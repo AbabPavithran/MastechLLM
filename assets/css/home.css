@@ -1,0 +1,615 @@
+/* # ============================================================
+# File Name    : home.css
+# Created On   : 19-12-2025
+# Last Update  : 29-12-2025
+# Project      : Website Homepage
+# Customized By: Sharissa Marian Hurtis
+# Description  : Homepage-specific styles including hero
+#                section, featured service previews, homepage
+#                imagery, and primary call-to-action layouts.
+# Usage        : Loaded ONLY on index/home page
+# ============================================================ */
+
+
+
+/*--------------------------------------------------------------
+# Hero Section with Overlay
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 900px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero.section {
+  padding: 0 !important;
+}
+
+.hero-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.9);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.4) 100%);
+  padding: 0 5%;
+}
+
+.hero-text-content {
+  max-width: 900px;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+}
+
+.hero-main-title {
+  font-size: 3.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -0.01em;
+  font-family: 'Times New Roman', serif;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-line:first-child {
+  margin-bottom: 5px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 20;
+}
+
+.hero-text-content::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%);
+}
+
+/*--------------------------------------------------------------
+# Our Approach Section
+--------------------------------------------------------------*/
+.our-approach-section {
+  position: relative;
+  padding: 110px 0;
+  background: url("../img/approach-bg.jpg") center center / cover no-repeat;
+  color: #fff;
+}
+
+.our-approach-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.our-approach-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.approach-header h2 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.approach-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.approach-divider .line {
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.approach-divider .dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.approach-steps {
+  margin: 90px 0 60px;
+  text-align: center;
+}
+
+.approach-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  transition: all 0.35s ease;
+}
+
+.approach-circle span {
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  line-height: 1.4;
+  transition: color 0.35s ease;
+}
+
+.approach-circle:hover {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.approach-circle:hover span {
+  color: #fff;
+}
+
+.approach-bottom-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 30px 0 40px;
+}
+
+.approach-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/*--------------------------------------------------------------
+# CTA Section
+--------------------------------------------------------------*/
+.cta-strip {
+  background: #8c8c8c;
+  padding: 60px 0;
+}
+
+.cta-btn {
+  border: 1px solid #111;
+  padding: 14px 34px;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Home Services Section (OUR DESIGN & BUILD SERVICES)
+--------------------------------------------------------------*/
+.home-services-section {
+  background: #111111;
+  padding: 120px 0;
+  color: #fff;
+}
+
+.home-services-header h2 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.home-services-header .divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.home-services-header .divider span {
+  width: 80px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.home-services-header .divider i {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 15px;
+}
+
+.home-services-card {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.home-services-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-services-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+  transition: all 0.4s ease;
+}
+
+.home-services-overlay.center {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.home-services-overlay h3 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.home-services-overlay p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.home-services-underline {
+  width: 40px;
+  height: 1px;
+  background: #fff;
+  margin-top: 20px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.home-services-card:hover .home-services-underline {
+  transform: scaleX(1);
+}
+
+.home-services-card:hover img {
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+}
+
+/*--------------------------------------------------------------
+# Fix for black space between Hero and About sections
+--------------------------------------------------------------*/
+.index-page .hero.section,
+.index-page .about-section.section {
+  padding: 0 !important;
+}
+
+.hero+.about-section {
+  margin-top: 0 !important;
+}
+
+.index-page main.main {
+  padding-top: 0;
+}
+
+.about-section .container-fluid,
+.hero .container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/*--------------------------------------------------------------
+# Mobile Fix - Hero Fullscreen & About Image Position
+# Desktop view remains completely unchanged
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+
+  /* Ensure hero takes full viewport */
+  .hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+  }
+
+  /* Push About section down by one full viewport */
+  .about-section {
+    position: relative;
+    margin-top: 100vh;
+    /* This pushes it exactly one screen down */
+  }
+
+  /* Add small spacing as requested */
+  .about-section .container-fluid {
+    padding-top: 20px;
+  }
+
+  /* Ensure About image is visible (it will be below the fold) */
+  .about-section .col-lg-5.about-image {
+    display: block !important;
+  }
+
+  /* Make content stack properly on mobile */
+  .about-section .row {
+    flex-direction: column;
+  }
+
+  .about-section .col-lg-5,
+  .about-section .col-lg-7 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Image should come first on mobile */
+  .about-section .col-lg-5.about-image {
+    order: 1;
+  }
+
+  .about-section .col-lg-7.about-content {
+    order: 2;
+  }
+}
+
+/*--------------------------------------------------------------
+# Responsive Design - Home Page
+--------------------------------------------------------------*/
+@media (max-width: 1200px) {
+  .hero-main-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .home-services-section {
+    padding: 100px 0;
+  }
+
+  .home-services-card {
+    height: 280px;
+  }
+
+  .home-services-header h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-main-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .home-services-section {
+    padding: 90px 0;
+  }
+
+  .home-services-header h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .home-services-card {
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+
+  .hero-main-title {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 15px;
+    padding-top: 18px;
+    margin-top: 18px;
+  }
+
+  .hero-overlay {
+    padding: 0 20px;
+  }
+
+  .our-approach-section {
+    padding: 70px 0;
+  }
+
+  .approach-header h2 {
+    font-size: 32px;
+  }
+
+  .approach-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .approach-divider .line {
+    width: 60px;
+  }
+
+  .home-services-section {
+    padding: 80px 0;
+  }
+
+  .home-services-header h2 {
+    font-size: 24px;
+  }
+
+  .home-services-header .divider span {
+    width: 60px;
+  }
+
+  .home-services-card {
+    height: 240px;
+  }
+
+  .home-services-overlay {
+    padding: 20px;
+  }
+
+  .home-services-underline {
+    width: 40px;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+
+  .hero-main-title {
+    font-size: 2rem;
+  }
+
+  .hero-title-line {
+    display: inline;
+  }
+
+  .hero-title-line:first-child::after {
+    content: " ";
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  .scroll-down {
+    bottom: 20px;
+    padding: 6px 15px;
+    font-size: 10px;
+  }
+
+  .hero-text-content::before {
+    width: 60px;
+  }
+
+  .home-services-section {
+    padding: 70px 0;
+  }
+
+  .home-services-header h2 {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+  }
+
+  .home-services-card {
+    height: 220px;
+  }
+
+  .home-services-overlay h3 {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .home-services-overlay p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-services-card {
+    height: 200px;
+  }
+
+  .home-services-header h2 {
+    font-size: 20px;
+  }
+}

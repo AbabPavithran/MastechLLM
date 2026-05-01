@@ -1,0 +1,966 @@
+/**
+* Template Name: PhotoFolio (Customized)
+* Project      : Website UI Design System
+* File         : main.css
+* Created On   : Dec 19, 2025
+* Last Updated : Dec 29, 2025
+* Based On     : PhotoFolio Bootstrap Template
+* Bootstrap    : v5.3.3
+* Original URL : https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+* Customized By: Sharissa Marian Hurtis 
+* Description  : Global stylesheet containing base styles,
+*                typography, color variables, layout helpers,
+*                buttons, and reusable utility classes used
+*                across all pages.
+* License      : https://bootstrapmade.com/license/
+*/
+
+
+
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+--------------------------------------------------------------*/
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Kanit&display=swap');
+
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Cardo", sans-serif;
+  --nav-font: "Inter", sans-serif;
+  --background-color: #000000;
+  --default-color: #fafafa;
+  --heading-color: #ffffff;
+  --accent-color: #e6f3ee;
+  --surface-color: #1a1a1a;
+  --contrast-color: #ffffff;
+  --nav-color: rgba(255, 255, 255, 0.7);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #1a1a1a;
+  --nav-dropdown-background-color: #1a1a1a;
+  --nav-dropdown-color: rgba(255, 255, 255, 0.7);
+  --nav-dropdown-hover-color: #ffffff;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #1a1a1a;
+  --surface-color: #343434;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# Font Declarations
+--------------------------------------------------------------*/
+/* Apply Kanit font to company name only */
+.logo h1.sitename {
+  font-family: 'Kanit', sans-serif !important;
+}
+
+/* Apply Montserrat to all text */
+.header,
+.navmenu,
+.navmenu ul li a,
+footer,
+.interior-page-hero h1,
+.breadcrumb,
+.breadcrumb a,
+.about-box h2,
+.about-box p,
+.footer-logo,
+.footer-text,
+.footer-title,
+.footer-links,
+.footer-contact,
+.home-services-section,
+.home-services-header h2,
+.home-services-overlay h3,
+.home-services-overlay p,
+.services,
+.services-tag,
+.services-title,
+.services-text,
+.services-badge,
+.flooring-services-section,
+.premium-shell,
+.process-eyebrow,
+.process-header p,
+.process-step h5,
+.process-step p,
+.cta-strip,
+.cta-btn,
+.our-approach-section,
+.approach-header h2,
+.approach-circle span,
+.approach-text p,
+.contact-info-section,
+.contact-box h4,
+.contact-details p,
+.contact-image-title,
+.contact-image-text,
+.cta-subtitle,
+.cta-description,
+.stat-number,
+.stat-label {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Exceptions - Keep Times New Roman for specific headings */
+.hero-main-title,
+.process-header h2,
+.step-index {
+  font-family: 'Times New Roman', serif !important;
+}
+
+/* Special case for hero subtitle */
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background: linear-gradient(180deg, #ffffff, #ffffff);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.interactive-logo {
+  max-height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.interactive-logo:hover {
+  transform: scale(1.02);
+}
+
+.header .sitename {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+.navmenu ul {
+  gap: 28px;
+}
+
+.navmenu a {
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header:not(.interior-page-header) .navmenu a {
+  color: #333333;
+}
+
+.interior-page-header .navmenu a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: #d0531a !important;
+}
+
+.navmenu a:hover {
+  transform: scale(1.05);
+}
+
+/* Underline hover effect */
+@media (min-width: 1200px) {
+  .navmenu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #d0531a;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  .interactive-logo:hover {
+    transform: scale(1.02);
+  }
+
+}
+
+
+/* Social Icons */
+.header-social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  margin-left: 14px;
+  transition: 0.3s;
+}
+
+.header-social-links a:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.header:not(.interior-page-header) .mobile-nav-toggle {
+  color: #333333;
+}
+
+.interior-page-header .mobile-nav-toggle {
+  color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    padding: 18px 16px;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+
+  .header:not(.interior-page-header) .navmenu a,
+  .header:not(.interior-page-header) .navmenu a:focus {
+    color: #333333;
+  }
+
+  .interior-page-header .navmenu a,
+  .interior-page-header .navmenu a:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--nav-underline-color);
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+  }
+
+  .navmenu a:hover::after,
+  .navmenu .active::after {
+    width: calc(100% - 32px);
+    background-color: #f26522;
+  }
+
+
+  /* Dropdown Styles */
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 250px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #333333;
+    justify-content: flex-start;
+  }
+
+  .navmenu .dropdown ul a:hover {
+    color: #ed1c24 !important;
+    background: rgba(237, 28, 36, 0.05);
+    transform: scale(1.05);
+  }
+
+  .navmenu .dropdown ul a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 12px 0;
+    margin: 0;
+    border-radius: 8px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 14px 22px;
+    font-family: var(--nav-font);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu a::after {
+    display: none;
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #ffffff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+
+  /* Dropdown Styles for Mobile */
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+  }
+
+  .navmenu .dropdown-active {
+    display: block !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer-dark {
+  background: #111111;
+  color: #ccc;
+  padding: 80px 0 0;
+}
+
+.footer-logo {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #aaa;
+  max-width: 420px;
+}
+
+.footer-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #aaa;
+  margin: 0;
+}
+
+.footer-contact .line {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
+}
+
+.footer-contact strong {
+  color: #fff;
+}
+
+.footer-bottom {
+  background: #000;
+  margin-top: 70px;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer-social a {
+  color: #fff;
+  margin-left: 18px;
+  font-size: 16px;
+}
+
+.footer-social a:hover {
+  opacity: 0.7;
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .social-links {
+  margin-top: 20px;
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer .credits {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+
+#preloader .line {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 1px;
+  height: 280px;
+  transition: all 0.8s ease 0s;
+}
+
+#preloader .line:before {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  transform: translateY(-50%);
+  animation: lineincrease 1000ms ease-in-out 0s forwards;
+}
+
+#preloader .line:after {
+  content: "";
+  position: absolute;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateY(-100%);
+  animation: linemove 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+#preloader.loaded .line {
+  opacity: 0;
+  height: 100% !important;
+}
+
+#preloader.loaded .line:after {
+  opacity: 0;
+}
+
+#preloader.loaded:before,
+#preloader.loaded:after {
+  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+}
+
+@keyframes lineincrease {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes linemove {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width: 50%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--default-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.page-title .heading {
+  padding: 80px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.page-title .heading h1 {
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.page-title .heading .cta-btn {
+  color: var(--default-color);
+  background: var(--accent-color);
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.page-title .heading .cta-btn:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+}
+
+.page-title nav {
+  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 20px 0;
+}
+
+.page-title nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page-title nav ol li+li {
+  padding-left: 10px;
+}
+
+.page-title nav ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 100px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  line-height: 1px;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  position: relative;
+  font-family: var(--default-font);
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+
+.section-title p {
+  color: var(--heading-color);
+  margin: 0;
+  font-size: 36px;
+  font-weight: 400;
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Page Hero / Breadcrumb (Interior Pages)
+--------------------------------------------------------------*/
+.interior-page-hero .hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interior-page-hero h1 {
+  font-size: 36px;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+}
+
+.breadcrumb .active {
+  color: #fff;
+  pointer-events: none;
+}
+
+.breadcrumb span {
+  margin: 0 8px;
+  color: #888;
+}
+
+/*--------------------------------------------------------------
+# Interior Pages Header Only
+--------------------------------------------------------------*/
+.interior-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #0f0f0f;
+  transition: background 0.35s ease;
+}
+
+.interior-page .interior-page-header {
+  background-color: #111;
+  transition: background-color 0.4s ease, padding 0.4s ease;
+  z-index: 999;
+}
+
+.interior-page .interior-page-hero .hero-content {
+  transform: translateY(50px);
+}
+
+.interior-page .interior-page-header.is-transparent {
+  background: transparent;
+}
+
+.interior-page .interior-page-hero {
+  position: relative;
+  padding: 100px 0 100px;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../img/gallery/AboutBG.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Responsive Design - Global
+--------------------------------------------------------------*/
+/* Responsive - Footer */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
