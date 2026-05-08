@@ -19,8 +19,8 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Main CSS Files -->
-  <link href="assets/css/main.css?v=2.0" rel="stylesheet">
-  <link href="assets/css/home.css?v=2.0" rel="stylesheet">
+  <link href="assets/css/main.css?v=2.6" rel="stylesheet">
+  <link href="assets/css/home.css?v=2.6" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -47,7 +47,8 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html" class="btn-quote">Contact Us</a></li>
+          <li><a href="tel:+971525816222" class="nav-phone"><i class="bi bi-telephone-fill phone-ring-icon"></i> +971
+              525816222</a></li>
         </ul>
       </nav>
 
@@ -67,8 +68,9 @@
       <div class="container-editorial text-center">
         <div class="hero-content mx-auto" style="max-width: 900px;">
           <h1 class="hero-headline">
-            <span class="text-reveal interactive-text" data-aos="fade-up">Building dreams with</span>
-            <span class="text-reveal interactive-text" data-aos="fade-up" data-aos-delay="200">precision and excellence</span>
+            <br>
+            <span class="text-reveal interactive-text" data-aos="fade-up">Building dreams with precision </span>
+            <span class="text-reveal interactive-text" data-aos="fade-up" data-aos-delay="200"> and excellence</span>
           </h1>
           <p class="hero-subtext" data-aos="fade-up" data-aos-delay="400"
             style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 40px;">We deliver innovative
@@ -83,7 +85,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="chapter-section buildup-about">
+    <section class="chapter-section buildup-about" style="padding-bottom: 0;">
       <div class="container-editorial">
         <div class="editorial-grid align-items-center">
           <div class="editorial-image-box rounded-box" data-aos="fade-right">
@@ -135,9 +137,9 @@
         <div class="decor-spanner spanner-1"></div>
         <div class="decor-spanner spanner-2"></div>
       </div>
-      
+
       <div class="container-editorial">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
           <span class="tagline-ui">ABOUT INDOFACT INDUSTRY</span>
           <h2 class="section-title">Our Services & Solutions</h2>
         </div>
@@ -229,12 +231,41 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="chapter-section" style="padding: 120px 0; text-align: center; background: var(--surface);">
+    <!-- CTA / Message Section -->
+    <section class="chapter-section"
+      style="background: var(--surface); display: flex; align-items: center; justify-content: center;">
       <div class="container-editorial">
-        <h2 class="section-title" style="font-size: 8rem; margin-bottom: 60px;" data-aos="zoom-in">Ready to build
-          <br>the future?</h2>
-        <a href="contact.html" class="btn-editorial" style="font-size: 1.2rem; padding: 25px 60px;">Start A Project</a>
+        <div class="cta-message-wrapper"
+          style="background: var(--white); padding: clamp(40px, 8vw, 80px); border-radius: 24px; box-shadow: 0 40px 100px rgba(0,0,0,0.05); text-align: center; position: relative; overflow: hidden;"
+          data-aos="fade-up">
+
+          <!-- Decorative Quote Icon -->
+          <div
+            style="position: absolute; top: -20px; left: 20px; opacity: 0.03; font-size: 15rem; color: var(--dark); line-height: 1;">
+            <i class="bi bi-quote"></i>
+          </div>
+
+          <div style="position: relative; z-index: 2;">
+            <span class="tagline-ui"
+              style="margin-bottom: 25px; font-size: 0.7rem; letter-spacing: 0.3em; opacity: 0.8;"></span>
+            <h2 class="section-title"
+              style="font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 500; margin-bottom: 40px; color: var(--dark); max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.4; letter-spacing: -0.01em;">
+              "Every great industrial structure begins with a conversation. Let's engineer your vision with absolute
+              precision."
+            </h2>
+
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-4 mt-5">
+              <a href="contact.html" class="btn-editorial" style="padding: 18px 40px; font-size: 1rem;">
+                Start A Project <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="tel:+971525816222"
+                style="font-family: var(--ui-font); font-weight: 700; color: var(--text); font-size: 0.9rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 10px; transition: var(--transition-fast);">
+                <i class="bi bi-telephone-fill" style="color: var(--primary); font-size: 1.2rem;"></i> OR CALL US
+                DIRECTLY
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -247,7 +278,7 @@
     <div class="container-editorial">
       <div class="row gy-5">
         <div class="col-lg-6">
-          <span class="footer-logo-text">Mastech.</span>
+          <a href="index.html" class="footer-logo-text">Mastech.</a>
           <p style="color: rgba(255,255,255,0.4); max-width: 450px; font-size: 1.1rem;">Established in 2007, Mastech
             provides smart & innovative solutions in engineering and construction fields across the United Arab
             Emirates.</p>
@@ -285,17 +316,19 @@
         <!-- Smaller SVG Crane Silhouette -->
         <svg width="100" height="75" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- City Skyline -->
-          <path d="M0 150H200V130H185V110H170V140H160V120H140V145H125V115H110V140H95V105H75V135H60V125H45V140H30V110H15V135H0V150Z" fill="rgba(255,255,255,0.15)"/>
-          
+          <path
+            d="M0 150H200V130H185V110H170V140H160V120H140V145H125V115H110V140H95V105H75V135H60V125H45V140H30V110H15V135H0V150Z"
+            fill="rgba(255,255,255,0.15)" />
+
           <!-- Crane Base & Tower -->
-          <path d="M50 150V40" stroke="white" stroke-width="3" stroke-linecap="round"/>
-          <path d="M40 150H60" stroke="white" stroke-width="2"/>
-          
+          <path d="M50 150V40" stroke="white" stroke-width="3" stroke-linecap="round" />
+          <path d="M40 150H60" stroke="white" stroke-width="2" />
+
           <!-- Animated Crane Arm -->
           <g class="crane-arm-group">
-            <path d="M50 40L140 55" stroke="white" stroke-width="3" stroke-linecap="round" class="crane-arm"/>
-            <path d="M50 40L20 35" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M120 52V65" stroke="white" stroke-width="1" stroke-dasharray="2 2"/>
+            <path d="M50 40L140 55" stroke="white" stroke-width="3" stroke-linecap="round" class="crane-arm" />
+            <path d="M50 40L20 35" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M120 52V65" stroke="white" stroke-width="1" stroke-dasharray="2 2" />
             <rect x="115" y="65" width="10" height="10" fill="var(--primary)" class="crane-load-new">
               <animate attributeName="y" values="65;85;65" dur="3s" repeatCount="indefinite" />
             </rect>

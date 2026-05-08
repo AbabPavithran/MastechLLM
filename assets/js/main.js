@@ -31,15 +31,35 @@
     // 2. Text Reveal Animation for Headlines
     gsap.utils.toArray(".section-title").forEach(title => {
       gsap.from(title, {
-        y: 100,
+        y: 80,
         opacity: 0,
-        duration: 1.5,
-        ease: "power4.out",
+        duration: 1.2,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: title,
-          start: "top 90%"
+          start: "top 85%",
+          toggleActions: "play reverse play reverse"
         }
       });
+    });
+
+    // 2b. Paragraph & List Reveal
+    gsap.utils.toArray(".chapter-section").forEach(section => {
+      const texts = section.querySelectorAll('p, ul li, .tagline-ui');
+      if(texts.length > 0) {
+        gsap.from(texts, {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 75%",
+            toggleActions: "play reverse play reverse"
+          }
+        });
+      }
     });
 
     // 3. Parallax Images with Smoother Scrub
@@ -126,9 +146,10 @@
           // Initialize animations after preloader clears
           initAnimations();
           AOS.init({
-            duration: 1000,
+            duration: 800,
             easing: 'ease-out-cubic',
-            once: true,
+            once: false,
+            mirror: true,
             offset: 100
           });
         }, 1000);
@@ -154,6 +175,38 @@
   }
 
   /**
+   * Interactive 3D Tilt for Service Cards
+   */
+  function init3DTilt() {
+    const cards = document.querySelectorAll('.service-card-new');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate tilt angles based on mouse position relative to center
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10 deg tilt
+        const rotateY = ((x - centerX) / centerX) * 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transition = 'none';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+      });
+      
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'transform 0.1s ease';
+      });
+    });
+  }
+
+  /**
    * Run All
    */
   document.addEventListener('DOMContentLoaded', () => {
@@ -161,6 +214,7 @@
     initHeader();
     initMobileNav();
     initPreloader();
+    init3DTilt();
   });
 
 })();
