@@ -11,12 +11,12 @@
 
 :root {
   /* Brand Colors (BuildUp Corporate Theme) */
-  --primary: #52d1ff;
-  /* Lighter Sky Blue */
-  --primary-dark: #00b8ff;
-  --dark: #1a2b3c;
-  /* Slate Blue */
-  --dark-accent: #2c3e50;
+  --primary: #d32f2f;
+  /* Lighter Red */
+  --primary-dark: #b71c1c;
+  --dark: #1f2937;
+  /* Dark Grey */
+  --dark-accent: #374151;
   --surface: #f8fafc;
   --text: #4a5568;
   --text-muted: #718096;
