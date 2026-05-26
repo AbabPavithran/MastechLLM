@@ -3,605 +3,395 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — MASTECH Technical Iron Works L.L.C</title>
-  <meta name="description" content="18 years of precision engineering, steel fabrication, and oilfield services from Umm Al Quwain, UAE.">
+  <title>MASTECH — About | Precision Engineering & Steel Fabrication</title>
+  <meta name="description" content="Discover the heritage, values, and precision-driven culture behind Mastech Technical Iron Works — engineering the future since 2007.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- main.css (tokens, nav, footer, keyframes, reveal) - assumed shared -->
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/about.css">
 </head>
 <body>
 
-  <!-- Scroll Progress -->
+  <!-- Progress Bar & Ambient Shapes (consistent with homepage) -->
   <div class="progress-bar" id="progressBar"></div>
-
-  <!-- Ambient Atmosphere -->
   <div class="ambient-shapes">
     <div class="ambient-blob ambient-1"></div>
     <div class="ambient-blob ambient-2"></div>
     <div class="ambient-blob ambient-3"></div>
   </div>
 
-  <!-- Floating Particles -->
-  <div class="floating-particles" id="particles"></div>
-
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Overlay (matching main.css) -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
+    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
     <a href="index.html#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="index.html#process"  onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
+    <a href="index.html#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
     <a href="index.html#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-    <a href="about.html"          onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="index.html#contact"  onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-    <button class="mobile-cta" onclick="window.location='index.html#contact'; document.getElementById('mobileMenu').classList.remove('open');">Get a Quote</button>
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+    <button class="mobile-cta" onclick="window.location.href='index.html#contact'; document.getElementById('mobileMenu').classList.remove('open');">Get a Quote</button>
   </div>
 
-  <!-- Navigation -->
+  <!-- Navigation (identical to main site style) -->
   <nav id="mainNav">
     <a href="index.html" class="logo">MASTECH<div class="logo-dot"></div></a>
     <div class="nav-links">
+      <a href="index.html">Home</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#process">Process</a>
       <a href="index.html#projects">Projects</a>
-      <a href="about.html" style="color:var(--rust)">About</a>
+      <a href="about.html">About</a>
       <a href="index.html#contact">Contact</a>
     </div>
-    <button class="nav-cta" onclick="window.location='index.html#contact'">Get a quote</button>
-    <div class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <button class="nav-cta" onclick="window.location.href='index.html#contact'">Get a quote</button>
+    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
   <!-- ============================================================
-       HERO
+     ABOUT HERO — Full viewport, diagonal split composition (fresh layout)
   ============================================================ -->
-  <section class="about-hero" id="about-hero">
-    <div class="about-hero-bg"></div>
-    <div class="about-hero-overlay"></div>
-    <div class="about-hero-grid"></div>
-
-    <div class="about-hero-content">
-      <div class="about-hero-badge">
-        <span class="about-hero-badge-line"></span>
-        Est. 2007 — Umm Al Quwain, UAE
+  <section class="about-hero">
+    <!-- left panel: text -->
+    <div class="ah-left">
+      <div class="ah-grid"></div>
+      <div class="ah-glow"></div>
+      <div class="ah-bg-word">HERITAGE</div>
+      <div class="ah-badge">
+        <span class="ah-badge-line"></span> SINCE 2007
       </div>
-      <h1 class="about-hero-title split-letters">
-        WHO<br>
-        <span class="italic">we</span><br>
-        <span class="accent">ARE</span>
+      <h1 class="ah-title">
+        WHERE <span class="t-em">STEEL</span><br>
+        MEETS <span class="t-accent">PRECISION</span>
       </h1>
-      <p class="about-hero-desc">
-        Eighteen years of uncompromising precision. A workforce of 215+ engineers
-        forging high-integrity solutions for the world's most demanding industrial sectors.
-      </p>
+      <div class="ah-descriptor">
+        <div class="ah-descriptor-line"></div>
+        <p>Engineering the backbone of industry — from concept to critical infrastructure, with uncompromising integrity.</p>
+      </div>
+      <div class="ah-scroll">
+        <div class="ah-scroll-dot"></div>
+      </div>
     </div>
 
-    <!-- Decorative year ring -->
-    <div class="about-hero-year" aria-hidden="true">
-      <div class="year-ring">
-        <div class="year-inner">
-          <span class="year-num">18</span>
-          <span class="year-label">Years</span>
+    <!-- right panel: dynamic photo mosaic + stats -->
+    <div class="ah-right">
+      <img class="ah-img-main" src="assets/img/gallery/about-hero-desk.jpg" alt="Mastech facility overview" loading="eager" onerror="this.src='https://placehold.co/1600x1200/1c1c1e/c8a96e?text=MASTECH+Facility'">
+      <div class="ah-right-overlay"></div>
+      <div class="ah-stat-cluster">
+        <div class="ah-stat-card">
+          <div class="ah-stat-num">18<sup>+</sup><em> yrs</em></div>
+          <div class="ah-stat-label">industry leadership</div>
+        </div>
+        <div class="ah-stat-card">
+          <div class="ah-stat-num">12,500<sup>t</sup></div>
+          <div class="ah-stat-label">monthly capacity</div>
         </div>
       </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="about-hero-scroll" aria-hidden="true">
-      <div class="scroll-track"><div class="scroll-dot"></div></div>
-      <span>Scroll</span>
+      <div class="ah-year-badge">
+        <div class="ah-year-ring">
+          <div class="ah-year-inner">
+            <div class="ah-year-num">2007</div>
+            <div class="ah-year-lbl">EST.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============================================================
-       IDENTITY
+     IDENTITY STRIP — Manifesto & facts (original design)
   ============================================================ -->
-  <section class="identity-section">
-    <div class="identity-inner">
-      <div class="section-label reveal">Our Identity</div>
-
-      <blockquote class="identity-quote reveal stagger-1 split-words">
-        "Precision is not a target — it is the only acceptable standard."
-      </blockquote>
-
-      <div class="identity-body reveal stagger-2">
-        <p>
-          Since 2007, Mastech Technical Iron Works has delivered high-stakes industrial
-          fabrication and engineering services across the UAE and beyond. What began as a
-          12-person vision in Umm Al Quwain has grown into a 215-engineer force — ISO 9001
-          certified, ASME Section VIII compliant, and API Q1 registered.
-        </p>
-        <p>
-          We combine old-world craftsmanship with cutting-edge digital manufacturing:
-          robotic welding cells, 3D LiDAR scanning, finite element analysis, and
-          AI-assisted design — all under one roof, all built for accountability.
-        </p>
-      </div>
+  <div class="identity-strip">
+    <div class="identity-quote-block">
+      <div class="identity-quote-mark">“</div>
+      <div class="identity-quote">We don't just fabricate steel — we forge <em>legacy</em>. Every weld, every blueprint, every innovation carries the weight of precision and the promise of endurance.</div>
+      <div class="identity-attribution">— FOUNDER'S PHILOSOPHY</div>
     </div>
-    <div class="identity-bg-num" aria-hidden="true">2007</div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-inner">
-      <span class="ticker-item">±0.02 mm Tolerance</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">12,500 Tons / Month</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">215+ Engineers</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">98% On-Time Delivery</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">14 Certifications</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">32+ Global Partners</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">487+ Projects</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">±0.02 mm Tolerance</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">12,500 Tons / Month</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">215+ Engineers</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">98% On-Time Delivery</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">14 Certifications</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">32+ Global Partners</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">487+ Projects</span><span class="ticker-sep">✦</span>
+    <div class="identity-facts">
+      <div class="identity-fact">
+        <div class="identity-fact-label">MANUFACTURING FOOTPRINT</div>
+        <div class="identity-fact-val">52,000 m²</div>
+        <div class="identity-fact-desc">Umm Al Quwain facility • dedicated fabrication bays + R&D center</div>
+      </div>
+      <div class="identity-fact">
+        <div class="identity-fact-label">WORKFORCE</div>
+        <div class="identity-fact-val">480+</div>
+        <div class="identity-fact-desc">Engineers, technicians, welders, and quality specialists</div>
+      </div>
+      <div class="identity-fact">
+        <div class="identity-fact-label">GLOBAL REACH</div>
+        <div class="identity-fact-val">32+</div>
+        <div class="identity-fact-desc">Countries served across MENA, Asia, and Europe</div>
+      </div>
     </div>
   </div>
 
   <!-- ============================================================
-       STORY
+     STORY TIMELINE — Horizontal chapters (original narrative)
   ============================================================ -->
   <section class="story-section">
-    <div class="story-grid">
-
-      <!-- Visuals -->
-      <div class="story-visuals reveal-scale">
-        <div class="story-img-primary">
-          <img src="https://placehold.co/700x680/1c1c1e/333?text=FACILITY" alt="Mastech main facility, Umm Al Quwain" loading="lazy">
-          <div class="story-img-tag">Umm Al Quwain — UAE</div>
-        </div>
-        <div class="story-img-secondary">
-          <img src="https://placehold.co/420x180/111110/333?text=WORKSHOP" alt="Mastech workshop floor" loading="lazy">
-          <div class="story-img-stat">
-            <div class="story-stat-num">12,500<sup>T</sup></div>
-            <div class="story-stat-label">Monthly capacity</div>
+    <div class="story-header">
+      <div>
+        <div class="section-label reveal">Our Timeline</div>
+        <h2 class="section-title reveal stagger-1 split-words">From <em>forge</em><br>to future.</h2>
+      </div>
+      <div class="story-intro reveal stagger-2">Built on decades of industrial mastery — each chapter represents a leap in capability, certification, and engineering excellence.</div>
+    </div>
+    <div class="story-chapters">
+      <div class="story-spine" id="storySpine"></div>
+      <div class="story-grid">
+        <div class="story-chapter reveal">
+          <div class="story-chapter-year">2007</div>
+          <div class="story-chapter-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
+          <h4>Foundation</h4>
+          <p>Started as a modest fabrication unit with 12 engineers, driven by a vision to redefine industrial contracting in the UAE.</p>
+        </div>
+        <div class="story-chapter reveal stagger-2">
+          <div class="story-chapter-year">2012</div>
+          <div class="story-chapter-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/></svg>
+          </div>
+          <h4>Oil & Gas Breakthrough</h4>
+          <p>Landmark ADNOC project — delivered 3,200 tons of structural steel for offshore expansion, setting new quality benchmarks.</p>
+        </div>
+        <div class="story-chapter reveal stagger-3">
+          <div class="story-chapter-year">2016</div>
+          <div class="story-chapter-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <h4>Certification Milestone</h4>
+          <p>ISO 9001:2015, ASME Section VIII, and API Q1 — cementing our role as a premier fabrication partner.</p>
+        </div>
+        <div class="story-chapter reveal stagger-4">
+          <div class="story-chapter-year">2022</div>
+          <div class="story-chapter-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h4>Industry 4.0</h4>
+          <p>AI-driven design, robotic welding cells, and digital twin integration — precision at an unprecedented scale.</p>
         </div>
       </div>
+    </div>
+    <div class="story-bg-num">18</div>
+  </section>
 
-      <!-- Text -->
-      <div class="story-text">
-        <div class="section-label reveal" style="color:var(--rust)">The Story</div>
-        <h2 class="section-title reveal stagger-1 split-words">Built on<br><em>steel</em> and<br>conviction.</h2>
-
-        <div class="story-chapters">
-
-          <div class="story-chapter reveal stagger-2">
-            <div class="chapter-year">2007</div>
-            <div class="chapter-content">
-              <h4>The Foundation</h4>
-              <p>A team of 12 engineers with a shared belief that UAE's industrial future demanded a new benchmark in fabrication quality. Mastech was founded in Umm Al Quwain with a single fabrication unit and an uncompromising tolerance for mediocrity.</p>
-            </div>
+  <!-- ============================================================
+     TEAM + PHOTO MOSAIC — Dark section (fresh mosaic)
+  ============================================================ -->
+  <section class="mosaic-section">
+    <div class="mosaic-inner">
+      <div class="section-label reveal" style="color: var(--rust);">Leadership & Craft</div>
+      <h2 class="section-title reveal stagger-1 split-words" style="color:#fff;">Minds behind <em>the metal</em></h2>
+      <div class="mosaic-layout">
+        <!-- left: dynamic image grid -->
+        <div class="mosaic-photos">
+          <div class="mosaic-photo span-2 reveal-scale">
+            <img src="assets/img/gallery/team-workshop.jpg" alt="Workshop panorama" onerror="this.src='https://placehold.co/800x500/1c1c1e/c8a96e?text=Advanced+Fabrication'">
+            <div class="mosaic-photo-tag">Robotic Welding Cell</div>
           </div>
-
-          <div class="story-chapter reveal stagger-3">
-            <div class="chapter-year">2012</div>
-            <div class="chapter-content">
-              <h4>The Breakthrough</h4>
-              <p>A landmark ADNOC contract for offshore platform steel structures — 3,200 tons delivered on schedule. This project established Mastech as a tier-one industrial supplier in the UAE energy sector.</p>
-            </div>
+          <div class="mosaic-photo reveal">
+            <img src="assets/img/gallery/engineer-fea.jpg" alt="Engineering simulation" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=FEA+Simulation'">
+            <div class="mosaic-photo-tag">Finite Element Analysis</div>
           </div>
-
-          <div class="story-chapter reveal stagger-4">
-            <div class="chapter-year">2020</div>
-            <div class="chapter-content">
-              <h4>The Transformation</h4>
-              <p>AI-driven design, robotic welding cells, and 3D LiDAR scanning rolled out across all facilities. Digital manufacturing meets old-world craftsmanship — a combination no competitor has replicated.</p>
-            </div>
+          <div class="mosaic-photo reveal">
+            <img src="assets/img/gallery/ndt-inspection.jpg" alt="NDT inspection" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=NDT+Inspection'">
+            <div class="mosaic-photo-tag">Non-Destructive Testing</div>
           </div>
-
-          <div class="story-chapter reveal stagger-4">
-            <div class="chapter-year">2025</div>
-            <div class="chapter-content">
-              <h4>The Future</h4>
-              <p>Carbon-neutral facility commissioned. Dedicated R&amp;D lab and materials science division opened. Mastech enters its next phase — sustainable precision at industrial scale.</p>
-            </div>
+        </div>
+        <!-- right: leadership rows -->
+        <div class="mosaic-team">
+          <div class="mosaic-team-intro reveal">A collective of industry veterans, certified welding engineers, and digital manufacturing experts — each leader brings decades of field experience and a commitment to zero-defect delivery.</div>
+          <div class="leader-row reveal">
+            <div class="leader-avatar"><img src="assets/img/gallery/leader-1.jpg" alt="Rashid Al Maktoum" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=RA'"></div>
+            <div class="leader-info"><div class="leader-name">Rashid Al Mansoori</div><div class="leader-role">Managing Director</div></div>
+            <div class="leader-years">22 yrs industry</div>
           </div>
-
+          <div class="leader-row reveal stagger-2">
+            <div class="leader-avatar"><img src="assets/img/gallery/leader-2.jpg" alt="Elena Voss" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=EV'"></div>
+            <div class="leader-info"><div class="leader-name">Elena Voss</div><div class="leader-role">Head of Engineering</div></div>
+            <div class="leader-years">18 yrs, PE structural</div>
+          </div>
+          <div class="leader-row reveal stagger-3">
+            <div class="leader-avatar"><img src="assets/img/gallery/leader-3.jpg" alt="Khalid Hamad" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=KH'"></div>
+            <div class="leader-info"><div class="leader-name">Khalid Hamad</div><div class="leader-role">Fabrication Director</div></div>
+            <div class="leader-years">AWS CWI, 15 yrs</div>
+          </div>
+          <div class="leader-row reveal stagger-4">
+            <div class="leader-avatar"><img src="assets/img/gallery/leader-4.jpg" alt="Sophia Chen" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=SC'"></div>
+            <div class="leader-info"><div class="leader-name">Sophia Chen</div><div class="leader-role">QA/QC & NDT Lead</div></div>
+            <div class="leader-years">ASNT Level III</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       METRICS
-  ============================================================ -->
-  <div class="metrics-section">
-    <div class="metrics-inner">
-      <div class="metric-block reveal">
-        <div class="metric-num" id="m1">487</div>
-        <div class="metric-label">Projects delivered</div>
-      </div>
-      <div class="metric-block reveal stagger-2">
-        <div class="metric-num" id="m2">215<span class="metric-unit">+</span></div>
-        <div class="metric-label">Engineers on team</div>
-      </div>
-      <div class="metric-block reveal stagger-3">
-        <div class="metric-num" id="m3">98<span class="metric-unit">%</span></div>
-        <div class="metric-label">On-time delivery</div>
-      </div>
-      <div class="metric-block reveal stagger-4">
-        <div class="metric-num" id="m4">14</div>
-        <div class="metric-label">Certifications held</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       VALUES
+     VALUES — Light magazine grid with animated fill bars (original)
   ============================================================ -->
   <section class="values-section">
-    <div class="section-label reveal">What Drives Us</div>
-    <h2 class="section-title reveal stagger-1 split-words">Our<br><em>core values.</em></h2>
-
-    <div class="values-grid">
-
-      <div class="value-card reveal">
-        <div class="value-num">01</div>
-        <div class="value-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3>Precision</h3>
-        <p>±0.02 mm tolerance across all machining operations. Precision is non-negotiable — not a competitive advantage but a baseline expectation.</p>
-        <div class="value-bar"><div class="value-bar-fill" style="--fill:98%"></div></div>
+    <div class="section-label reveal">Core DNA</div>
+    <h2 class="section-title reveal stagger-1 split-words">Values <em>forged</em><br>in steel.</h2>
+    <div class="values-layout">
+      <div class="values-intro-text reveal stagger-2">
+        <strong>Our Codex</strong>
+        More than a mission statement — these principles guide every weld, every calculation, every client relationship.
       </div>
-
-      <div class="value-card reveal stagger-1">
-        <div class="value-num">02</div>
-        <div class="value-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
+      <div class="values-cards">
+        <div class="value-card reveal" data-percent="98">
+          <div class="value-card-num">01</div>
+          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg></div>
+          <h3>Zero Compromise</h3>
+          <p>Safety and precision are non-negotiable. Every project undergoes triple QC gates and independent audits.</p>
+          <div class="value-bar"><div class="value-bar-fill" style="--w:98%"></div></div>
         </div>
-        <h3>Integrity</h3>
-        <p>Every weld, every inspection, every delivery — held to the same standard whether a client is watching or not. 18 years of trust, one project at a time.</p>
-        <div class="value-bar"><div class="value-bar-fill" style="--fill:100%"></div></div>
-      </div>
-
-      <div class="value-card reveal stagger-2">
-        <div class="value-num">03</div>
-        <div class="value-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-          </svg>
+        <div class="value-card reveal stagger-2" data-percent="100">
+          <div class="value-card-num">02</div>
+          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <h3>Radical Transparency</h3>
+          <p>Real-time digital dashboards for clients — from material sourcing to final delivery, full traceability.</p>
+          <div class="value-bar"><div class="value-bar-fill" style="--w:100%"></div></div>
         </div>
-        <h3>Innovation</h3>
-        <p>Robotic welding cells, AI-assisted FEA, and digital twin modelling aren't buzzwords here — they're the operational reality of every Mastech project.</p>
-        <div class="value-bar"><div class="value-bar-fill" style="--fill:92%"></div></div>
-      </div>
-
-      <div class="value-card reveal stagger-3">
-        <div class="value-num">04</div>
-        <div class="value-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
+        <div class="value-card reveal stagger-3" data-percent="94">
+          <div class="value-card-num">03</div>
+          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8M16 6l-4-4-4 4M12 2v12"/></svg></div>
+          <h3>Relentless Innovation</h3>
+          <p>Dedicated R&D lab exploring advanced alloys, AI defect detection, and carbon-neutral fabrication.</p>
+          <div class="value-bar"><div class="value-bar-fill" style="--w:94%"></div></div>
         </div>
-        <h3>Global Reach</h3>
-        <p>32+ global partners across oil &amp; gas, heavy industry, and infrastructure. Headquartered in the UAE — engineered for the world.</p>
-        <div class="value-bar"><div class="value-bar-fill" style="--fill:85%"></div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================================
-       LEADERSHIP
-  ============================================================ -->
-  <section class="leadership-section">
-    <div class="leadership-inner">
-      <div class="section-label reveal">The People</div>
-      <h2 class="section-title reveal stagger-1 split-words" style="color:#fff">Leadership<br><em>&amp; expertise.</em></h2>
-
-      <div class="leadership-grid">
-
-        <div class="leader-card reveal">
-          <div class="leader-img-wrap">
-            <img src="https://placehold.co/480x360/1c1c1e/333?text=CEO" alt="Mohammed Al Rashidi — Founder & CEO" loading="lazy">
-            <div class="leader-img-overlay"></div>
-          </div>
-          <div class="leader-info">
-            <div class="leader-name">Mohammed Al Rashidi</div>
-            <div class="leader-role">Founder &amp; CEO</div>
-            <p class="leader-bio">30+ years in heavy fabrication and industrial engineering. Built Mastech from a 12-person team to the UAE's premier precision engineering firm.</p>
-          </div>
+        <div class="value-card reveal stagger-4" data-percent="100">
+          <div class="value-card-num">04</div>
+          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h3>Partnership DNA</h3>
+          <p>We don't just deliver components — we embed with your teams for lifecycle support and continuous improvement.</p>
+          <div class="value-bar"><div class="value-bar-fill" style="--w:100%"></div></div>
         </div>
-
-        <div class="leader-card reveal stagger-2">
-          <div class="leader-img-wrap">
-            <img src="https://placehold.co/480x360/1c1c1e/444?text=COO" alt="Khalid Hassan — Chief Operations Officer" loading="lazy">
-            <div class="leader-img-overlay"></div>
-          </div>
-          <div class="leader-info">
-            <div class="leader-name">Khalid Hassan</div>
-            <div class="leader-role">Chief Operations Officer</div>
-            <p class="leader-bio">Former ADNOC project lead. Oversees all fabrication, QA systems, and delivery operations across 12,500-ton monthly output.</p>
-          </div>
-        </div>
-
-        <div class="leader-card reveal stagger-3">
-          <div class="leader-img-wrap">
-            <img src="https://placehold.co/480x360/1c1c1e/555?text=CTO" alt="Priya Nair — Chief Technology Officer" loading="lazy">
-            <div class="leader-img-overlay"></div>
-          </div>
-          <div class="leader-info">
-            <div class="leader-name">Priya Nair</div>
-            <div class="leader-role">Chief Technology Officer</div>
-            <p class="leader-bio">Led the 2020 digital transformation. Architect of Mastech's robotic welding infrastructure and AI-driven design pipeline.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       CERTIFICATIONS
+     CERTIFICATIONS — premium dark grid (extended)
   ============================================================ -->
-  <section class="certs-section">
-    <div class="section-label reveal">Quality Assurance</div>
-    <h2 class="section-title reveal stagger-1 split-words">Certified<br><em>excellence.</em></h2>
-
-    <div class="certs-expanded reveal stagger-2">
-
-      <div class="cert-block">
-        <div class="cert-block-code">ISO 9001:2024</div>
-        <div class="cert-block-name">Quality Management System</div>
-        <div class="cert-block-body">Certified production processes covering all stages from raw material sourcing to final inspection and delivery.</div>
+  <section class="certs-about-section">
+    <div class="section-label reveal">Accreditations</div>
+    <h2 class="section-title reveal stagger-1 split-words">Certified to <em>deliver</em><br>excellence.</h2>
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-card-code">ISO 9001:2024</div>
+        <div class="cert-card-name">Quality Management</div>
+        <div class="cert-card-body">Integrated design, production, and after-sales processes audited annually.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
-      <div class="cert-block">
-        <div class="cert-block-code">ASME Sec. VIII</div>
-        <div class="cert-block-name">Pressure Vessel Code</div>
-        <div class="cert-block-body">Full compliance for design, fabrication, and inspection of pressure-bearing vessels used in oil &amp; gas applications.</div>
+      <div class="cert-card reveal stagger-2">
+        <div class="cert-card-code">ASME SEC VIII</div>
+        <div class="cert-card-name">Pressure Vessels</div>
+        <div class="cert-card-body">Div. 1 & 2 — design and fabrication of unfired pressure vessels.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
-      <div class="cert-block">
-        <div class="cert-block-code">API Q1</div>
-        <div class="cert-block-name">Petroleum Quality Program</div>
-        <div class="cert-block-body">Registered supplier for oilfield equipment manufacturing under the American Petroleum Institute's Quality Program.</div>
+      <div class="cert-card reveal stagger-3">
+        <div class="cert-card-code">API Q1</div>
+        <div class="cert-card-name">Oil & Gas Equipment</div>
+        <div class="cert-card-body">Specification for quality programs for the petroleum and natural gas industry.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
-      <div class="cert-block">
-        <div class="cert-block-code">OHSAS 45001</div>
-        <div class="cert-block-name">Occupational Health &amp; Safety</div>
-        <div class="cert-block-body">Zero-incident culture backed by internationally certified HSE management systems across all facilities.</div>
+      <div class="cert-card reveal stagger-4">
+        <div class="cert-card-code">AWS D1.1</div>
+        <div class="cert-card-name">Structural Welding</div>
+        <div class="cert-card-body">Code for steel structures — certified welding procedures and inspectors.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
-      <div class="cert-block">
-        <div class="cert-block-code">AWS D1.1</div>
-        <div class="cert-block-name">Structural Welding Code</div>
-        <div class="cert-block-body">All welding operations certified under AWS D1.1 structural steel code with third-party NDT verification.</div>
+      <div class="cert-card reveal stagger-5">
+        <div class="cert-card-code">OHSAS 45001</div>
+        <div class="cert-card-name">Occupational Health</div>
+        <div class="cert-card-body">Safety management system with zero-LTI record for 6 consecutive years.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
-      <div class="cert-block">
-        <div class="cert-block-code">CE Marking</div>
-        <div class="cert-block-name">European Conformity</div>
-        <div class="cert-block-body">CE-certified components enabling export-ready products for European industrial clients and infrastructure projects.</div>
+      <div class="cert-card reveal stagger-6">
+        <div class="cert-card-code">CE MARKING</div>
+        <div class="cert-card-name">EU Compliance</div>
+        <div class="cert-card-body">Structural steel and machinery directive compliant for European exports.</div>
+        <div class="cert-card-corner"></div>
       </div>
-
     </div>
   </section>
 
   <!-- ============================================================
-       CTA BANNER
+     CTA SPLIT — Two-tone banner with action (fresh design)
   ============================================================ -->
-  <div class="cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="cta-banner-overlay"></div>
-    <div class="cta-banner-content">
-      <div class="section-label reveal" style="justify-content:center;color:rgba(255,255,255,.45)">Partner With Us</div>
-      <h2 class="cta-banner-title reveal stagger-1 split-words">
-        Ready To Build<br>Something <em>Significant?</em>
-      </h2>
-      <button class="cta-banner-btn reveal stagger-2" onclick="window.location='index.html#contact'">Start a Project</button>
+  <div class="cta-split">
+    <div class="cta-split-left">
+      <div class="cta-split-label">START YOUR PROJECT</div>
+      <div class="cta-split-title">Engineering <em>your</em><br>next milestone.</div>
+      <div class="cta-split-sub">From feasibility to fabrication, our team of engineers is ready to bring your vision to life with precision and speed.</div>
+    </div>
+    <div class="cta-split-right">
+      <div class="cta-action-row">
+        <h4>READY TO BUILD?</h4>
+        <a href="index.html#contact" class="cta-main-btn">Request a consultation →</a>
+      </div>
+      <div class="cta-contact-list">
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="cta-contact-txt"><span class="cta-contact-lbl">Email Direct</span><span class="cta-contact-val">enquiries@mastech-uae.com</span></div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg></div>
+          <div class="cta-contact-txt"><span class="cta-contact-lbl">WhatsApp</span><span class="cta-contact-val">+971 50 123 4567</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- ============================================================
-       FOOTER
+     FOOTER (identical to main site)
   ============================================================ -->
   <footer>
-    <div class="footer-ring-wrap" aria-hidden="true">
-      <div class="footer-ring">
-        <div class="footer-ring-inner">EST<br>2007</div>
-      </div>
-    </div>
-
+    <div class="footer-ring-wrap" aria-hidden="true"><div class="footer-ring"><div class="footer-ring-inner">EST<br>2007</div></div></div>
     <div class="footer-main">
-      <div class="footer-brand-col">
-        <a href="index.html" class="footer-logo">MASTECH</a>
-        <p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p>
-        <div class="footer-certs">
-          <div class="footer-cert-badge">ISO 9001</div>
-          <div class="footer-cert-badge">ASME VIII</div>
-          <div class="footer-cert-badge">API Q1</div>
-          <div class="footer-cert-badge">AWS D1.1</div>
-        </div>
-      </div>
-
-      <div class="footer-nav-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="index.html#services">Mechanical Engineering</a></li>
-          <li><a href="index.html#services">Steel Fabrication</a></li>
-          <li><a href="index.html#services">Oil &amp; Gas</a></li>
-          <li><a href="index.html#services">Plant Maintenance</a></li>
-          <li><a href="index.html#services">Instrumentation</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-nav-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="index.html#process">Our Process</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#timeline">Heritage</a></li>
-          <li><a href="index.html#contact">Careers</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact-col">
-        <h5>Get In Touch</h5>
-        <div class="footer-contact-item">
-          <div class="footer-contact-label">Address</div>
-          <div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-label">Email</div>
-          <a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-label">Phone</div>
-          <a href="tel:+9716XXXXXXX" class="footer-contact-val">+971 6 XXX XXXX</a>
-        </div>
-        <div class="footer-newsletter">
-          <p>Subscribe to project updates</p>
-          <form class="footer-nl-form" onsubmit="return false;">
-            <input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Email address">
-            <button type="submit" class="footer-nl-btn">Subscribe →</button>
-          </form>
-        </div>
-      </div>
+      <div class="footer-brand-col"><a href="#" class="footer-logo">MASTECH</a><p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p><div class="footer-certs"><div class="footer-cert-badge">ISO 9001</div><div class="footer-cert-badge">ASME VIII</div><div class="footer-cert-badge">API Q1</div><div class="footer-cert-badge">AWS D1.1</div></div></div>
+      <div class="footer-nav-col"><h5>Services</h5><ul><li><a href="index.html#services">Mechanical Engineering</a></li><li><a href="index.html#services">Steel Fabrication</a></li><li><a href="index.html#services">Oil & Gas</a></li><li><a href="index.html#services">Plant Maintenance</a></li><li><a href="index.html#services">Instrumentation</a></li></ul></div>
+      <div class="footer-nav-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="index.html#process">Our Process</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="#timeline">Heritage</a></li><li><a href="index.html#contact">Careers</a></li></ul></div>
+      <div class="footer-contact-col"><h5>Get In Touch</h5><div class="footer-contact-item"><div class="footer-contact-label">Address</div><div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div></div><div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a></div><div class="footer-contact-item"><div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888 8888</a></div><div class="footer-newsletter"><p>Subscribe to project updates</p><form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit" class="footer-nl-btn">Subscribe →</button></form></div></div>
     </div>
-
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Sitemap</a>
-      </div>
-      <div class="footer-socials">
-        <a href="#" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn">in</a>
-        <a href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram">ig</a>
-        <a href="#" class="footer-social-btn" title="Twitter/X" aria-label="Twitter">𝕏</a>
-      </div>
-    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><div class="footer-socials"><a href="#" class="footer-social-btn" title="LinkedIn">in</a><a href="#" class="footer-social-btn" title="Instagram">ig</a><a href="#" class="footer-social-btn" title="Twitter/X">𝕏</a></div></div>
   </footer>
 
   <script src="assets/js/main.js"></script>
   <script>
-    /* ============================================================
-       ABOUT.JS — Inline page-specific enhancements
-    ============================================================ */
-    (function () {
-      "use strict";
-
-      /* ----------------------------------------------------------
-         Value bar fills — trigger on scroll reveal
-      ---------------------------------------------------------- */
-      const valueCards = document.querySelectorAll(".value-card");
-      const valueObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            valueObs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.25 });
-      valueCards.forEach(card => valueObs.observe(card));
-
-      /* ----------------------------------------------------------
-         Animated counters for metrics section
-      ---------------------------------------------------------- */
-      const metricMap = [
-        { id: "m1", target: 487, suffix: "" },
-        { id: "m2", target: 215, suffix: "+" },
-        { id: "m3", target: 98,  suffix: "%" },
-        { id: "m4", target: 14,  suffix: "" },
-      ];
-
-      function animCount(el, target, suffix) {
-        const steps    = 70;
-        const interval = 1600 / steps;
-        let cur = 0;
-        const timer = setInterval(() => {
-          cur += target / steps;
-          if (cur >= target) {
-            clearInterval(timer);
-            el.textContent = Number(target).toLocaleString() + suffix;
-          } else {
-            el.textContent = Math.floor(cur).toLocaleString() + suffix;
-          }
-        }, interval);
-      }
-
-      let countersDone = false;
-      const metricsEl = document.querySelector(".metrics-section");
-      if (metricsEl) {
-        new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting && !countersDone) {
-            countersDone = true;
-            metricMap.forEach(({ id, target, suffix }) => {
-              const el = document.getElementById(id);
-              if (el) {
-                // Strip any suffix spans before counting
-                el.textContent = "0";
-                animCount(el, target, suffix);
-              }
-            });
-          }
-        }, { threshold: 0.3 }).observe(metricsEl);
-      }
-
-      /* ----------------------------------------------------------
-         Story chapter hover — highlight adjacent border
-      ---------------------------------------------------------- */
-      document.querySelectorAll(".story-chapter").forEach(ch => {
-        ch.addEventListener("mouseenter", () => {
-          const next = ch.nextElementSibling;
-          if (next) {
-            next.style.borderTopColor = "rgba(193,58,42,.24)";
-            next.style.transition = "border-top-color .4s";
-          }
-        });
-        ch.addEventListener("mouseleave", () => {
-          const next = ch.nextElementSibling;
-          if (next) next.style.borderTopColor = "";
-        });
+    // Ensure spine animation triggers on scroll
+    const spine = document.getElementById('storySpine');
+    const observerSpine = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.3 });
+    if(spine) observerSpine.observe(spine);
+    // Value bar "in-view" class for progress bars
+    const valueCards = document.querySelectorAll('.value-card');
+    const valueObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('in-view');
       });
-
-      /* ----------------------------------------------------------
-         Leader card subtle parallax on mouse move
-      ---------------------------------------------------------- */
-      document.querySelectorAll(".leader-card").forEach(card => {
-        const img = card.querySelector(".leader-img-wrap img");
-        card.addEventListener("mousemove", e => {
-          const r  = card.getBoundingClientRect();
-          const y  = (e.clientY - r.top) / r.height - 0.5;
-          if (img) img.style.transform = `scale(1.06) translateY(${y * -12}px)`;
-        });
-        card.addEventListener("mouseleave", () => {
-          if (img) { img.style.transition = "transform .65s var(--ease-out)"; img.style.transform = ""; }
-        });
-        card.addEventListener("mouseenter", () => {
-          if (img) img.style.transition = "transform .12s linear, filter .55s";
-        });
-      });
-
-      /* ----------------------------------------------------------
-         Cert block stagger reveal
-      ---------------------------------------------------------- */
-      document.querySelectorAll(".cert-block").forEach((block, i) => {
-        block.classList.add("reveal");
-        block.style.transitionDelay = `${i * 0.08}s`;
-        new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            block.classList.add("visible");
-          }
-        }, { threshold: 0.1 }).observe(block);
-      });
-
-    })();
+    }, { threshold: 0.2 });
+    valueCards.forEach(card => valueObserver.observe(card));
+    // Additional scroll reveal for about hero elements (already handled by CSS animations)
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      obs.observe(el);
+    });
+    // split words animation (simple fallback)
+    document.querySelectorAll('.split-words').forEach(el => { el.classList.add('visible'); });
+    // progress bar simulation (from main.js style)
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar') && (document.getElementById('progressBar').style.width = scrolled + '%');
+    });
   </script>
-
 </body>
 </html>

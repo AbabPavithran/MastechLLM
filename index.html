@@ -29,11 +29,12 @@
 
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
-    <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
-    <a href="#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-    <a href="#timeline" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+    <a href="home.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>  
+    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+    <a href="process.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
+    <a href="projects.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
+<a href="about.html"onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
     <button class="mobile-cta"
       onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobileMenu').classList.remove('open');">Get
       a Quote</button>
@@ -45,10 +46,11 @@
   <nav id="mainNav">
     <a href="#" class="logo">MASTECH<div class="logo-dot"></div></a>
     <div class="nav-links">
-      <a href="#services">Services</a>
+      <a href="#home">Home</a>
+      <a href="services.html">Services</a>
       <a href="#process">Process</a>
       <a href="#projects">Projects</a>
-      <a href="#timeline">About</a>
+      <a href="about.html">About</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a
@@ -99,7 +101,7 @@
 
     <div class="hero-right">
       <div class="hero-img-wrapper">
-        <img src="https://placehold.co/900x1100/1a1816/333?text=STEEL+FABRICATION" class="hero-img"
+        <img src="assets/img/gallery/home-hero.jpg" class="hero-img"
           alt="Mastech fabrication facility" loading="eager">
       </div>
       <div class="hero-right-overlay"></div>
@@ -193,7 +195,7 @@
     </div>
     <div class="about-visual reveal-scale">
       <div class="about-visual-img-wrapper">
-        <img src="https://placehold.co/800x700/1c1c1e/333?text=ENGINEERING+FACILITY" alt="Engineering facility"
+        <img src="assets/img/gallery/chamber-2.png" alt="Engineering facility"
           loading="lazy">
       </div>
       <div class="about-visual-card">
@@ -207,97 +209,233 @@
      SERVICES
   ============================================================ -->
   <section class="services-section" id="services">
-    <div class="section-label reveal">Core Expertise</div>
-    <h2 class="section-title reveal stagger-1 split-words">Engineering<br><em>that scales.</em></h2>
 
-    <div class="services-grid">
-      <!-- 01 -->
-      <div class="service-tile">
+  <div class="section-label reveal">
+    Core Expertise
+  </div>
+
+  <h2 class="section-title reveal stagger-1 split-words">
+    Engineering<br><em>that scales.</em>
+  </h2>
+
+  <div class="services-grid">
+
+    <!-- 01 -->
+    <div class="service-tile">
+
+      <div class="service-bg">
+        <img src="assets/img/gallery/mechanical.jpg" alt="Mechanical Engineering">
+      </div>
+
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+
         <div class="service-num">01</div>
+
         <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3" />
-            <path d="M19.07 4.93a10 10 0 0 0-14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" />
+            <path d="M19.07 4.93a10 10 0 0 0-14.14 0" />
+            <path d="M4.93 19.07a10 10 0 0 0 14.14 0" />
             <path d="M12 2v2m0 16v2M2 12h2m16 0h2" />
           </svg>
         </div>
-        <h3 class="service-title split-words">Mechanical<br>Engineering</h3>
-        <p class="service-body split-words">System design, FEA simulation, thermal analysis, and rapid industrial
-          prototyping for complex assemblies.</p>
-        <div class="service-arrow">Learn more <span class="service-arrow-icon"></span></div>
+
+        <h3 class="service-title">
+          Mechanical<br>Engineering
+        </h3>
+
+        <p class="service-body">
+          System design, FEA simulation, thermal analysis,
+          and rapid industrial prototyping for complex assemblies.
+        </p>
+
+        <div class="service-arrow">
+          Learn more
+          <span class="service-arrow-icon"></span>
+        </div>
+
       </div>
-      <!-- 02 -->
-      <div class="service-tile">
+    </div>
+
+    <!-- 02 -->
+    <div class="service-tile">
+
+      <div class="service-bg">
+        <img src="assets/img/gallery/steel.jpg" alt="Steel Fabrication">
+      </div>
+
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+
         <div class="service-num">02</div>
+
         <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2" />
             <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
             <line x1="12" y1="12" x2="12" y2="16" />
             <line x1="10" y1="14" x2="14" y2="14" />
           </svg>
         </div>
-        <h3 class="service-title split-words">Steel<br>Fabrication</h3>
-        <p class="service-body split-words">Structural &amp; custom components, robotic welding, CNC machining, ISO 9001
-          certified production lines.</p>
-        <div class="service-arrow">Learn more <span class="service-arrow-icon"></span></div>
+
+        <h3 class="service-title">
+          Steel<br>Fabrication
+        </h3>
+
+        <p class="service-body">
+          Structural &amp; custom components, robotic welding,
+          CNC machining, ISO 9001 certified production lines.
+        </p>
+
+        <div class="service-arrow">
+          Learn more
+          <span class="service-arrow-icon"></span>
+        </div>
+
       </div>
-      <!-- 03 -->
-      <div class="service-tile">
+    </div>
+
+    <!-- 03 -->
+    <div class="service-tile">
+
+      <div class="service-bg">
+        <img src="assets/img/gallery/oil-gas.jpg" alt="Oil and Gas">
+      </div>
+
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+
         <div class="service-num">03</div>
+
         <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 6h18M3 12h18M3 18h18" />
             <circle cx="7" cy="6" r="2" />
             <circle cx="17" cy="12" r="2" />
             <circle cx="7" cy="18" r="2" />
           </svg>
         </div>
-        <h3 class="service-title split-words">Oil &amp;<br>Gas</h3>
-        <p class="service-body split-words">Upstream/downstream support, pressure vessels, field maintenance &amp;
-          turnaround services for refineries.</p>
-        <div class="service-arrow">Learn more <span class="service-arrow-icon"></span></div>
+
+        <h3 class="service-title">
+          Oil &amp;<br>Gas
+        </h3>
+
+        <p class="service-body">
+          Upstream/downstream support, pressure vessels,
+          field maintenance &amp; turnaround services for refineries.
+        </p>
+
+        <div class="service-arrow">
+          Learn more
+          <span class="service-arrow-icon"></span>
+        </div>
+
       </div>
-      <!-- 04 -->
-      <div class="service-tile">
+    </div>
+
+    <!-- 04 -->
+    <div class="service-tile">
+
+      <div class="service-bg">
+        <img src="assets/img/gallery/plant.jpg" alt="Plant Maintenance">
+      </div>
+
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+
         <div class="service-num">04</div>
+
         <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" />
             <rect x="14" y="3" width="7" height="7" />
             <rect x="14" y="14" width="7" height="7" />
             <rect x="3" y="14" width="7" height="7" />
           </svg>
         </div>
-        <h3 class="service-title split-words">Plant<br>Maintenance</h3>
-        <p class="service-body split-words">Predictive monitoring, lifecycle extension, equipment refurbishment and
-          planned shutdown management.</p>
-        <div class="service-arrow">Learn more <span class="service-arrow-icon"></span></div>
+
+        <h3 class="service-title">
+          Plant<br>Maintenance
+        </h3>
+
+        <p class="service-body">
+          Predictive monitoring, lifecycle extension,
+          equipment refurbishment and planned shutdown management.
+        </p>
+
+        <div class="service-arrow">
+          Learn more
+          <span class="service-arrow-icon"></span>
+        </div>
+
       </div>
-      <!-- 05 -->
-      <div class="service-tile">
+    </div>
+
+    <!-- 05 -->
+    <div class="service-tile">
+
+      <div class="service-bg">
+        <img src="assets/img/gallery/instrumentation.jpg" alt="Instrumentation">
+      </div>
+
+      <div class="service-overlay"></div>
+
+      <div class="service-content">
+
         <div class="service-num">05</div>
+
         <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
           </svg>
         </div>
-        <h3 class="service-title split-words">Instrumenta-<br>tion</h3>
-        <p class="service-body split-words">Automation systems, control panel integration, SCADA implementation and
-          smart diagnostics.</p>
-        <div class="service-arrow">Learn more <span class="service-arrow-icon"></span></div>
+
+        <h3 class="service-title">
+          Instrumenta-<br>tion
+        </h3>
+
+        <p class="service-body">
+          Automation systems, control panel integration,
+          SCADA implementation and smart diagnostics.
+        </p>
+
+        <div class="service-arrow">
+          Learn more
+          <span class="service-arrow-icon"></span>
+        </div>
+
       </div>
-      <!-- Stats tile -->
-      <div class="service-tile service-stats-tile">
-        <div class="stats-compact">
-          <div class="stats-number">215<span>+</span></div>
-          <div class="stats-label">Expert engineers</div>
-          <div class="stats-number" style="margin-top:28px">14</div>
-          <div class="stats-label">Certifications held</div>
+    </div>
+
+    <!-- Stats tile -->
+    <div class="service-tile service-stats-tile">
+      <div class="stats-compact">
+        <div class="stats-number">215<span>+</span></div>
+        <div class="stats-label">Expert engineers</div>
+
+        <div class="stats-number" style="margin-top:28px">
+          14
+        </div>
+
+        <div class="stats-label">
+          Certifications held
         </div>
       </div>
     </div>
-  </section>
+
+  </div>
+
+</section>
 
   <!-- ============================================================
      METRICS RAIL
@@ -446,7 +584,7 @@
     <div class="projects-masonry">
       <div class="project-item large reveal-scale">
         <div class="project-img-wrapper">
-          <img src="https://placehold.co/800x800/1c1c1e/333?text=ABU+DHABI+INDUSTRIAL+ZONE"
+          <img src="assets/img/gallery/abu.jpg"
             alt="Abu Dhabi Industrial Zone" loading="lazy">
         </div>
         <div class="project-overlay">
@@ -458,7 +596,7 @@
       </div>
       <div class="project-item reveal stagger-2">
         <div class="project-img-wrapper">
-          <img src="https://placehold.co/600x400/1c1c1e/333?text=RUWAIS+REFINERY" alt="Oil Refinery" loading="lazy">
+          <img src="assets/img/gallery/ruwais.jpg" alt="Oil Refinery" loading="lazy">
         </div>
         <div class="project-overlay">
           <div class="project-cat">Oil &amp; Gas</div>
@@ -469,7 +607,7 @@
       </div>
       <div class="project-item reveal stagger-3">
         <div class="project-img-wrapper">
-          <img src="https://placehold.co/600x400/1c1c1e/333?text=JEBEL+ALI+PORT" alt="Port Terminal" loading="lazy">
+          <img src="assets/img/gallery/jebel_ali.jpg" alt="Port Terminal" loading="lazy">
         </div>
         <div class="project-overlay">
           <div class="project-cat">Heavy Fabrication</div>

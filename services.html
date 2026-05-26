@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASTECH — Services | Engineering, Fabrication & Oilfield Solutions</title>
+  <meta name="description" content="Comprehensive mechanical engineering, steel fabrication, pipe spool welding, project management, on/offshore services, and plant dismantling solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Ambient Shapes -->
+  <div class="ambient-shapes">
+    <div class="ambient-blob ambient-1"></div>
+    <div class="ambient-blob ambient-2"></div>
+    <div class="ambient-blob ambient-3"></div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
+    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+    <a href="process.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
+    <a href="index.html#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+    <button class="mobile-cta" onclick="window.location.href='contact.html';">Get a Quote</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="mainNav">
+    <a href="index.html" class="logo">MASTECH<div class="logo-dot"></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="process.html">Process</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-cta" onclick="window.location.href='contact.html'">Get a quote</button>
+    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+     SERVICES HERO — Industrial strength visual
+  ============================================================ -->
+  <section class="services-hero">
+    <div class="services-hero-bg">
+      <div class="services-hero-overlay"></div>
+      <div class="services-hero-pattern"></div>
+    </div>
+    <div class="services-hero-content">
+      <div class="services-hero-badge">
+        <span class="services-hero-badge-line"></span>
+        CORE CAPABILITIES
+      </div>
+      <h1 class="services-hero-title split-letters">
+        ENGINEERING<br>
+        <span class="services-hero-title-accent">THAT BUILDS</span><br>
+        INDUSTRY
+      </h1>
+      <p class="services-hero-desc split-words">From precision pipe spool fabrication to full-scale plant erection — delivering turnkey solutions that power the region's most demanding industrial sectors.</p>
+      <div class="services-hero-stats">
+        <div class="services-hero-stat">
+          <span class="services-hero-stat-num">18+</span>
+          <span class="services-hero-stat-label">Years Excellence</span>
+        </div>
+        <div class="services-hero-stat">
+          <span class="services-hero-stat-num">487+</span>
+          <span class="services-hero-stat-label">Projects Complete</span>
+        </div>
+        <div class="services-hero-stat">
+          <span class="services-hero-stat-num">32+</span>
+          <span class="services-hero-stat-label">Global Partners</span>
+        </div>
+      </div>
+    </div>
+    <div class="services-hero-scroll">
+      <div class="services-hero-scroll-dot"></div>
+      <span>EXPLORE SERVICES</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     SERVICES GRID — Main service cards (8 services)
+  ============================================================ -->
+  <section class="services-main-section">
+    <div class="services-container">
+      <div class="services-header">
+        <div class="section-label reveal">What We Deliver</div>
+        <h2 class="section-title reveal stagger-1 split-words">Integrated<br><em>industrial</em> solutions.</h2>
+        <p class="services-header-desc reveal stagger-2">End-to-end capabilities spanning site erection, project management, pipe fabrication, offshore services, heavy lifting equipment, structural steel, dismantling, and commissioning.</p>
+      </div>
+
+      <div class="services-grid-modern">
+        <!-- Service 1: Site Erection -->
+        <div class="service-card-modern reveal">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              <rect x="4" y="14" width="6" height="8" rx="1"/>
+              <rect x="14" y="14" width="6" height="8" rx="1"/>
+            </svg>
+          </div>
+          <div class="service-card-num">01</div>
+          <h3 class="service-card-title">Site Erection, Installation & Commissioning</h3>
+          <p class="service-card-desc">The projects division has many years of experience in the management and execution of work scopes — from ground-up industrial plant erection to full system commissioning.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 2: Project Management -->
+        <div class="service-card-modern reveal stagger-2">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="service-card-num">02</div>
+          <h3 class="service-card-title">Project Management Services</h3>
+          <p class="service-card-desc">Specializing in planning, coordinating, and executing projects according to specific requirements and constraints — ensuring on-time, on-budget delivery.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 3: Pipework & Spool Fabrication -->
+        <div class="service-card-modern reveal stagger-3">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 12h3l3-9 3 18 3-9h3"/>
+              <path d="M21 12h-3l-3-9-3 18-3-9H3" stroke-dasharray="2"/>
+            </svg>
+          </div>
+          <div class="service-card-num">03</div>
+          <h3 class="service-card-title">Pipework & Pipe Spool Fabrication</h3>
+          <p class="service-card-desc">Pipe spool fabrication and welding to ASME IX standards. Utilizing modern equipment and techniques including MMA, MIG, GTAW, and SAW with skilled qualified welders.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 4: On & Offshore Services -->
+        <div class="service-card-modern reveal stagger-4">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 13.5V8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v5.5"/>
+              <path d="M2 13.5h20"/>
+              <path d="M8 13.5V16a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.5"/>
+              <circle cx="7" cy="9.5" r="1.5"/>
+              <circle cx="17" cy="9.5" r="1.5"/>
+            </svg>
+          </div>
+          <div class="service-card-num">04</div>
+          <h3 class="service-card-title">On & Offshore Services</h3>
+          <p class="service-card-desc">Both onshore and offshore services provided in a time-efficient manner to meet demanding project schedules — from platform maintenance to subsea support.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 5: Heavy Lifting Equipment Fabrication -->
+        <div class="service-card-modern reveal stagger-5">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="14" rx="2"/>
+              <path d="M8 21h8"/>
+              <path d="M12 17v4"/>
+              <path d="M6 7h12"/>
+              <path d="M6 11h8"/>
+            </svg>
+          </div>
+          <div class="service-card-num">05</div>
+          <h3 class="service-card-title">Fabrication of Heavy Lifting Equipment</h3>
+          <p class="service-card-desc">Construction sites make use of a wide variety of construction machines — we design and fabricate custom lifting solutions for heavy industrial applications.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 6: Structural & Tubular Steel -->
+        <div class="service-card-modern reveal stagger-6">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="9" y1="14" x2="15" y2="14"/>
+            </svg>
+          </div>
+          <div class="service-card-num">06</div>
+          <h3 class="service-card-title">Structural & Tubular Steel Fabrication</h3>
+          <p class="service-card-desc">Since 2007, MASTECH has completed numerous diverse and complex projects — establishing excellence in structural steel and tubular fabrication for industrial infrastructure.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 7: Dismantling & Reconstruction -->
+        <div class="service-card-modern reveal stagger-7">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 8h16M4 16h16"/>
+              <path d="M8 4v16M16 4v16"/>
+              <path d="M3 3l6 6M21 21l-6-6M21 3l-6 6M3 21l6-6"/>
+            </svg>
+          </div>
+          <div class="service-card-num">07</div>
+          <h3 class="service-card-title">Dismantling & Reconstruction</h3>
+          <p class="service-card-desc">Dismantling of structures and piping, plus reconstruction with modification of process units — safe, methodical, and compliant with all safety standards.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+
+        <!-- Service 8: Commissioning (highlighted) -->
+        <div class="service-card-modern service-card-highlight reveal stagger-8">
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="service-card-num">08</div>
+          <h3 class="service-card-title">Commissioning & Handover</h3>
+          <p class="service-card-desc">Full-cycle commissioning services including system testing, performance verification, client training, and final documentation handover.</p>
+          <a href="contact.html" class="service-card-link">Read More <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     CAPABILITIES STRIP — Welding & Certification Showcase
+  ============================================================ -->
+  <div class="welding-strip">
+    <div class="welding-strip-inner">
+      <span class="welding-strip-label">WELDING QUALIFICATIONS</span>
+      <div class="welding-strip-items">
+        <span>MMA</span><span class="sep">|</span>
+        <span>MIG/MAG</span><span class="sep">|</span>
+        <span>GTAW (TIG)</span><span class="sep">|</span>
+        <span>SAW</span><span class="sep">|</span>
+        <span>ASME IX</span><span class="sep">|</span>
+        <span>API 1104</span><span class="sep">|</span>
+        <span>ISO 3834-2</span>
+        <!-- duplicate for seamless loop -->
+        <span>MMA</span><span class="sep">|</span>
+        <span>MIG/MAG</span><span class="sep">|</span>
+        <span>GTAW (TIG)</span><span class="sep">|</span>
+        <span>SAW</span><span class="sep">|</span>
+        <span>ASME IX</span><span class="sep">|</span>
+        <span>API 1104</span><span class="sep">|</span>
+        <span>ISO 3834-2</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     PROCESS VISUAL — How we deliver (site erection focus)
+  ============================================================ -->
+  <section class="delivery-process-section">
+    <div class="delivery-process-bg"></div>
+    <div class="delivery-process-content">
+      <div class="section-label reveal" style="color: var(--rust);">Execution Excellence</div>
+      <h2 class="section-title reveal stagger-1 split-words">From <em>blueprint</em><br>to commissioning.</h2>
+      <div class="process-steps-grid">
+        <div class="process-step-card reveal">
+          <div class="process-step-num-wrap">01</div>
+          <h4>Planning & Engineering</h4>
+          <p>Detailed work breakdown, resource allocation, and engineering reviews before mobilization.</p>
+        </div>
+        <div class="process-step-card reveal stagger-2">
+          <div class="process-step-num-wrap">02</div>
+          <h4>Site Erection</h4>
+          <p>On-ground execution — structural assembly, piping installation, equipment setting.</p>
+        </div>
+        <div class="process-step-card reveal stagger-3">
+          <div class="process-step-num-wrap">03</div>
+          <h4>Quality & Safety Control</h4>
+          <p>Continuous NDT, third-party inspections, and HSE compliance at every stage.</p>
+        </div>
+        <div class="process-step-card reveal stagger-4">
+          <div class="process-step-num-wrap">04</div>
+          <h4>Commissioning & Handover</h4>
+          <p>System testing, performance validation, and full documentation delivered to client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PROJECT MANAGEMENT HIGHLIGHT
+  ============================================================ -->
+  <div class="pm-showcase">
+    <div class="pm-showcase-inner">
+      <div class="pm-showcase-text">
+        <div class="pm-showcase-label">PROJECT MANAGEMENT</div>
+        <h3>Planning, coordination, and execution — delivered with precision.</h3>
+        <p>Our project management office (PMO) specializes in end-to-end project lifecycle management, from initial feasibility studies to final commissioning. We integrate cost control, schedule management, risk assessment, and stakeholder communication into every project.</p>
+        <div class="pm-stats">
+          <div><span>98%</span> On-time delivery</div>
+          <div><span>100%</span> HSE compliance</div>
+          <div><span>24/7</span> Client portal access</div>
+        </div>
+      </div>
+      <div class="pm-showcase-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     CERTIFICATIONS STRIP
+  ============================================================ -->
+  <div class="certs-strip">
+    <div class="certs-strip-track">
+      <span>ASME Section VIII</span>
+      <span class="cert-dot">●</span>
+      <span>API Q1</span>
+      <span class="cert-dot">●</span>
+      <span>ISO 9001:2024</span>
+      <span class="cert-dot">●</span>
+      <span>OHSAS 45001</span>
+      <span class="cert-dot">●</span>
+      <span>AWS D1.1</span>
+      <span class="cert-dot">●</span>
+      <span>CE Marking</span>
+      <span class="cert-dot">●</span>
+      <span>ASME IX Welding</span>
+      <!-- duplicate for seamless loop -->
+      <span>ASME Section VIII</span>
+      <span class="cert-dot">●</span>
+      <span>API Q1</span>
+      <span class="cert-dot">●</span>
+      <span>ISO 9001:2024</span>
+      <span class="cert-dot">●</span>
+      <span>OHSAS 45001</span>
+      <span class="cert-dot">●</span>
+      <span>AWS D1.1</span>
+      <span class="cert-dot">●</span>
+      <span>CE Marking</span>
+      <span class="cert-dot">●</span>
+      <span>ASME IX Welding</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     CTA BANNER
+  ============================================================ -->
+  <div class="services-cta">
+    <div class="services-cta-bg"></div>
+    <div class="services-cta-content">
+      <div class="services-cta-label">READY TO EXECUTE?</div>
+      <h2 class="services-cta-title">Let's discuss your<br><em>next project</em></h2>
+      <div class="services-cta-buttons">
+        <a href="contact.html" class="services-cta-primary">Request a consultation →</a>
+        <a href="tel:+97168888888" class="services-cta-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+          Call us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-ring-wrap" aria-hidden="true"><div class="footer-ring"><div class="footer-ring-inner">EST<br>2007</div></div></div>
+    <div class="footer-main">
+      <div class="footer-brand-col"><a href="index.html" class="footer-logo">MASTECH</a><p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p><div class="footer-certs"><div class="footer-cert-badge">ISO 9001</div><div class="footer-cert-badge">ASME VIII</div><div class="footer-cert-badge">API Q1</div><div class="footer-cert-badge">AWS D1.1</div></div></div>
+      <div class="footer-nav-col"><h5>Services</h5><ul><li><a href="services.html">Site Erection</a></li><li><a href="services.html">Pipe Fabrication</a></li><li><a href="services.html">Structural Steel</a></li><li><a href="services.html">Offshore Services</a></li><li><a href="services.html">Dismantling</a></li></ul></div>
+      <div class="footer-nav-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="about.html">Heritage</a></li><li><a href="contact.html">Careers</a></li></ul></div>
+      <div class="footer-contact-col"><h5>Get In Touch</h5><div class="footer-contact-item"><div class="footer-contact-label">Address</div><div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div></div><div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a></div><div class="footer-contact-item"><div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888 8888</a></div><div class="footer-newsletter"><p>Subscribe to project updates</p><form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit" class="footer-nl-btn">Subscribe →</button></form></div></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><div class="footer-socials"><a href="#" class="footer-social-btn" title="LinkedIn">in</a><a href="#" class="footer-social-btn" title="Instagram">ig</a><a href="#" class="footer-social-btn" title="Twitter/X">𝕏</a></div></div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('progressBar');
+      if(progressBar) progressBar.style.width = scrolled + '%';
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => observer.observe(el));
+
+    // Split letters hero
+    const heroTitle = document.querySelector('.services-hero-title');
+    if(heroTitle && heroTitle.classList.contains('split-letters')) {
+      const text = heroTitle.innerText;
+      heroTitle.innerHTML = text.split('').map((char, i) => 
+        char === ' ' ? ' ' : `<span class="char" style="--i:${i}">${char}</span>`
+      ).join('');
+      setTimeout(() => heroTitle.classList.add('visible'), 100);
+    }
+
+    // Split words for paragraphs
+    document.querySelectorAll('.split-words').forEach(el => {
+      const words = el.innerText.split(' ');
+      el.innerHTML = words.map((word, i) => `<span class="word" style="--i:${i}"><span>${word}</span></span>`).join(' ');
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        const expanded = hamburger.classList.contains('open');
+        hamburger.setAttribute('aria-expanded', expanded);
+      });
+    }
+  </script>
+</body>
+</html>
