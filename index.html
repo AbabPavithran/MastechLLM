@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASTECH — Precision Engineering &amp; Steel Fabrication</title>
+  <title>MASTECH — Precision Engineering & Steel Fabrication</title>
   <meta name="description"
     content="Mechanical engineering, steel fabrication, and oilfield services delivering high-integrity solutions for the world's most demanding sectors.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,40 +13,35 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/home.css">
+
 </head>
 
 <body>
 
-  <!-- Progress bar -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Ambient shapes -->
   <div class="ambient-shapes">
     <div class="ambient-blob ambient-1"></div>
     <div class="ambient-blob ambient-2"></div>
     <div class="ambient-blob ambient-3"></div>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
-    <a href="home.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>  
-    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="process.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
-    <a href="projects.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-<a href="about.html"onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-    <button class="mobile-cta"
-      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobileMenu').classList.remove('open');">Get
-      a Quote</button>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="#process" onclick="closeMobile()">Process</a>
+    <a href="#projects" onclick="closeMobile()">Projects</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+    <button class="mobile-cta" onclick="scrollTo('contact'); closeMobile();">Get a Quote</button>
   </div>
 
-  <!-- ============================================================
-     NAV
-  ============================================================ -->
+  <!-- Nav -->
   <nav id="mainNav">
-    <a href="#" class="logo">MASTECH<div class="logo-dot"></div></a>
+    <a href="#home" class="logo">MASTECH<div class="logo-dot"></div></a>
     <div class="nav-links">
-      <a href="#home">Home</a>
+      <a href="#home" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="#process">Process</a>
       <a href="#projects">Projects</a>
@@ -55,617 +50,320 @@
     </div>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a
       quote</button>
-    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+    <div class="nav-hamburger" id="navHamburger">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
-  <!-- ============================================================
-     HERO
-  ============================================================ -->
-  <section class="hero" id="hero">
-    <div class="hero-left">
-      <div class="hero-left-glow"></div>
-      <div class="hero-grid-lines"></div>
-      <div class="hero-bg-text">STEEL</div>
 
-      <div class="hero-badge">
-        <span class="hero-badge-line"></span>
-        Est. 2007 — Umm Al Quwain, UAE
+  <!-- ═══════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero-section" id="home">
+
+    <!-- animated dot-grid background -->
+    <svg class="hero-grid-bg" viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="heroGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+          <path d="M48 0H0V48" fill="none" stroke="rgba(255,255,255,1)" stroke-width="0.4" />
+        </pattern>
+      </defs>
+      <rect width="1440" height="960" fill="url(#heroGrid)" style="animation: gridScroll 10s linear infinite" />
+      <line x1="614" y1="0" x2="614" y2="960" stroke="#c13a2a" stroke-width="0.8" opacity="0.45" />
+    </svg>
+
+    <!-- ghost watermark word -->
+    <div class="hero-bg-word">STEEL</div>
+
+    <!-- split body -->
+    <div class="hero-body">
+
+      <!-- LEFT: text content -->
+      <div class="hero-left">
+
+        <div class="hero-label">
+          <div class="hero-label-line"></div>
+          <span class="hero-label-text">Est. 2007 · UAE</span>
+          <span class="hero-label-badge">ISO 9001</span>
+        </div>
+
+        <div class="hero-title">
+          <span class="ht-top">PRECISION</span>
+          <span class="ht-mid">engineered</span>
+          <span class="ht-bot"><span class="outline-word">for</span> INDUSTRY</span>
+        </div>
+
+        <p class="hero-desc">
+          Steel fabrication, mechanical engineering &amp; oilfield services —
+          built for the world's harshest environments.
+        </p>
+
+        <div class="hero-actions">
+          <button class="hero-btn-primary"
+            onclick="document.querySelector('.services-section').scrollIntoView({behavior:'smooth'})">
+            View Services
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button class="hero-btn-ghost"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Get a Quote
+          </button>
+        </div>
+
       </div>
 
-      <h1 class="hero-title split-letters">
-        FORGE<br>
-        <span class="italic">the</span><br>
-        <span class="accent">FUTURE</span>
-      </h1>
+      <!-- RIGHT: image -->
+      <div class="hero-right">
+        <img src="assets/img/gallery/hero.jpg" alt="Industrial fabrication" />
+        <div class="hero-accent"></div>
 
-      <p class="hero-desc split-words">
-        Mechanical engineering, steel fabrication, and oilfield services delivering
-        high-integrity solutions for the world's most demanding sectors.
-      </p>
+        <!-- live badge -->
+        <div class="hero-live">
+          <div class="live-dot"></div>
+          Operations Active
+        </div>
 
-      <div class="hero-actions">
-        <button class="btn-main" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-          Explore capabilities
-        </button>
-        <button class="btn-ghost" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-          View projects →
-        </button>
+        <!-- floating data card -->
+        <div class="hero-datacard">
+          <div class="dc-row">
+            <div class="dc-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div>
+              <div class="dc-val">487<sup>+</sup></div>
+              <div class="dc-lbl">Projects Delivered</div>
+            </div>
+          </div>
+          <div class="dc-div"></div>
+          <div class="dc-row">
+            <div class="dc-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div>
+              <div class="dc-val">18</div>
+              <div class="dc-lbl">Years Active</div>
+            </div>
+          </div>
+          <div class="dc-div"></div>
+          <div class="dc-row">
+            <div class="dc-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div>
+              <div class="dc-val">200<sup>+</sup></div>
+              <div class="dc-lbl">Engineers</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-scroll-line">
-        <div class="scroll-indicator"></div>
+    </div><!-- .hero-body -->
+
+    <!-- stats strip -->
+    <div class="hero-stats-strip">
+      <div class="ss-block">
+        <div class="ss-num"><sup>+</sup>487</div>
+        <div class="ss-lbl">Projects</div>
+        <div class="ss-desc">Across GCC &amp; global</div>
+      </div>
+      <div class="ss-block">
+        <div class="ss-num">18</div>
+        <div class="ss-lbl">Years</div>
+        <div class="ss-desc">Established 2007</div>
+      </div>
+      <div class="ss-block">
+        <div class="ss-num"><sup>+</sup>200</div>
+        <div class="ss-lbl">Engineers</div>
+        <div class="ss-desc">On-site &amp; offshore</div>
+      </div>
+      <div class="ss-block">
+        <div class="ss-num">24/7</div>
+        <div class="ss-lbl">Operations</div>
+        <div class="ss-desc">Always active</div>
+      </div>
+      <div class="ss-certs">
+        <span class="cert-pill">ISO 9001</span>
+        <span class="cert-pill">ASME VIII</span>
+        <span class="cert-pill">API Q1</span>
+        <span class="cert-pill">CE Mark</span>
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="hero-img-wrapper">
-        <img src="assets/img/gallery/home-hero.jpg" class="hero-img"
-          alt="Mastech fabrication facility" loading="eager">
-      </div>
-      <div class="hero-right-overlay"></div>
-
-      <!-- Stats -->
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num">487<sup>+</sup></div>
-          <div class="hero-stat-label">Projects completed</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">18</div>
-          <div class="hero-stat-label">Years of excellence</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">32<sup>+</sup></div>
-          <div class="hero-stat-label">Global partners</div>
-        </div>
-      </div>
-
-      <!-- Trust badges -->
-      <div class="hero-trust">
-        <div class="hero-trust-item">
-          <div class="hero-trust-dot"></div>ISO 9001 Certified
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-dot"></div>ASME Section VIII
-        </div>
-        <div class="hero-trust-item">
-          <div class="hero-trust-dot"></div>API Q1 Registered
-        </div>
-      </div>
-    </div>
   </section>
 
-  <!-- Floating particles -->
-  <div class="floating-particles" id="particles"></div>
+  <!-- ═══════════════════════════════════════
+     2. FLOATING BRIDGE STRIP
+═══════════════════════════════════════ -->
+  <div class="bridge-float" id="industryStrip">
+    <div class="bridge-inner">
 
-  <!-- ============================================================
-     TICKER
-  ============================================================ -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span class="ticker-item">Mechanical Engineering</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Steel Fabrication</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Oil &amp; Gas Services</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Plant Maintenance</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Instrumentation &amp; SCADA</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">ISO 9001 Certified</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">ASME Section VIII</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">API Q1 Registered</span><span class="ticker-sep">✦</span>
-      <!-- Duplicate for seamless loop -->
-      <span class="ticker-item">Mechanical Engineering</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Steel Fabrication</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Oil &amp; Gas Services</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Plant Maintenance</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">Instrumentation &amp; SCADA</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">ISO 9001 Certified</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">ASME Section VIII</span><span class="ticker-sep">✦</span>
-      <span class="ticker-item">API Q1 Registered</span><span class="ticker-sep">✦</span>
+      <div class="bridge-search-wrap">
+        <svg class="bridge-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input class="bridge-search-input" type="text" placeholder="Search by industry, service, or standard…" />
+        <button class="bridge-search-btn">
+          Search
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="bridge-tabs">
+        <button class="bridge-tab active" data-industry="all">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">All Industries</span>
+        </button>
+        <button class="bridge-tab" data-industry="oil">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Oil & Gas</span>
+        </button>
+        <button class="bridge-tab" data-industry="power">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Power Generation</span>
+        </button>
+        <button class="bridge-tab" data-industry="marine">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Marine</span>
+        </button>
+        <button class="bridge-tab" data-industry="construction">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Construction</span>
+        </button>
+        <button class="bridge-tab" data-industry="petrochemical">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Petrochemical</span>
+        </button>
+        <button class="bridge-tab" data-industry="defense">
+          <span class="bridge-tab-icon">◈</span>
+          <span class="bridge-tab-label">Defense</span>
+        </button>
+      </div>
+
     </div>
   </div>
 
-  <!-- ============================================================
-     ABOUT
-  ============================================================ -->
+
   <div class="about-grid" id="about">
-    <div class="about-text">
-      <div class="about-accent-num">18</div>
-      <div class="section-label reveal">Our Identity</div>
-      <h2 class="section-title reveal stagger-1 split-words">Precision<br><em>at every</em><br>scale.</h2>
-      <p class="about-body reveal stagger-2 split-words">
-        Since 2007, Mastech Technical Iron Works has been the backbone of
-        high-stakes industrial projects across the UAE and beyond. We combine
-        old-world craftsmanship with cutting-edge digital manufacturing.
+    <div class="about-watermark">MASTECH</div>
+
+    <!-- TEXT -->
+    <div class="about-text reveal">
+      <div class="section-label">
+        <span class="section-label-line"></span>
+        About Mastech
+      </div>
+
+      <h2 class="section-title">
+        Built on<br><em>Precision</em>
+      </h2>
+
+      <p class="about-body">
+        For over 18 years, MASTECH Technical Iron Works has engineered solutions at the
+        intersection of precision manufacturing and industrial ambition. From pressure vessels
+        to structural steel, our work holds the world's infrastructure together.
       </p>
-      <div class="about-checks reveal stagger-3">
+
+      <div class="about-checks">
         <div class="check-item">
-          <div class="check-dot"></div><span>±0.02 mm precision machining tolerance</span>
-        </div>
-        <div class="check-item">
-          <div class="check-dot"></div><span>AI-driven design &amp; robotic welding systems</span>
+          <span class="check-num">01</span>Full in-house engineering &amp; design team
         </div>
         <div class="check-item">
-          <div class="check-dot"></div><span>12,500 tons monthly fabrication capacity</span>
+          <span class="check-num">02</span>ASME, API, and ISO certified processes
         </div>
         <div class="check-item">
-          <div class="check-dot"></div><span>98% on-time delivery across all projects</span>
+          <span class="check-num">03</span>End-to-end fabrication from raw stock
+        </div>
+        <div class="check-item">
+          <span class="check-num">04</span>Rigorous third-party NDT inspection
         </div>
       </div>
+
+      <div class="about-cta-row">
+        <button class="btn-main"
+          onclick="document.querySelector('.services-section').scrollIntoView({behavior:'smooth'})">
+          Our Capabilities
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+        <button class="btn-link-inline">
+          Company Profile
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="cert-row">
+        <div class="cert-badge">ISO 9001</div>
+        <div class="cert-badge">ASME VIII</div>
+        <div class="cert-badge">API Q1</div>
+        <div class="cert-badge">CE Mark</div>
+      </div>
     </div>
-    <div class="about-visual reveal-scale">
-      <div class="about-visual-img-wrapper">
-        <img src="assets/img/gallery/chamber-2.png" alt="Engineering facility"
-          loading="lazy">
+
+    <!-- VISUAL -->
+    <div class="about-visual">
+
+      <!-- Inset corner image (swap src to a workshop close-up)
+      <div class="about-inset">
+        <img src="assets/img/gallery/chamber-2.png" alt="Workshop detail" />
+      </div> -->
+
+      <div class="about-img-outer">
+        <img src="assets/img/gallery/chamber-2.png" alt="Mastech workshop">
+        <div class="about-img-overlay"></div>
+
+        <div class="about-year-tag">
+          <span class="year-dot"></span>
+          Est. 2007 — UAQ, UAE
+        </div>
       </div>
-      <div class="about-visual-card">
-        <h4>MASTECH TECHNICAL<br>IRON WORKS L.L.C</h4>
-        <p>P.O. Box 3534, Umm Al Quwain — UAE</p>
+
+      <div class="about-accent-strip"></div>
+      <div class="about-vert-text">PRECISION · ENGINEERING · 2007</div>
+
+      <div class="about-stats-card">
+        <div class="stats-card-label">Company Milestones</div>
+        <div class="stats-card-row">
+          <div>
+            <div class="stat-big">18</div>
+            <div class="stat-small-lbl">Years Active</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div>
+            <div class="stat-big"><sup>+</sup>487</div>
+            <div class="stat-small-lbl">Projects Done</div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
-  <!-- ============================================================
-     SERVICES
-  ============================================================ -->
-  <section class="services-section" id="services">
 
-  <div class="section-label reveal">
-    Core Expertise
-  </div>
-
-  <h2 class="section-title reveal stagger-1 split-words">
-    Engineering<br><em>that scales.</em>
-  </h2>
-
-  <div class="services-grid">
-
-    <!-- 01 -->
-    <div class="service-tile">
-
-      <div class="service-bg">
-        <img src="assets/img/gallery/mechanical.jpg" alt="Mechanical Engineering">
-      </div>
-
-      <div class="service-overlay"></div>
-
-      <div class="service-content">
-
-        <div class="service-num">01</div>
-
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M19.07 4.93a10 10 0 0 0-14.14 0" />
-            <path d="M4.93 19.07a10 10 0 0 0 14.14 0" />
-            <path d="M12 2v2m0 16v2M2 12h2m16 0h2" />
-          </svg>
-        </div>
-
-        <h3 class="service-title">
-          Mechanical<br>Engineering
-        </h3>
-
-        <p class="service-body">
-          System design, FEA simulation, thermal analysis,
-          and rapid industrial prototyping for complex assemblies.
-        </p>
-
-        <div class="service-arrow">
-          Learn more
-          <span class="service-arrow-icon"></span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 02 -->
-    <div class="service-tile">
-
-      <div class="service-bg">
-        <img src="assets/img/gallery/steel.jpg" alt="Steel Fabrication">
-      </div>
-
-      <div class="service-overlay"></div>
-
-      <div class="service-content">
-
-        <div class="service-num">02</div>
-
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2" />
-            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-            <line x1="12" y1="12" x2="12" y2="16" />
-            <line x1="10" y1="14" x2="14" y2="14" />
-          </svg>
-        </div>
-
-        <h3 class="service-title">
-          Steel<br>Fabrication
-        </h3>
-
-        <p class="service-body">
-          Structural &amp; custom components, robotic welding,
-          CNC machining, ISO 9001 certified production lines.
-        </p>
-
-        <div class="service-arrow">
-          Learn more
-          <span class="service-arrow-icon"></span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 03 -->
-    <div class="service-tile">
-
-      <div class="service-bg">
-        <img src="assets/img/gallery/oil-gas.jpg" alt="Oil and Gas">
-      </div>
-
-      <div class="service-overlay"></div>
-
-      <div class="service-content">
-
-        <div class="service-num">03</div>
-
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 6h18M3 12h18M3 18h18" />
-            <circle cx="7" cy="6" r="2" />
-            <circle cx="17" cy="12" r="2" />
-            <circle cx="7" cy="18" r="2" />
-          </svg>
-        </div>
-
-        <h3 class="service-title">
-          Oil &amp;<br>Gas
-        </h3>
-
-        <p class="service-body">
-          Upstream/downstream support, pressure vessels,
-          field maintenance &amp; turnaround services for refineries.
-        </p>
-
-        <div class="service-arrow">
-          Learn more
-          <span class="service-arrow-icon"></span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 04 -->
-    <div class="service-tile">
-
-      <div class="service-bg">
-        <img src="assets/img/gallery/plant.jpg" alt="Plant Maintenance">
-      </div>
-
-      <div class="service-overlay"></div>
-
-      <div class="service-content">
-
-        <div class="service-num">04</div>
-
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" />
-            <rect x="14" y="3" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" />
-            <rect x="3" y="14" width="7" height="7" />
-          </svg>
-        </div>
-
-        <h3 class="service-title">
-          Plant<br>Maintenance
-        </h3>
-
-        <p class="service-body">
-          Predictive monitoring, lifecycle extension,
-          equipment refurbishment and planned shutdown management.
-        </p>
-
-        <div class="service-arrow">
-          Learn more
-          <span class="service-arrow-icon"></span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 05 -->
-    <div class="service-tile">
-
-      <div class="service-bg">
-        <img src="assets/img/gallery/instrumentation.jpg" alt="Instrumentation">
-      </div>
-
-      <div class="service-overlay"></div>
-
-      <div class="service-content">
-
-        <div class="service-num">05</div>
-
-        <div class="service-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
-        </div>
-
-        <h3 class="service-title">
-          Instrumenta-<br>tion
-        </h3>
-
-        <p class="service-body">
-          Automation systems, control panel integration,
-          SCADA implementation and smart diagnostics.
-        </p>
-
-        <div class="service-arrow">
-          Learn more
-          <span class="service-arrow-icon"></span>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Stats tile -->
-    <div class="service-tile service-stats-tile">
-      <div class="stats-compact">
-        <div class="stats-number">215<span>+</span></div>
-        <div class="stats-label">Expert engineers</div>
-
-        <div class="stats-number" style="margin-top:28px">
-          14
-        </div>
-
-        <div class="stats-label">
-          Certifications held
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- ============================================================
-     METRICS RAIL
-  ============================================================ -->
-  <div class="metrics-section">
-    <div class="metrics-inner">
-      <div class="metric-block reveal">
-        <div class="metric-num" id="m1">0</div>
-        <div class="metric-label">Projects delivered</div>
-      </div>
-      <div class="metric-block reveal stagger-2">
-        <div class="metric-num" id="m2">0</div>
-        <div class="metric-label">Tons / month capacity</div>
-      </div>
-      <div class="metric-block reveal stagger-3">
-        <div class="metric-num" id="m3">0<span class="metric-unit">%</span></div>
-        <div class="metric-label">On-time delivery</div>
-      </div>
-      <div class="metric-block reveal stagger-4">
-        <div class="metric-num" id="m4">0</div>
-        <div class="metric-label">Global partners</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-     CAPABILITIES STRIP — Infinite looping scroll
-  ============================================================ -->
-  <div class="capabilities-strip">
-    <span class="cap-label">Capabilities</span>
-    <div class="cap-items">
-      <div class="cap-track">
-        <div class="cap-item">
-          <h5>CNC Machining</h5>
-          <p>5-axis precision</p>
-        </div>
-        <div class="cap-item">
-          <h5>Robotic Welding</h5>
-          <p>ISO 3834-2</p>
-        </div>
-        <div class="cap-item">
-          <h5>3D LiDAR Scan</h5>
-          <p>±0.5mm accuracy</p>
-        </div>
-        <div class="cap-item">
-          <h5>FEA Simulation</h5>
-          <p>ANSYS / Abaqus</p>
-        </div>
-        <div class="cap-item">
-          <h5>NDT Inspection</h5>
-          <p>UT / RT / MT / PT</p>
-        </div>
-        <div class="cap-item">
-          <h5>Digital Twin</h5>
-          <p>Full lifecycle model</p>
-        </div>
-        <div class="cap-item">
-          <h5>SCADA / DCS</h5>
-          <p>Integrated control</p>
-        </div>
-        <div class="cap-item">
-          <h5>Pressure Vessels</h5>
-          <p>ASME Section VIII</p>
-        </div>
-        <div class="cap-item">
-          <h5>Material Testing</h5>
-          <p>ISO 17025 accredited</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-     PROCESS
-  ============================================================ -->
-  <section class="process-section" id="process">
-    <div class="section-label reveal">Methodology</div>
-    <h2 class="section-title reveal stagger-1 split-words">Blueprint to<br><em>breakthrough.</em></h2>
-
-    <div class="process-row">
-      <div class="process-step reveal">
-        <div class="process-step-num">01</div>
-        <div class="process-step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.35-4.35" />
-          </svg>
-        </div>
-        <h4 class="split-words">Discovery</h4>
-        <p class="split-words">Deep-dive engineering consultation, site assessment, and requirement mapping against
-          project constraints.</p>
-        <div class="process-connector"></div>
-      </div>
-      <div class="process-step reveal stagger-2">
-        <div class="process-step-num">02</div>
-        <div class="process-step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-        </div>
-        <h4 class="split-words">Design &amp; FEA</h4>
-        <p class="split-words">3D LiDAR scanning, finite element analysis, and full digital twin simulation before a
-          single weld is made.</p>
-        <div class="process-connector"></div>
-      </div>
-      <div class="process-step reveal stagger-3">
-        <div class="process-step-num">03</div>
-        <div class="process-step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" />
-            <path d="M8 21h8m-4-4v4" />
-          </svg>
-        </div>
-        <h4 class="split-words">Fabrication</h4>
-        <p class="split-words">Robotic welding cells, CNC precision machining, and continuous QC inspection at every
-          stage of production.</p>
-        <div class="process-connector"></div>
-      </div>
-      <div class="process-step reveal stagger-4">
-        <div class="process-step-num">04</div>
-        <div class="process-step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-            <polyline points="22 4 12 14.01 9 11.01" />
-          </svg>
-        </div>
-        <h4 class="split-words">Delivery &amp; QA</h4>
-        <p class="split-words">NDT testing, third-party inspection, on-site commissioning, and 24-month warranty
-          coverage.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-     PROJECTS
-  ============================================================ -->
-  <section class="projects-section" id="projects">
-    <div class="projects-header">
-      <div>
-        <div class="section-label reveal">Featured Deliveries</div>
-        <h2 class="section-title reveal stagger-1 split-words">Built to<br><em>last.</em></h2>
-      </div>
-      <a href="#" class="view-all-link reveal stagger-2">View all projects →</a>
-    </div>
-
-    <div class="projects-masonry">
-      <div class="project-item large reveal-scale">
-        <div class="project-img-wrapper">
-          <img src="assets/img/gallery/abu.jpg"
-            alt="Abu Dhabi Industrial Zone" loading="lazy">
-        </div>
-        <div class="project-overlay">
-          <div class="project-cat">Steel Fabrication</div>
-          <div class="project-name">Abu Dhabi Industrial Zone</div>
-          <div class="project-loc">KIZAD, Abu Dhabi — UAE</div>
-        </div>
-        <div class="project-expand">↗</div>
-      </div>
-      <div class="project-item reveal stagger-2">
-        <div class="project-img-wrapper">
-          <img src="assets/img/gallery/ruwais.jpg" alt="Oil Refinery" loading="lazy">
-        </div>
-        <div class="project-overlay">
-          <div class="project-cat">Oil &amp; Gas</div>
-          <div class="project-name">Ruwais Refinery Upgrade</div>
-          <div class="project-loc">ADNOC, Ruwais — UAE</div>
-        </div>
-        <div class="project-expand">↗</div>
-      </div>
-      <div class="project-item reveal stagger-3">
-        <div class="project-img-wrapper">
-          <img src="assets/img/gallery/jebel_ali.jpg" alt="Port Terminal" loading="lazy">
-        </div>
-        <div class="project-overlay">
-          <div class="project-cat">Heavy Fabrication</div>
-          <div class="project-name">Port Terminal Expansion</div>
-          <div class="project-loc">Jebel Ali, Dubai — UAE</div>
-        </div>
-        <div class="project-expand">↗</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-     TIMELINE
-  ============================================================ -->
-  <section class="timeline-section" id="timeline">
-    <div class="section-label reveal" style="color:var(--rust)">Heritage</div>
-    <h2 class="section-title reveal stagger-1 split-words"><em>18 years</em> of<br>excellence.</h2>
-
-    <div class="timeline-list">
-      <div class="timeline-entry">
-        <div class="tl-year">2007</div>
-        <div class="tl-event split-words">Foundation</div>
-        <div class="tl-desc split-words">First fabrication unit established in Umm Al Quwain. A team of 12 engineers
-          with a singular vision.</div>
-      </div>
-      <div class="timeline-entry">
-        <div class="tl-year">2012</div>
-        <div class="tl-event split-words">First Major Contract</div>
-        <div class="tl-desc split-words">Landmark ADNOC project — steel structures for offshore platform expansion.
-          3,200 tons delivered.</div>
-      </div>
-      <div class="timeline-entry">
-        <div class="tl-year">2014</div>
-        <div class="tl-event split-words">ISO Certification</div>
-        <div class="tl-desc split-words">Oil &amp; gas services launched. ISO 9001 &amp; ASME Section VIII
-          certifications achieved.</div>
-      </div>
-      <div class="timeline-entry">
-        <div class="tl-year">2020</div>
-        <div class="tl-event split-words">Digital Transformation</div>
-        <div class="tl-desc split-words">AI-driven design, robotic welding, and 3D LiDAR scanning introduced across all
-          facilities.</div>
-      </div>
-      <div class="timeline-entry">
-        <div class="tl-year">2025</div>
-        <div class="tl-event split-words">Sustainable Future</div>
-        <div class="tl-desc split-words">Carbon-neutral facility commissioned. Dedicated R&amp;D lab and materials
-          science division opened.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-     CERTIFICATIONS
-  ============================================================ -->
+  <!-- ═══════════════════════════════════════
+       12. CERTIFICATIONS
+  ═══════════════════════════════════════ -->
   <section class="certs-section">
-    <div class="section-label reveal">Quality Assurance</div>
-    <h2 class="section-title reveal stagger-1 split-words">Certified<br><em>excellence.</em></h2>
+    <div class="section-label reveal">Our Services · Quality Assurance</div>
+    <h2 class="section-title reveal stagger-1">What We Forge,<br><em>Certified to Excellence.</em></h2>
     <div class="certs-row">
       <div class="cert-pill reveal"><span>ISO 9001:2024</span></div>
       <div class="cert-pill reveal stagger-1"><span>ASME Section VIII</span></div>
@@ -674,385 +372,903 @@
       <div class="cert-pill reveal stagger-4"><span>AWS D1.1 Structural</span></div>
       <div class="cert-pill reveal stagger-5"><span>CE Marking</span></div>
     </div>
+
+    <!-- ═══════════════════════════════════════
+     5. SERVICES SECTION — NEW DESIGN
+═══════════════════════════════════════ -->
+
+    <div class="svc-header-row">
+      <div>
+
+
+      </div>
+      <div class="svc-header-right">
+
+        <a href="services.html" class="svc-all-link">
+          View all services
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="svc-bento">
+
+
+      <!-- Hero cell -->
+      <div class="svc-cell cell-hero" data-cat="fabrication">
+        <div class="svc-cell-img">
+          <img src="assets/img/gallery/Pipe Work & Spool Fabrication.jpg" alt="Pipe Work & Pipe Spool Fabrication">
+        </div>
+        <div class="svc-cell-veil"></div>
+        <div class="svc-floating-num">01</div>
+        <div class="svc-cell-rust-bar"></div>
+
+        <div class="svc-cell-body">
+          <div class="svc-cell-tag">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            Featured
+          </div>
+
+          <div class="svc-cell-num">01 — Piping Systems</div>
+
+          <div class="svc-cell-title">
+            Pipe Work &amp; Spool Fabrication
+          </div>
+
+          <div class="svc-cell-desc">
+            Pipe work and pipe spool fabrication with welding performed to ASME IX standards, utilizing advanced MMA,
+            MIG,
+            GTAW, and SAW processes by highly qualified welders for reliable industrial and oilfield applications.
+          </div>
+
+          <a href="services.html" class="svc-cell-arrow" aria-label="Explore service">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cell B -->
+      <div class="svc-cell cell-b" data-cat="projects">
+        <div class="svc-cell-img">
+          <img src="assets/img/gallery/Site Erection & Commissioning.jpg" alt="Site Erection & Installation">
+        </div>
+
+        <div class="svc-cell-veil"></div>
+        <div class="svc-floating-num">02</div>
+        <div class="svc-cell-rust-bar"></div>
+
+        <div class="svc-cell-body">
+          <div class="svc-cell-num">02 — Project Services</div>
+
+          <div class="svc-cell-title">
+            Site Erection &amp; Commissioning
+          </div>
+
+          <div class="svc-cell-desc">
+            Experienced project teams delivering site erection, installation and commissioning services for complex
+            industrial and oilfield facilities.
+          </div>
+
+          <a href="services.html" class="svc-cell-arrow" aria-label="Explore service">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cell C -->
+      <div class="svc-cell cell-c" data-cat="fabrication">
+        <div class="svc-cell-img">
+          <img src="assets/img/gallery/home-hero.jpg" alt="Structural & Tubular Steel Fabrication">
+        </div>
+
+        <div class="svc-cell-veil"></div>
+        <div class="svc-floating-num">03</div>
+        <div class="svc-cell-rust-bar"></div>
+
+        <div class="svc-cell-body">
+          <div class="svc-cell-num">03 — Steel Fabrication</div>
+
+          <div class="svc-cell-title">
+            Structural &amp; Tubular Steel
+          </div>
+
+          <div class="svc-cell-desc">
+            Delivering complex structural and tubular steel fabrication solutions backed by extensive project experience
+            across diverse industrial sectors.
+          </div>
+
+          <a href="services.html" class="svc-cell-arrow" aria-label="Explore service">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cell D -->
+      
+      <div class="svc-cell cell-d" data-cat="projects">
+        <div class="svc-cell-img">
+          <img src="assets/img/gallery/Equipments.jpg"
+            alt="Plant Dismantling & Reconstruction">
+        </div>
+
+        <div class="svc-cell-veil"></div>
+        <div class="svc-floating-num">04</div>
+        <div class="svc-cell-rust-bar"></div>
+
+        <div class="svc-cell-body">
+          <div class="svc-cell-num">04 — Plant Services</div>
+
+          <div class="svc-cell-title">
+            Plant Reconstruction
+          </div>
+
+          <div class="svc-cell-desc">
+            Dismantling of structures, equipment and piping systems with reconstruction and modification of process
+            units.
+          </div>
+
+          <a href="services.html" class="svc-cell-arrow" aria-label="Explore service">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cell E -->
+<div class="svc-cell cell-e" data-cat="oilfield">
+  <div class="svc-cell-img">
+    <img src="assets/img/gallery/Offshore Services.jpg"
+      alt="Onshore & Offshore Services">
+  </div>
+
+  <div class="svc-cell-veil"></div>
+  <div class="svc-floating-num">05</div>
+  <div class="svc-cell-rust-bar"></div>
+
+  <div class="svc-cell-body">
+    <div class="svc-cell-num">05 — Oil &amp; Gas Services</div>
+
+    <div class="svc-cell-title">
+      Onshore &amp; Offshore Services
+    </div>
+
+    <div class="svc-cell-desc">
+      Reliable onshore and offshore support services delivered efficiently to meet demanding project schedules and operational requirements.
+    </div>
+
+    <a href="services.html" class="svc-cell-arrow" aria-label="Explore service">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</div>
+
+    </div><!-- /svc-bento -->
+
+    <!-- Why Strip -->
+    <div class="why-strip">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg></div>
+        <div class="why-title">Certified Quality</div>
+        <div class="why-desc">ISO 9001, ASME VIII and API Q1 compliance built into every process stage.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg></div>
+        <div class="why-title">Fast Delivery</div>
+        <div class="why-desc">Streamlined fabrication flow with on-time delivery backed by 18 years of execution.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path
+              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+          </svg></div>
+        <div class="why-title">Global Reach</div>
+        <div class="why-desc">32 active partners across GCC, Africa, South Asia — logistics expertise included.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg></div>
+        <div class="why-title">Expert Team</div>
+        <div class="why-desc">Certified welders, engineers, and inspectors — 200+ skilled professionals on site.</div>
+      </div>
+    </div>
+
+
   </section>
 
-  <!-- ============================================================
-     CTA BANNER
-  ============================================================ -->
-  <div class="cta-banner">
-    <div class="cta-banner-bg"></div>
-    <div class="cta-banner-overlay"></div>
-    <div class="cta-banner-content">
-      <div class="section-label reveal" style="justify-content:center;color:rgba(255,255,255,.5)">
-        Partner With Us
+  <!-- ═══════════════════════════════════════
+       5. SERVICES (tabbed)
+  ═══════════════════════════════════════ -->
+
+
+  <!-- ═══════════════════════════════════════
+       7. PROCESS
+  ═══════════════════════════════════════ -->
+  <section class="process-section" id="process">
+    <div class="process-header">
+      <div>
+        <div class="proc-label reveal">
+          <span class="proc-label-line"></span>Methodology
+        </div>
+        <h2 class="proc-title reveal stagger-1">Blueprint to<br><em>breakthrough.</em></h2>
       </div>
-      <h2 class="cta-banner-title split-words reveal stagger-1">
-        We Are Always Ready To<br>Deliver <em>Precision</em> Work.
-      </h2>
-      <button class="cta-banner-btn reveal stagger-2"
-        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        Get Started
-      </button>
+      <p class="proc-intro reveal stagger-2">
+        From first engineering consultation through final commissioning —
+        a proven four-stage methodology that eliminates risk at every phase.
+      </p>
+    </div>
+    <div class="process-row">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </div>
+        <h4>Discovery</h4>
+        <p>Deep-dive engineering consultation, site assessment, and requirement mapping against project constraints.</p>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step reveal stagger-2">
+        <div class="process-step-num">02</div>
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <h4>Design & FEA</h4>
+        <p>3D LiDAR scanning, finite element analysis, and full digital twin simulation before a single weld is made.
+        </p>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step reveal stagger-3">
+        <div class="process-step-num">03</div>
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <path d="M8 21h8m-4-4v4" />
+          </svg>
+        </div>
+        <h4>Fabrication</h4>
+        <p>Robotic welding cells, CNC precision machining, and continuous QC inspection at every stage of production.
+        </p>
+        <div class="process-connector"></div>
+      </div>
+      <div class="process-step reveal stagger-4">
+        <div class="process-step-num">04</div>
+        <div class="process-step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+        </div>
+        <h4>Delivery & QA</h4>
+        <p>NDT testing, third-party inspection, on-site commissioning, and 24-month warranty coverage.</p>
+      </div>
+    </div>
+
+    <!-- Process Accordion (detail view) -->
+    <div class="process-accordion">
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="acc-num">01</div>
+          <div class="acc-title">Discovery & Engineering</div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>We begin with detailed client briefs and site surveys, assigning a dedicated engineering team to
+              translate requirements into code-compliant designs with full FEA validation.</p>
+            <div class="acc-body-tags">
+              <span class="acc-tag">Site Survey</span>
+              <span class="acc-tag">FEA Analysis</span>
+              <span class="acc-tag">Code Review</span>
+              <span class="acc-tag">3D Modelling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="acc-num">02</div>
+          <div class="acc-title">Material Procurement</div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Certified mill-tested materials sourced from approved vendors. Full traceability with MTCs, heat numbers,
+              and hardness certifications maintained throughout.</p>
+            <div class="acc-body-tags">
+              <span class="acc-tag">Mill Certs</span>
+              <span class="acc-tag">Traceability</span>
+              <span class="acc-tag">Vendor Audit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="acc-num">03</div>
+          <div class="acc-title">Fabrication & Welding</div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>In-house fabrication by certified welders using qualified WPS/PQR procedures. Dimensional checks at every
+              stage with final fit-up review by lead inspector.</p>
+            <div class="acc-body-tags">
+              <span class="acc-tag">WPS/PQR</span>
+              <span class="acc-tag">PWHT</span>
+              <span class="acc-tag">Dimensional QC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="acc-num">04</div>
+          <div class="acc-title">Inspection & Delivery</div>
+          <div class="acc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Third-party NDT, hydrostatic testing, and final documentation package before supervised loading and
+              delivery with full as-built dossier.</p>
+            <div class="acc-body-tags">
+              <span class="acc-tag">UT/RT/MPI</span>
+              <span class="acc-tag">Hydrotest</span>
+              <span class="acc-tag">As-built Docs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       6. METRICS
+  ═══════════════════════════════════════ -->
+  <div class="metrics-section" id="metrics">
+    <div class="metrics-inner">
+      <div class="metric-block reveal stagger-1">
+        <div class="metric-num" data-count="487">487<span class="metric-unit">+</span></div>
+        <div class="metric-label">Projects Delivered</div>
+      </div>
+      <div class="metric-block reveal stagger-2">
+        <div class="metric-num" data-count="18">18<span class="metric-unit">+</span></div>
+        <div class="metric-label">Years in Industry</div>
+      </div>
+      <div class="metric-block reveal stagger-3">
+        <div class="metric-num" data-count="200">200<span class="metric-unit">+</span></div>
+        <div class="metric-label">Skilled Engineers</div>
+      </div>
+      <div class="metric-block reveal stagger-4">
+        <div class="metric-num" data-count="32">32<span class="metric-unit">+</span></div>
+        <div class="metric-label">Global Partners</div>
+      </div>
     </div>
   </div>
 
-  <!-- ============================================================
-     CONTACT SECTION — ENHANCED PREMIUM VERSION
-  ============================================================ -->
-  
-    <!-- ============================================================
-     CONTACT SECTION — Horizontal Split Design
-  ============================================================ -->
+
+  <!-- ═══════════════════════════════════════
+       9. TIMELINE
+  ═══════════════════════════════════════ -->
+  <section class="timeline-section" id="timeline">
+    <div class="section-label reveal" style="color:var(--gold)">Heritage</div>
+    <h2 class="section-title reveal stagger-1"><em>18 years</em> of<br>excellence.</h2>
+    <div class="timeline-list">
+      <div class="timeline-entry">
+        <div class="tl-year">2007</div>
+        <div class="tl-event">Foundation</div>
+        <div class="tl-desc">First fabrication unit established in Umm Al Quwain. A team of 12 engineers with a singular
+          vision.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="tl-year">2012</div>
+        <div class="tl-event">First Major Contract</div>
+        <div class="tl-desc">Landmark ADNOC project — steel structures for offshore platform expansion. 3,200 tons
+          delivered.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="tl-year">2014</div>
+        <div class="tl-event">ISO Certification</div>
+        <div class="tl-desc">Oil & gas services launched. ISO 9001 & ASME Section VIII certifications achieved.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="tl-year">2020</div>
+        <div class="tl-event">Digital Transformation</div>
+        <div class="tl-desc">AI-driven design, robotic welding, and 3D LiDAR scanning introduced across all facilities.
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="tl-year">2025</div>
+        <div class="tl-event">Sustainable Future</div>
+        <div class="tl-desc">Carbon-neutral facility commissioned. Dedicated R&D lab and materials science division
+          opened.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       10. TESTIMONIALS
+  ═══════════════════════════════════════ -->
+  <div class="testimonial-strip">
+    <div class="testimonial-track-wrap">
+      <div class="testimonial-track">
+        <div class="testem-card">
+          <p class="testem-quote">"MASTECH delivered our pressure vessel package 3 weeks ahead of schedule without a
+            single NCR. Their in-house engineering capability is exceptional."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">AK</div>
+            <div>
+              <div class="testem-name">Ahmed Al-Kuwari</div>
+              <div class="testem-role">Projects Director — QatarEnergy</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"The structural steel for our refinery pipe rack was fabricated to millimetre
+            tolerance. MASTECH's quality control process is industry-leading."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">SR</div>
+            <div>
+              <div class="testem-name">S. Rajan</div>
+              <div class="testem-role">Chief Engineer — ADNOC Refining</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"We've used MASTECH for NDT inspection on 6 major projects. Their ASNT Level II
+            inspectors are thorough, prompt, and their reports are always comprehensive."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">MB</div>
+            <div>
+              <div class="testem-name">Mohammed Al-Balushi</div>
+              <div class="testem-role">QA Manager — PDO Oman</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"From concept engineering to final hydro-test, MASTECH handled our heat exchanger
+            bundle with zero deviations. Exceptional team, exceptional result."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">PV</div>
+            <div>
+              <div class="testem-name">Priya Varghese</div>
+              <div class="testem-role">Procurement Head — BPCL</div>
+            </div>
+          </div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testem-card">
+          <p class="testem-quote">"MASTECH delivered our pressure vessel package 3 weeks ahead of schedule without a
+            single NCR. Their in-house engineering capability is exceptional."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">AK</div>
+            <div>
+              <div class="testem-name">Ahmed Al-Kuwari</div>
+              <div class="testem-role">Projects Director — QatarEnergy</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"The structural steel for our refinery pipe rack was fabricated to millimetre
+            tolerance. MASTECH's quality control process is industry-leading."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">SR</div>
+            <div>
+              <div class="testem-name">S. Rajan</div>
+              <div class="testem-role">Chief Engineer — ADNOC Refining</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"We've used MASTECH for NDT inspection on 6 major projects. Their ASNT Level II
+            inspectors are thorough, prompt, and their reports are always comprehensive."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">MB</div>
+            <div>
+              <div class="testem-name">Mohammed Al-Balushi</div>
+              <div class="testem-role">QA Manager — PDO Oman</div>
+            </div>
+          </div>
+        </div>
+        <div class="testem-card">
+          <p class="testem-quote">"From concept engineering to final hydro-test, MASTECH handled our heat exchanger
+            bundle with zero deviations. Exceptional team, exceptional result."</p>
+          <div class="testem-author">
+            <div class="testem-avatar">PV</div>
+            <div>
+              <div class="testem-name">Priya Varghese</div>
+              <div class="testem-role">Procurement Head — BPCL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       11. PARTNER LOGOS
+  ═══════════════════════════════════════ -->
+  <div class="partners-strip">
+    <div class="partners-label">Trusted by Industry Leaders</div>
+    <div class="partners-track-wrap">
+      <div class="partners-track">
+        <div class="partner-item">ADNOC</div>
+        <div class="partner-item">QatarEnergy</div>
+        <div class="partner-item">Saudi Aramco</div>
+        <div class="partner-item">PDO Oman</div>
+        <div class="partner-item">KNPC</div>
+        <div class="partner-item">BPCL</div>
+        <div class="partner-item">Shell</div>
+        <div class="partner-item">Petrofac</div>
+        <div class="partner-item">ADNOC</div>
+        <div class="partner-item">QatarEnergy</div>
+        <div class="partner-item">Saudi Aramco</div>
+        <div class="partner-item">PDO Oman</div>
+        <div class="partner-item">KNPC</div>
+        <div class="partner-item">BPCL</div>
+        <div class="partner-item">Shell</div>
+        <div class="partner-item">Petrofac</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- ═══════════════════════════════════════
+       13. CTA SPLIT
+  ═══════════════════════════════════════ -->
+  <div class="cta-split">
+    <div class="cta-left reveal-left">
+      <div class="cta-left-title">
+        Start Your<br>
+        <em>Project Today</em>
+      </div>
+      <p>Tell us what you need. Our engineering team will respond within 24 hours with a preliminary scope and timeline.
+      </p>
+      <a href="#contact" class="cta-left-btn"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">
+        Request a Quote
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+    <div class="cta-right reveal-right">
+      <div class="cta-right-title">Reach <span>Us</span><br>Directly</div>
+      <p>Prefer to talk? Our project engineers are available during UAE business hours for technical discussions.</p>
+      <div class="cta-contact-row">
+        <a href="tel:+97165551234" class="cta-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          +971 6 555 1234
+        </a>
+        <a href="mailto:info@mastech-uae.com" class="cta-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          info@mastech-uae.com
+        </a>
+        <a href="https://maps.google.com" class="cta-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Umm Al Quwain, UAE
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       14. CONTACT
+  ═══════════════════════════════════════ -->
   <section class="contact-section" id="contact">
     <div class="contact-accent"></div>
-    
     <div class="contact-container">
-      <!-- Header -->
-      <div class="contact-header reveal">
-        <div class="section-label" style="color: var(--rust);">Start a Dialogue</div>
-        <h2 class="section-title split-words" style="color: #fff;">
-          <em>Let's build</em> something<br>significant.
-        </h2>
+      <div class="contact-header">
+        <div class="section-label reveal">Get in Touch</div>
+        <h2 class="section-title reveal">Request a <em>Quote</em></h2>
       </div>
-
-      <!-- Split Content -->
-      <div class="contact-content-split reveal stagger-2">
-        <!-- LEFT COLUMN - Contact Info -->
+      <div class="contact-content-split">
         <div class="contact-info-column">
-          <h3>Connect with us</h3>
-          
+          <h3>Contact Details</h3>
           <div class="contact-details-list">
             <div class="contact-detail">
               <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div class="contact-detail-content">
                 <div class="contact-detail-label">Address</div>
-                <div class="contact-detail-value">P.O. Box 3534, Umm Al Quwain, UAE</div>
+                <div class="contact-detail-value">Industrial Area, Umm Al Quwain, UAE</div>
               </div>
             </div>
-            
             <div class="contact-detail">
               <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                  <path
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div class="contact-detail-content">
+                <div class="contact-detail-label">Phone</div>
+                <a href="tel:+97165551234" class="contact-detail-value">+971 6 555 1234</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" stroke-width="1.5">
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div class="contact-detail-content">
                 <div class="contact-detail-label">Email</div>
-                <a href="mailto:enquiries@mastech-uae.com" class="contact-detail-value">enquiries@mastech-uae.com</a>
-              </div>
-            </div>
-            
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/>
-                </svg>
-              </div>
-              <div class="contact-detail-content">
-                <div class="contact-detail-label">Phone / WhatsApp</div>
-                <a href="tel:+9716XXXXXXX" class="contact-detail-value">+971 6 XXX XXXX</a>
-              </div>
-            </div>
-            
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <div class="contact-detail-content">
-                <div class="contact-detail-label">Working Hours</div>
-                <div class="contact-detail-value">Sunday – Thursday, 08:00 – 18:00 GST</div>
+                <a href="mailto:info@mastech-uae.com" class="contact-detail-value">info@mastech-uae.com</a>
               </div>
             </div>
           </div>
-
-          <!-- Quick Actions -->
           <div class="quick-actions">
-            <a href="tel:+9716XXXXXXX" class="quick-action-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/>
+            <a href="tel:+97165551234" class="quick-action-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call
+              Call Now
             </a>
-            <a href="https://wa.me/971XXXXXXXXX" class="quick-action-pill" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            <a href="mailto:info@mastech-uae.com" class="quick-action-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Email Us
+            </a>
+            <a href="https://wa.me/97165551234" class="quick-action-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
               WhatsApp
             </a>
-            <a href="mailto:enquiries@mastech-uae.com" class="quick-action-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              Email
-            </a>
           </div>
-
-          <!-- Mini Map -->
           <div class="mini-map">
-            <div class="mini-map-title">Our Location</div>
+            <div class="mini-map-title">Location</div>
             <div class="map-preview">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115263.9!2d55.5948!3d25.5648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f2fb1ec03df5%3A0x2a0e7b3f64e58ab7!2sUmm%20Al%20Quwain%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1699000000000" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-                title="Mastech Location">
-              </iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.!2d55.755!3d25.565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDMzJzU0LjAiTiA1NcKwNDUnMTguMCJF!5e0!3m2!1sen!2sae!4v1"
+                loading="lazy"></iframe>
             </div>
           </div>
-
-          <!-- Social Links -->
           <div class="social-links">
             <a href="#" class="social-link">LinkedIn</a>
             <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Twitter/X</a>
+            <a href="#" class="social-link">WhatsApp</a>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN - Form -->
         <div class="contact-form-column">
-          <h3>Send an enquiry</h3>
-          <div class="form-subhead">Fill out the form below and our team will respond within 24 hours.</div>
-
-          <!-- Multi-step Form -->
-          <form id="contactForm" class="contact-form" novalidate>
-            <!-- Step 1 - Service Selection -->
-            <div id="step1" class="form-page">
+          <h3>Send a Message</h3>
+          <p class="form-subhead">Fill in your project details and we'll get back to you within 24 hours.</p>
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row-2">
               <div class="form-group">
-                <label>Select Service *</label>
-                <div class="service-options">
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="mechanical">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="3"/>
-                        <path d="M19.07 4.93a10 10 0 0 0-14.14 0M4.93 19.07a10 10 0 0 0 14.14 0"/>
-                      </svg>
-                      <span>Mechanical</span>
-                    </div>
-                  </label>
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="fabrication">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="2" y="7" width="20" height="14" rx="2"/>
-                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-                      </svg>
-                      <span>Fabrication</span>
-                    </div>
-                  </label>
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="oilgas">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M3 6h18M3 12h18M3 18h18"/>
-                        <circle cx="7" cy="6" r="2"/><circle cx="17" cy="12" r="2"/>
-                      </svg>
-                      <span>Oil & Gas</span>
-                    </div>
-                  </label>
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="maintenance">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-                      </svg>
-                      <span>Maintenance</span>
-                    </div>
-                  </label>
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="instrumentation">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                      </svg>
-                      <span>Instrumentation</span>
-                    </div>
-                  </label>
-                  <label class="service-opt">
-                    <input type="radio" name="service" value="other">
-                    <div class="service-opt-inner">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="8" x2="12" y2="12"/>
-                      </svg>
-                      <span>Other</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <button type="button" class="submit-btn" onclick="goToStep(2)" style="background: var(--rust); margin-top: 20px;">Next Step →</button>
-            </div>
-
-            <!-- Step 2 - Project Details -->
-            <div id="step2" class="form-page hidden">
-              <div class="form-row-2">
-                <div class="form-group">
-                  <label>Budget Range</label>
-                  <select id="f-budget">
-                    <option value="" disabled selected>Select range</option>
-                    <option>Under AED 100K</option>
-                    <option>AED 100K – 500K</option>
-                    <option>AED 500K – 2M</option>
-                    <option>AED 2M – 10M</option>
-                    <option>Over AED 10M</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label>Timeline</label>
-                  <select id="f-timeline">
-                    <option value="" disabled selected>Select timeline</option>
-                    <option>Urgent (under 4 weeks)</option>
-                    <option>1 – 3 months</option>
-                    <option>3 – 6 months</option>
-                    <option>6 months +</option>
-                  </select>
-                </div>
+                <label>Full Name</label>
+                <input type="text" placeholder="John Smith" required>
               </div>
               <div class="form-group">
-                <label>Project Overview *</label>
-                <textarea id="f-message" placeholder="Describe your engineering challenge..." required></textarea>
-              </div>
-              <div style="display: flex; gap: 12px; margin-top: 20px;">
-                <button type="button" class="submit-btn" onclick="goToStep(1)" style="background: transparent; border: 1px solid rgba(255,255,255,.2);">← Back</button>
-                <button type="button" class="submit-btn" onclick="goToStep(3)" style="background: var(--rust);">Next Step →</button>
+                <label>Company</label>
+                <input type="text" placeholder="Your Company">
               </div>
             </div>
-
-            <!-- Step 3 - Contact Info -->
-            <div id="step3" class="form-page hidden">
-              <div class="form-row-2">
-                <div class="form-group">
-                  <label>Full Name *</label>
-                  <input type="text" id="f-name" placeholder="Your full name" required>
-                </div>
-                <div class="form-group">
-                  <label>Company *</label>
-                  <input type="text" id="f-company" placeholder="Your company" required>
-                </div>
-              </div>
-              <div class="form-row-2">
-                <div class="form-group">
-                  <label>Email *</label>
-                  <input type="email" id="f-email" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                  <label>Phone</label>
-                  <input type="tel" id="f-phone" placeholder="+971 XX XXX XXXX">
-                </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@company.com" required>
               </div>
               <div class="form-group">
-                <label>How did you find us?</label>
-                <select id="f-source">
-                  <option value="" disabled selected>Select option</option>
-                  <option>Referral / Word of mouth</option>
-                  <option>LinkedIn</option>
-                  <option>Google / Search</option>
-                  <option>Trade show</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div style="display: flex; gap: 12px; margin-top: 20px;">
-                <button type="button" class="submit-btn" onclick="goToStep(2)" style="background: transparent; border: 1px solid rgba(255,255,255,.2);">← Back</button>
-                <button type="submit" class="submit-btn" style="background: var(--rust);">Send Enquiry →</button>
+                <label>Phone / WhatsApp</label>
+                <input type="tel" placeholder="+971 xx xxx xxxx">
               </div>
             </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <div class="service-options">
+                <label class="service-opt">
+                  <input type="radio" name="service" value="fabrication">
+                  <div class="service-opt-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                      <path
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    <span>Fabrication</span>
+                  </div>
+                </label>
+                <label class="service-opt">
+                  <input type="radio" name="service" value="engineering">
+                  <div class="service-opt-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                      <path
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <span>Engineering</span>
+                  </div>
+                </label>
+                <label class="service-opt">
+                  <input type="radio" name="service" value="oilfield">
+                  <div class="service-opt-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                      <path d="M3 7h18M3 12h18M3 17h18" />
+                    </svg>
+                    <span>Oilfield</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Project Brief</label>
+              <textarea placeholder="Describe your project scope, materials, timeline, and any relevant standards…"
+                rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Enquiry →</button>
           </form>
-
-          <!-- Success Message -->
-          <div id="formSuccess" class="form-success-message">
+          <div class="form-success-message" id="successMsg">
             <div class="success-check">✓</div>
-            <h4>ENQUIRY SENT</h4>
-            <p>Thank you for reaching out. Our engineering team will respond within 24 hours.</p>
+            <h4>Message Sent</h4>
+            <p>We'll respond within 24 hours with a preliminary scope and timeline.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-     FOOTER — Full Premium
-  ============================================================ -->
+
+  <!-- ═══════════════════════════════════════
+       15. FOOTER
+  ═══════════════════════════════════════ -->
   <footer>
-    <div class="footer-ring-wrap" aria-hidden="true">
-      <div class="footer-ring">
-        <div class="footer-ring-inner">EST<br>2007</div>
-      </div>
-    </div>
     <div class="footer-main">
-      <div class="footer-brand-col"><a href="#" class="footer-logo">MASTECH</a>
-        <p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of
-          the UAE — built for the world's most demanding industries.</p>
+      <div class="footer-brand-col">
+        <a href="#home" class="footer-logo">MASTECH</a>
+        <p class="footer-tagline-text">Mechanical engineering, steel fabrication, and oilfield services —
+          precision-built for the world's most demanding industrial sectors since 2007.</p>
         <div class="footer-certs">
-          <div class="footer-cert-badge">ISO 9001</div>
-          <div class="footer-cert-badge">ASME VIII</div>
-          <div class="footer-cert-badge">API Q1</div>
-          <div class="footer-cert-badge">AWS D1.1</div>
+          <span class="footer-cert-badge">ISO 9001</span>
+          <span class="footer-cert-badge">ASME VIII</span>
+          <span class="footer-cert-badge">API Q1</span>
+          <span class="footer-cert-badge">AWS D1.1</span>
         </div>
+      </div>
+      <div class="footer-nav-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
       <div class="footer-nav-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="#services">Mechanical Engineering</a></li>
-          <li><a href="#services">Steel Fabrication</a></li>
-          <li><a href="#services">Oil &amp; Gas</a></li>
-          <li><a href="#services">Plant Maintenance</a></li>
-          <li><a href="#services">Instrumentation</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#process">Our Process</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#timeline">Heritage</a></li>
-          <li><a href="#contact">Careers</a></li>
+          <li><a href="services.html">Pressure Vessels</a></li>
+          <li><a href="services.html">Structural Steel</a></li>
+          <li><a href="services.html">Heat Exchangers</a></li>
+          <li><a href="services.html">Pipeline Systems</a></li>
+          <li><a href="services.html">NDT Inspection</a></li>
+          <li><a href="services.html">3D Engineering</a></li>
         </ul>
       </div>
       <div class="footer-contact-col">
-        <h5>Get In Touch</h5>
+        <h5>Contact</h5>
         <div class="footer-contact-item">
           <div class="footer-contact-label">Address</div>
-          <div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div>
+          <div class="footer-contact-val">Industrial Area, Umm Al Quwain, UAE</div>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com"
-            class="footer-contact-val">enquiries@mastech-uae.com</a>
+          <div class="footer-contact-label">Phone</div>
+          <a href="tel:+97165551234" class="footer-contact-val">+971 6 555 1234</a>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888
-            8888</a>
+          <div class="footer-contact-label">Email</div>
+          <a href="mailto:info@mastech-uae.com" class="footer-contact-val">info@mastech-uae.com</a>
         </div>
         <div class="footer-newsletter">
-          <p>Subscribe to project updates</p>
-          <form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email"
-              placeholder="your@email.com" aria-label="Email address"><button type="submit"
-              class="footer-nl-btn">Subscribe →</button></form>
+          <p>Subscribe for project updates</p>
+          <div class="footer-nl-form">
+            <input type="email" class="footer-nl-input" placeholder="your@email.com">
+            <button class="footer-nl-btn">Subscribe →</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div>
-      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a>
+      <div class="footer-copy">
+        © 2025 MASTECH Technical Iron Works L.L.C — All rights reserved.<br>
+        Umm Al Quwain, UAE · Trade License: UAQ-XXXXXXXX
       </div>
-      <div class="footer-socials"><a href="#" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn">in</a><a
-          href="#" class="footer-social-btn" title="Instagram" aria-label="Instagram">ig</a><a href="#"
-          class="footer-social-btn" title="Twitter/X" aria-label="Twitter">𝕏</a></div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Certifications</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" title="LinkedIn">in</a>
+        <a href="#" class="footer-social-btn" title="Instagram">ig</a>
+        <a href="#" class="footer-social-btn" title="WhatsApp">wa</a>
+      </div>
     </div>
+    <div class="footer-ring-wrap">
+      <div class="footer-ring">
+        <div class="footer-ring-inner">MASTECH<br>UAE</div>
+      </div>
+    </div>
+
+
+
   </footer>
+
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+      <path d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
 
   <script src="assets/js/main.js"></script>
 </body>
