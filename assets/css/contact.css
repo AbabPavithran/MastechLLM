@@ -1,0 +1,1028 @@
+/* ============================================================
+   MASTECH TECHNICAL IRON WORKS L.L.C
+   contact.css  |  Contact Page — Premium Conversion Design
+   Depends on: main.css (tokens, nav, footer, keyframes, reveal)
+   Theme: industrial dark/light contrast, high conversion focus
+============================================================ */
+
+/* ============================================================
+   CONTACT HERO — Full viewport industrial visual
+============================================================ */
+.contact-hero {
+  min-height: 75vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.contact-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" opacity="0.06"><path d="M0 0 L800 0 L800 600 L0 600 Z" fill="none"/><path d="M100 100 L700 100 M100 200 L700 200 M100 300 L700 300 M100 400 L700 400 M100 500 L700 500" stroke="white" stroke-width="0.5"/><circle cx="400" cy="300" r="120" stroke="white" stroke-width="0.3" fill="none"/></svg>');
+  background-repeat: repeat;
+  animation: gridDrift 42s linear infinite;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(15,14,12,0.2) 0%, var(--ink) 85%);
+  z-index: 2;
+}
+
+.contact-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(193,58,42,0.04) 0px,
+    rgba(193,58,42,0.04) 2px,
+    transparent 2px,
+    transparent 18px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 32px;
+}
+
+.contact-hero-badge {
+  font-size: .6rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--rust);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp .75s .3s var(--ease-out) forwards;
+}
+
+.contact-hero-badge-line {
+  width: 40px;
+  height: 1px;
+  background: var(--rust);
+  transform-origin: left;
+  animation: lineGrowH .65s .6s var(--ease-out) both;
+}
+
+.contact-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(68px, 10vw, 140px);
+  line-height: .88;
+  letter-spacing: 2px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(48px);
+  animation: fadeUp 1s .44s var(--ease-spring) forwards;
+  margin-bottom: 28px;
+}
+
+.contact-hero-accent {
+  color: var(--rust);
+  display: inline-block;
+}
+
+.contact-hero-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.48);
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .85s .78s var(--ease-out) forwards;
+}
+
+.contact-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 56px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .9s 1s var(--ease-out) forwards;
+}
+
+.contact-hero-stat {
+  text-align: center;
+}
+
+.contact-hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.contact-hero-stat-label {
+  font-size: .62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-top: 8px;
+}
+
+.contact-hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+  opacity: 0;
+  animation: fadeUp .7s 1.4s var(--ease-out) forwards;
+}
+
+.contact-hero-scroll-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--rust);
+  border-radius: 50%;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.contact-hero-scroll span {
+  font-size: .55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+
+/* ============================================================
+   CONTACT SPLIT SECTION — Form + Info Panel
+============================================================ */
+.contact-split-section {
+  background: var(--paper);
+  padding: 100px 80px;
+  position: relative;
+}
+
+.contact-split-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+/* LEFT PANEL - Contact Info */
+.contact-info-panel {
+  background: #fff;
+  padding: 48px;
+  border: 1px solid var(--smoke);
+  transition: all .4s var(--ease-spring);
+}
+
+.contact-info-panel:hover {
+  box-shadow: 0 24px 48px rgba(15,14,12,.08);
+}
+
+.contact-info-header {
+  margin-bottom: 40px;
+}
+
+.contact-info-header .section-label {
+  margin-bottom: 20px;
+}
+
+.contact-info-header h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.contact-info-header h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--rust);
+}
+
+.contact-info-header p {
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+/* Info Cards */
+.contact-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.contact-info-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--smoke);
+  transition: all .3s;
+}
+
+.contact-info-card:hover {
+  border-bottom-color: rgba(193,58,42,.3);
+  transform: translateX(6px);
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(193,58,42,.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .3s;
+}
+
+.contact-info-card:hover .contact-info-icon {
+  background: var(--rust);
+}
+
+.contact-info-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--rust);
+  transition: stroke .3s;
+}
+
+.contact-info-card:hover .contact-info-icon svg {
+  stroke: #fff;
+}
+
+.contact-info-text {
+  flex: 1;
+}
+
+.contact-info-text h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.contact-info-text p {
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--mid);
+  margin-bottom: 4px;
+}
+
+.contact-info-text a {
+  color: var(--mid);
+  text-decoration: none;
+  font-size: .85rem;
+  transition: color .3s;
+}
+
+.contact-info-text a:hover {
+  color: var(--rust);
+}
+
+/* Quick Actions */
+.contact-quick-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.quick-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1.5px solid var(--smoke);
+  text-decoration: none;
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: all .3s;
+}
+
+.quick-action-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--mid);
+  transition: stroke .3s;
+}
+
+.quick-action-btn:hover {
+  border-color: var(--rust);
+  background: rgba(193,58,42,.05);
+  color: var(--rust);
+}
+
+.quick-action-btn:hover svg {
+  stroke: var(--rust);
+}
+
+/* Social Links */
+.contact-social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--smoke);
+}
+
+.contact-social span {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.contact-social a {
+  font-size: .75rem;
+  text-decoration: none;
+  color: var(--mid);
+  transition: color .3s;
+}
+
+.contact-social a:hover {
+  color: var(--rust);
+}
+
+/* RIGHT PANEL - Form */
+.contact-form-panel {
+  background: var(--ink);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rust), var(--gold));
+}
+
+.form-header {
+  margin-bottom: 32px;
+}
+
+.form-header h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.form-header p {
+  font-size: .85rem;
+  color: rgba(255,255,255,.4);
+  line-height: 1.6;
+}
+
+/* Form Steps */
+.contact-form-modern {
+  position: relative;
+}
+
+.form-step {
+  display: none;
+  animation: fadeInScale .4s ease;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: .55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 14px 18px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  transition: all .3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--rust);
+  background: rgba(255,255,255,.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Service Selector */
+.service-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.service-option {
+  cursor: pointer;
+}
+
+.service-option input {
+  display: none;
+}
+
+.service-option-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: all .3s;
+  font-size: .7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+
+.service-option-inner svg {
+  width: 24px;
+  height: 24px;
+  stroke: rgba(255,255,255,.35);
+  transition: stroke .3s;
+}
+
+.service-option:hover .service-option-inner {
+  border-color: rgba(193,58,42,.4);
+  background: rgba(193,58,42,.05);
+}
+
+.service-option input:checked + .service-option-inner {
+  border-color: var(--rust);
+  background: rgba(193,58,42,.12);
+  color: #fff;
+}
+
+.service-option input:checked + .service-option-inner svg {
+  stroke: var(--rust);
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.form-next-btn,
+.form-back-btn,
+.form-submit-btn {
+  padding: 14px 28px;
+  font-size: .7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+}
+
+.form-next-btn,
+.form-submit-btn {
+  background: var(--rust);
+  color: #fff;
+  flex: 1;
+}
+
+.form-next-btn:hover,
+.form-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(193,58,42,.35);
+}
+
+.form-back-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.6);
+}
+
+.form-back-btn:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  background: rgba(193,58,42,.05);
+}
+
+/* Success Message */
+.form-success-message {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.form-success-message.show {
+  display: block;
+  animation: fadeInScale .4s ease;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(193,58,42,.12);
+  border: 2px solid var(--rust);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 2rem;
+  color: var(--rust);
+}
+
+.form-success-message h4 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.form-success-message p {
+  color: rgba(255,255,255,.45);
+  font-size: .9rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.reset-form-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 12px 28px;
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.reset-form-btn:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+/* ============================================================
+   MAP SECTION — Full width interactive
+============================================================ */
+.map-section {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container iframe {
+  filter: grayscale(.7) brightness(.6);
+  transition: filter .5s ease;
+}
+
+.map-section:hover .map-container iframe {
+  filter: grayscale(.2) brightness(.7);
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(15,14,12,.3) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.map-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(15,14,12,.85);
+  backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-left: 3px solid var(--rust);
+  z-index: 3;
+}
+
+.map-caption-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-caption-content span:first-child {
+  font-family: var(--font-display);
+  font-size: .85rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.map-caption-content span:last-child {
+  font-size: .7rem;
+  color: rgba(255,255,255,.45);
+}
+
+/* ============================================================
+   CERTIFICATIONS STRIP
+============================================================ */
+.contact-certs-strip {
+  background: var(--steel);
+  padding: 20px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.contact-certs-track {
+  display: inline-flex;
+  gap: 32px;
+  animation: certsScroll 22s linear infinite;
+}
+
+.contact-certs-strip:hover .contact-certs-track {
+  animation-play-state: paused;
+}
+
+@keyframes certsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.contact-certs-track span {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+
+.contact-certs-track .sep {
+  color: var(--rust);
+  font-size: .5rem;
+}
+
+/* ============================================================
+   CTA BANNER — Emergency contact
+============================================================ */
+.contact-cta-banner {
+  background: linear-gradient(135deg, #0f0e0c 0%, #1a1815 100%);
+  padding: 64px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta-bg {
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" opacity="0.04"><path d="M0 0 L800 0 L800 400 L0 400 Z" fill="none"/><circle cx="200" cy="200" r="150" stroke="white" stroke-width="0.5" fill="none"/><circle cx="600" cy="200" r="150" stroke="white" stroke-width="0.5" fill="none"/></svg>');
+  background-repeat: repeat;
+  animation: gridDrift 32s linear infinite;
+}
+
+.contact-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-cta-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.contact-cta-content p {
+  font-size: .9rem;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 32px;
+}
+
+.emergency-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 1.5px solid var(--rust);
+  padding: 14px 42px;
+  font-size: .75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: all .35s var(--ease-spring);
+}
+
+.emergency-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.emergency-btn:hover {
+  background: var(--rust);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(193,58,42,.35);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+============================================================ */
+@media (max-width: 1100px) {
+  .contact-split-section {
+    padding: 80px 40px;
+  }
+  
+  .contact-split-container {
+    gap: 32px;
+  }
+  
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-split-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-hero-stats {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-info-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .service-selector {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-split-section {
+    padding: 60px 24px;
+  }
+  
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 28px 24px;
+  }
+  
+  .contact-hero-title {
+    font-size: clamp(48px, 12vw, 80px);
+  }
+  
+  .contact-hero-stats {
+    gap: 20px;
+  }
+  
+  .contact-hero-stat-num {
+    font-size: 1.8rem;
+  }
+  
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .service-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-quick-actions {
+    flex-direction: column;
+  }
+  
+  .quick-action-btn {
+    justify-content: center;
+  }
+  
+  .map-caption {
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 16px;
+  }
+  
+  .contact-cta-banner {
+    padding: 48px 24px;
+  }
+  
+  .contact-cta-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .service-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  .contact-info-header h2 {
+    font-size: 2rem;
+  }
+  
+  .map-section {
+    height: 280px;
+  }
+  
+  .map-caption-content span:first-child {
+    font-size: .7rem;
+  }
+  
+  .emergency-btn {
+    padding: 12px 28px;
+    font-size: .65rem;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS & UTILITIES
+============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrowH {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Scroll reveal overrides */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.stagger-1 { transition-delay: .10s; }
+.stagger-2 { transition-delay: .20s; }
+.stagger-3 { transition-delay: .30s; }
+.stagger-4 { transition-delay: .40s; }
+
+/* Split letters animation */
+.split-letters .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(65%) rotateX(-45deg);
+  transform-origin: bottom center;
+  transition: opacity .55s var(--ease-spring), transform .55s var(--ease-spring);
+  transition-delay: calc(var(--i,0) * 0.04s);
+}
+
+.split-letters.visible .char {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Split words animation */
+.split-words .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.split-words .word span {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .78s var(--ease-spring), opacity .62s var(--ease-out);
+}
+
+.split-words.visible .word span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Hover transitions */
+.contact-info-card,
+.quick-action-btn,
+.service-option-inner,
+.form-next-btn,
+.form-submit-btn,
+.emergency-btn {
+  cursor: pointer;
+}
+
+/* Form validation visual feedback */
+.form-group input:invalid:focus,
+.form-group textarea:invalid:focus {
+  border-color: var(--rust);
+}
+
+/* Smooth scroll behavior for the whole page */
+html {
+  scroll-behavior: smooth;
+}
