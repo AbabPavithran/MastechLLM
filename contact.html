@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Mastech Technical Iron Works L.L.C</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/contact.css"/>
+</head>
+<body class="page-contact">
+
+  <!-- ======================================================
+       AMBIENT LAYER
+  ====================================================== -->
+  <div class="ambient-shapes" aria-hidden="true">
+    <div class="ambient-blob ambient-1"></div>
+    <div class="ambient-blob ambient-2"></div>
+    <div class="ambient-blob ambient-3"></div>
+  </div>
+
+  <div class="floating-particles" id="particles" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <nav id="mainNav">
+    <a href="index.html" class="logo">
+      <span class="logo-dot"></span>
+      MASTECH
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="nav-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">
+      Get a Quote
+    </button>
+
+    <!-- Hamburger -->
+    <div class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <button class="mobile-cta">Get a Quote</button>
+  </div>
+
+  <!-- ======================================================
+       HERO
+  ====================================================== -->
+  <section class="contact-hero" aria-label="Contact page hero">
+    <div class="contact-hero-bg" aria-hidden="true"></div>
+    <div class="contact-hero-grid" aria-hidden="true"></div>
+
+    <div class="contact-hero-content">
+      <div class="contact-hero-eyebrow reveal">Let's Talk</div>
+      <h1 class="contact-hero-title split-letters">
+        <span>GET IN</span>
+        <span><em>TOUCH</em></span>
+      </h1>
+      <p class="contact-hero-sub reveal stagger-2">
+        Every great structure begins with a conversation. Tell us about your project and let's build something exceptional together.
+      </p>
+    </div>
+
+    <div class="contact-hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="contact-hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       TICKER BAND
+  ====================================================== -->
+  <div class="contact-ticker" aria-hidden="true">
+    <div class="contact-ticker-track">
+      <div class="contact-ticker-item">24–48hr Response Time</div>
+      <div class="contact-ticker-item">Free Site Assessment</div>
+      <div class="contact-ticker-item">ISO Certified Fabrication</div>
+      <div class="contact-ticker-item">UAE Based Operations</div>
+      <div class="contact-ticker-item">20+ Years Experience</div>
+      <div class="contact-ticker-item">500+ Projects Delivered</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="contact-ticker-item">24–48hr Response Time</div>
+      <div class="contact-ticker-item">Free Site Assessment</div>
+      <div class="contact-ticker-item">ISO Certified Fabrication</div>
+      <div class="contact-ticker-item">UAE Based Operations</div>
+      <div class="contact-ticker-item">20+ Years Experience</div>
+      <div class="contact-ticker-item">500+ Projects Delivered</div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       CONTACT MAIN — INFO + FORM
+  ====================================================== -->
+  <section class="contact-section" id="contact-form">
+    <div class="contact-layout">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <div class="contact-info-label reveal">Contact</div>
+        <h2 class="contact-info-heading reveal stagger-1">
+          Get In<br><em>Touch</em>
+        </h2>
+        <p class="contact-info-desc reveal stagger-2">
+          Whether you need structural steel fabrication, custom ironworks, or industrial maintenance — our team at Mastech LLC is ready to assist with precision and urgency. Reach us directly through any of the channels below.
+        </p>
+
+        <!-- Three equal contact cards -->
+        <div class="contact-cards">
+
+          <div class="contact-card reveal stagger-1">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+              </svg>
+            </div>
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-val">
+              <a href="tel:+971525816222">+971 52 581 6222</a>
+            </div>
+            <div class="contact-card-action">
+              <a href="tel:+971525816222">Call Now →</a>
+            </div>
+          </div>
+
+          <div class="contact-card reveal stagger-2">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-val">
+              <a href="mailto:info@mastechllc.com">info@mastechllc.com</a>
+            </div>
+            <div class="contact-card-action">
+              <a href="mailto:info@mastechllc.com">Send Email →</a>
+            </div>
+          </div>
+
+          <div class="contact-card reveal stagger-3">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-card-label">Address</div>
+            <div class="contact-card-val">
+              P.O. Box 3534,<br/>Umm Al Quwain, UAE
+            </div>
+            <div class="contact-card-action">
+              <a href="https://maps.google.com/?q=Umm+Al+Quwain+UAE" target="_blank" rel="noopener">Get Directions →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-hours-badge reveal stagger-4">
+          <div class="contact-hours-dot"></div>
+          Currently Open — Responding in &lt;2hrs
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap reveal-scale">
+
+        <!-- Form header -->
+        <div class="form-header">
+          <div class="form-header-tag">Project Inquiry</div>
+          <h3 class="form-header-title">Tell Us About<br>Your Project</h3>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="form-success-title">Message Sent</div>
+          <p class="form-success-msg">
+            Thank you for reaching out. Our team will get back to you within 24–48 hours.
+          </p>
+        </div>
+
+        <!-- The actual form -->
+        <div id="formBody">
+          <div class="form-grid">
+
+            <!-- Full Name -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="fname">Full Name</label>
+              <input class="form-input" type="text" id="fname" name="fname" placeholder="Your full name" autocomplete="name"/>
+            </div>
+
+            <!-- Email / Phone -->
+            <div class="form-field">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email"/>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+971 52 581 6222" autocomplete="tel"/>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" name="subject" placeholder="e.g. Steel fabrication inquiry"/>
+            </div>
+
+            <!-- Message -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" maxlength="600" placeholder="Describe your project, timeline, and any specific requirements…"></textarea>
+              <div class="form-char-count" id="charCount">0 / 600</div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-submit-area">
+              <p class="form-privacy">
+                By submitting you agree to our <a href="#">Privacy Policy</a>. We never share your data with third parties.
+              </p>
+              <button class="btn-submit" type="button" id="submitBtn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       LOCATION / MAP
+  ====================================================== -->
+  <section class="contact-location">
+    <div class="contact-location-inner">
+
+      <div class="contact-location-header reveal">
+        <div>
+          <div class="contact-location-label">Find Us</div>
+          <h2 class="contact-location-title">Our <em>Facility</em></h2>
+        </div>
+      </div>
+
+      <div class="contact-map-grid reveal-scale">
+        <div class="contact-map-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3993.5!2d55.5547!3d25.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f4b12a6e1e1b%3A0x0!2zVW1tIEFsIFF1d2FpbiwgVUFF!5e0!3m2!1sen!2sae!4v1680000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mastech LLC location — Umm Al Quwain, UAE">
+          </iframe>
+        </div>
+
+        <div class="contact-map-sidebar">
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Mailing Address</div>
+            <div class="map-sidebar-val">
+              P.O. Box 3534<br/>
+              Umm Al Quwain<br/>
+              United Arab Emirates
+            </div>
+          </div>
+
+          <div class="map-sidebar-divider"></div>
+
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Phone</div>
+            <div class="map-sidebar-val">
+              <a href="tel:+971525816222" style="color:inherit;text-decoration:none;">+971 52 581 6222</a>
+            </div>
+          </div>
+
+          <div class="map-sidebar-divider"></div>
+
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Email</div>
+            <div class="map-sidebar-val">
+              <a href="mailto:info@mastechllc.com" style="color:inherit;text-decoration:none;">info@mastechllc.com</a>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Umm+Al+Quwain+UAE" target="_blank" rel="noopener" class="map-directions-btn">
+            <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FAQ
+  ====================================================== -->
+  <section class="contact-faq">
+    <div class="contact-faq-inner">
+
+      <div class="contact-faq-left">
+        <div class="contact-faq-label reveal">FAQ</div>
+        <h2 class="contact-faq-title reveal stagger-1">Common<br><em>Questions</em></h2>
+        <p class="contact-faq-desc reveal stagger-2">
+          Everything you need to know before getting in touch with our technical team.
+        </p>
+      </div>
+
+      <div class="faq-accordion reveal-right">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is your typical project turnaround time?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Turnaround depends on scope and complexity. Small fabrication jobs are typically completed within 5–10 working days, while large structural projects are scoped with detailed timelines during the quotation phase. We always respect agreed deadlines.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you provide a free site assessment?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. For projects within the UAE, we offer a complimentary site visit and technical assessment. Our engineers will evaluate the requirements and provide a comprehensive quote within 48 hours of the visit.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Which certifications does Mastech hold?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Mastech Technical Iron Works holds ISO 9001:2015 certification for quality management and complies with UAE Ministry of Economy trade regulations. All fabricated steel structures meet ASTM and BS EN standards.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can you handle both fabrication and on-site installation?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. We are a full-service operation — from design and fabrication at our Sharjah workshop to final installation and quality inspection on-site. We manage the entire process so you have one point of contact.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you work on residential projects?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. While our core focus is industrial and commercial fabrication, we also take on premium residential projects including custom gates, staircases, handrails, pergolas, and decorative ironworks for villas and high-end properties.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+    <div class="footer-main">
+
+      <!-- Brand column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">MASTECH</a>
+        <p class="footer-tagline-text">
+          Precision fabrication and structural ironworks crafted for the demands of modern UAE industry. Built to last. Built to perform.
+        </p>
+        <div class="footer-certs">
+          <span class="footer-cert-badge">ISO 9001</span>
+          <span class="footer-cert-badge">ASTM</span>
+          <span class="footer-cert-badge">BS EN</span>
+          <span class="footer-cert-badge">UAE Certified</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-nav-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="https://mastechllc.com/service/on-and-offshore-services/" target="_blank" rel="noopener">On &amp; Offshore Services</a></li>
+          <li><a href="https://mastechllc.com/service/site-erection-installation-and-commissioning/" target="_blank" rel="noopener">Site Erection &amp; Installation</a></li>
+          <li><a href="https://mastechllc.com/service/project-management-services/" target="_blank" rel="noopener">Project Management</a></li>
+          <li><a href="https://mastechllc.com/service/dismantling-and-re-construction-of-plants-and-equipments/" target="_blank" rel="noopener">Dismantling &amp; Reconstruction</a></li>
+          <li><a href="https://mastechllc.com/service/fabrication-in-structural-and-tubular-steel/" target="_blank" rel="noopener">Structural Steel Fabrication</a></li>
+          <li><a href="https://mastechllc.com/service/fabrication-of-heavy-lifting-equipments/" target="_blank" rel="noopener">Heavy Lifting Equipment</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-nav-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://mastechllc.com/about-us/" target="_blank" rel="noopener">About Us</a></li>
+          <li><a href="https://mastechllc.com/our-services/" target="_blank" rel="noopener">Our Services</a></li>
+          <li><a href="https://mastechllc.com/our-infrastructure/" target="_blank" rel="noopener">Our Infrastructure</a></li>
+          <li><a href="https://mastechllc.com/company-trade-license/" target="_blank" rel="noopener">Trade License</a></li>
+          <li><a href="https://mastechllc.com/membership-certificate/" target="_blank" rel="noopener">Membership Certificate</a></li>
+          <li><a href="https://mastechllc.com/contact-us/" target="_blank" rel="noopener">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:info@mastechllc.com" class="footer-contact-val">info@mastechllc.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <a href="tel:+971525816222" class="footer-contact-val">+971 52 581 6222</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Address</span>
+          <span class="footer-contact-val">P.O. Box 3534,<br/>Umm Al Quwain, UAE</span>
+        </div>
+
+        <div class="footer-newsletter">
+          <p>Industry updates &amp; project news</p>
+          <div class="footer-nl-form">
+            <input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Newsletter email"/>
+            <button class="footer-nl-btn" type="button">Subscribe →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; 2021 Mastech For Technical Iron Works L.L.C. All rights reserved.<br/>
+        P.O. Box 3534, Umm Al Quwain, United Arab Emirates.<br/>
+        Trade License No. 4840 &nbsp;|&nbsp; Designed with love by <a href="https://bienterprises.co" target="_blank" rel="noopener" style="color:rgba(255,255,255,.3);text-decoration:none;">Bi. Enterprises</a>
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram">ig</a>
+        <a href="#" class="footer-social-btn" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+
+    <!-- Decorative ring -->
+    <div class="footer-ring-wrap" aria-hidden="true">
+      <div class="footer-ring">
+        <div class="footer-ring-inner">MASTECH<br/>IRON WORKS</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       SCRIPTS
+  ====================================================== -->
+  <script>
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const pct = (window.scrollY / (document.body.scrollHeight - innerHeight)) * 100;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
+
+    /* ---- Nav scroll state ---- */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ---- Hamburger / mobile menu ---- */
+    const burger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    /* ---- Scroll reveal ---- */
+    const revealClasses = ['.reveal', '.reveal-left', '.reveal-right', '.reveal-scale', '.reveal-clip', '.reveal-blur', '.split-letters', '.split-words', '.section-label'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealClasses.forEach(cls => document.querySelectorAll(cls).forEach(el => observer.observe(el)));
+
+    /* ---- Split letter animation setup ---- */
+    document.querySelectorAll('.split-letters').forEach(el => {
+      if (el.dataset.splitDone) return;
+      el.dataset.splitDone = '1';
+      el.querySelectorAll('span:not(.char)').forEach(line => {
+        const text = line.textContent;
+        line.innerHTML = text.split('').map((c, i) =>
+          c === ' ' ? ' ' : `<span class="char" style="--i:${i}">${c}</span>`
+        ).join('');
+      });
+    });
+
+    /* ---- Floating particles ---- */
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 2;
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        animation-duration: ${14 + Math.random() * 20}s;
+        animation-delay: ${Math.random() * 14}s;
+        opacity: ${Math.random() * 0.4 + 0.1};
+      `;
+      container.appendChild(p);
+    }
+
+    /* ---- Char count for textarea ---- */
+    const msg = document.getElementById('message');
+    const counter = document.getElementById('charCount');
+    if (msg && counter) {
+      msg.addEventListener('input', () => {
+        const len = msg.value.length;
+        counter.textContent = len + ' / 600';
+        counter.classList.toggle('near', len > 520);
+      });
+    }
+
+    /* ---- Form submit (demo) ---- */
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!fname || !email) {
+        // Simple shake feedback
+        const wrap = document.querySelector('.contact-form-wrap');
+        wrap.style.animation = 'none';
+        wrap.style.transition = 'transform .1s';
+        [0,1,2,3].forEach((i) => {
+          setTimeout(() => { wrap.style.transform = i % 2 === 0 ? 'translateX(-6px)' : 'translateX(6px)'; }, i * 80);
+        });
+        setTimeout(() => { wrap.style.transform = ''; }, 360);
+        return;
+      }
+      document.getElementById('formBody').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    });
+
+    /* ---- FAQ accordion ---- */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+  </script>
+</body>
+</html>
