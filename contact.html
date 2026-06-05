@@ -1,536 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASTECH — Contact | Precision Engineering & Steel Fabrication</title>
-  <meta name="description" content="Get in touch with MASTECH Technical Iron Works. Request a quote, discuss your project, or visit our facility in Umm Al Quwain, UAE.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Mastech Technical Iron Works L.L.C</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/contact.css"/>
 </head>
-<body>
+<body class="page-contact">
 
-  <!-- Progress Bar -->
-  <div class="progress-bar" id="progressBar"></div>
-
-  <!-- Ambient Shapes -->
-  <div class="ambient-shapes">
+  <!-- ======================================================
+       AMBIENT LAYER
+  ====================================================== -->
+  <div class="ambient-shapes" aria-hidden="true">
     <div class="ambient-blob ambient-1"></div>
     <div class="ambient-blob ambient-2"></div>
     <div class="ambient-blob ambient-3"></div>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
-    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
-    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="process.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
-    <a href="index.html#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-    <button class="mobile-cta" onclick="window.location.href='contact.html';">Get a Quote</button>
-  </div>
+  <div class="floating-particles" id="particles" aria-hidden="true"></div>
 
-  <!-- Navigation -->
+  <!-- Scroll progress -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
   <nav id="mainNav">
-    <a href="index.html" class="logo">MASTECH<div class="logo-dot"></div></a>
+    <a href="index.html" class="logo">
+      <span class="logo-dot"></span>
+      MASTECH
+    </a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="index.html#projects">Projects</a>
       <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
-    <button class="nav-cta" onclick="window.location.href='contact.html'">Get a quote</button>
-    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+
+    <button class="nav-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">
+      Get a Quote
+    </button>
+
+    <!-- Hamburger -->
+    <div class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
-  <!-- ============================================================
-     CONTACT HERO — Industrial strength visual
-  ============================================================ -->
-  <section class="contact-hero">
-    <div class="contact-hero-bg">
-      <div class="contact-hero-overlay"></div>
-      <div class="contact-hero-pattern"></div>
-    </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <button class="mobile-cta">Get a Quote</button>
+  </div>
+
+  <!-- ======================================================
+       HERO
+  ====================================================== -->
+  <section class="contact-hero" aria-label="Contact page hero">
+    <div class="contact-hero-bg" aria-hidden="true"></div>
+    <div class="contact-hero-grid" aria-hidden="true"></div>
+
     <div class="contact-hero-content">
-      <div class="contact-hero-badge">
-        <span class="contact-hero-badge-line"></span>
-        START A DIALOGUE
-      </div>
+      <div class="contact-hero-eyebrow reveal">Let's Talk</div>
       <h1 class="contact-hero-title split-letters">
-        LET'S BUILD<br>
-        <span class="contact-hero-accent">SOMETHING</span><br>
-        SIGNIFICANT
+        <span>GET IN</span>
+        <span><em>TOUCH</em></span>
       </h1>
-      <p class="contact-hero-desc split-words">Whether you have a technical challenge, a urgent fabrication need, or a long-term partnership in mind — our engineering team is ready to respond within 24 hours.</p>
-      <div class="contact-hero-stats">
-        <div class="contact-hero-stat">
-          <span class="contact-hero-stat-num">24h</span>
-          <span class="contact-hero-stat-label">Response Time</span>
-        </div>
-        <div class="contact-hero-stat">
-          <span class="contact-hero-stat-num">18+</span>
-          <span class="contact-hero-stat-label">Years Expertise</span>
-        </div>
-        <div class="contact-hero-stat">
-          <span class="contact-hero-stat-num">487+</span>
-          <span class="contact-hero-stat-label">Projects Delivered</span>
-        </div>
-      </div>
+      <p class="contact-hero-sub reveal stagger-2">
+        Every great structure begins with a conversation. Tell us about your project and let's build something exceptional together.
+      </p>
     </div>
-    <div class="contact-hero-scroll">
-      <div class="contact-hero-scroll-dot"></div>
-      <span>REACH OUT</span>
+
+    <div class="contact-hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="contact-hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- ============================================================
-     CONTACT SPLIT SECTION — Form + Info (premium redesign)
-  ============================================================ -->
-  <section class="contact-split-section">
-    <div class="contact-split-container">
-      <!-- LEFT COLUMN - Contact Information -->
-      <div class="contact-info-panel reveal">
-        <div class="contact-info-header">
-          <div class="section-label" style="color: var(--rust);">CONNECT WITH US</div>
-          <h2>Direct<br>Lines &<br><em>Locations</em></h2>
-          <p>Visit our 52,000 m² facility in Umm Al Quwain, or reach out through any channel below. Our team operates Sunday–Thursday, 08:00–18:00 GST.</p>
-        </div>
+  <!-- ======================================================
+       TICKER BAND
+  ====================================================== -->
+  <div class="contact-ticker" aria-hidden="true">
+    <div class="contact-ticker-track">
+      <div class="contact-ticker-item">24–48hr Response Time</div>
+      <div class="contact-ticker-item">Free Site Assessment</div>
+      <div class="contact-ticker-item">ISO Certified Fabrication</div>
+      <div class="contact-ticker-item">UAE Based Operations</div>
+      <div class="contact-ticker-item">20+ Years Experience</div>
+      <div class="contact-ticker-item">500+ Projects Delivered</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="contact-ticker-item">24–48hr Response Time</div>
+      <div class="contact-ticker-item">Free Site Assessment</div>
+      <div class="contact-ticker-item">ISO Certified Fabrication</div>
+      <div class="contact-ticker-item">UAE Based Operations</div>
+      <div class="contact-ticker-item">20+ Years Experience</div>
+      <div class="contact-ticker-item">500+ Projects Delivered</div>
+    </div>
+  </div>
 
-        <div class="contact-info-details">
-          <div class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
+  <!-- ======================================================
+       CONTACT MAIN — INFO + FORM
+  ====================================================== -->
+  <section class="contact-section" id="contact-form">
+    <div class="contact-layout">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info">
+        <div class="contact-info-label reveal">Contact</div>
+        <h2 class="contact-info-heading reveal stagger-1">
+          Get In<br><em>Touch</em>
+        </h2>
+        <p class="contact-info-desc reveal stagger-2">
+          Whether you need structural steel fabrication, custom ironworks, or industrial maintenance — our team at Mastech LLC is ready to assist with precision and urgency. Reach us directly through any of the channels below.
+        </p>
+
+        <!-- Three equal contact cards -->
+        <div class="contact-cards">
+
+          <div class="contact-card reveal stagger-1">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
               </svg>
             </div>
-            <div class="contact-info-text">
-              <h4>Headquarters</h4>
-              <p>P.O. Box 3534, Umm Al Quwain<br>United Arab Emirates</p>
-              <a href="https://maps.google.com" target="_blank">Get directions →</a>
+            <div class="contact-card-label">Phone</div>
+            <div class="contact-card-val">
+              <a href="tel:+971525816222">+971 52 581 6222</a>
+            </div>
+            <div class="contact-card-action">
+              <a href="tel:+971525816222">Call Now →</a>
             </div>
           </div>
 
-          <div class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <div class="contact-card reveal stagger-2">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
             </div>
-            <div class="contact-info-text">
-              <h4>Email Us</h4>
-              <p><a href="mailto:enquiries@mastech-uae.com">enquiries@mastech-uae.com</a></p>
-              <p><a href="mailto:procurement@mastech-uae.com">procurement@mastech-uae.com</a></p>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-val">
+              <a href="mailto:info@mastechllc.com">info@mastechllc.com</a>
+            </div>
+            <div class="contact-card-action">
+              <a href="mailto:info@mastechllc.com">Send Email →</a>
             </div>
           </div>
 
-          <div class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/>
+          <div class="contact-card reveal stagger-3">
+            <div class="contact-card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
-            <div class="contact-info-text">
-              <h4>Phone & WhatsApp</h4>
-              <p><a href="tel:+97168888888">+971 6 888 8888</a></p>
-              <p><a href="https://wa.me/97168888888">+971 6 888 8888 (WhatsApp)</a></p>
+            <div class="contact-card-label">Address</div>
+            <div class="contact-card-val">
+              P.O. Box 3534,<br/>Umm Al Quwain, UAE
+            </div>
+            <div class="contact-card-action">
+              <a href="https://maps.google.com/?q=Umm+Al+Quwain+UAE" target="_blank" rel="noopener">Get Directions →</a>
             </div>
           </div>
 
-          <div class="contact-info-card">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <div class="contact-info-text">
-              <h4>Working Hours</h4>
-              <p>Sunday – Thursday: 08:00 – 18:00 GST</p>
-              <p>Friday – Saturday: Closed (emergency support available)</p>
-            </div>
-          </div>
         </div>
 
-        <!-- Quick Actions -->
-        <div class="contact-quick-actions">
-          <a href="tel:+97168888888" class="quick-action-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
-            Call Now
-          </a>
-          <a href="https://wa.me/97168888888" target="_blank" class="quick-action-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            WhatsApp
-          </a>
-          <a href="mailto:enquiries@mastech-uae.com" class="quick-action-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
-          </a>
-        </div>
-
-        <!-- Social Links -->
-        <div class="contact-social">
-          <span>Follow us:</span>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
-          <a href="#">Twitter/X</a>
+        <div class="contact-hours-badge reveal stagger-4">
+          <div class="contact-hours-dot"></div>
+          Currently Open — Responding in &lt;2hrs
         </div>
       </div>
 
-      <!-- RIGHT COLUMN - Enquiry Form (Multi-step) -->
-      <div class="contact-form-panel reveal stagger-2">
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap reveal-scale">
+
+        <!-- Form header -->
         <div class="form-header">
-          <h3>Send an enquiry</h3>
-          <p>Fill out the form below. Our engineering team will respond within 24 hours.</p>
+          <div class="form-header-tag">Project Inquiry</div>
+          <h3 class="form-header-title">Tell Us About<br>Your Project</h3>
         </div>
 
-        <form id="contactForm" class="contact-form-modern" novalidate>
-          <!-- Step 1 - Service Selection -->
-          <div id="formStep1" class="form-step active">
-            <div class="form-group">
-              <label>Select Service *</label>
-              <div class="service-selector">
-                <label class="service-option">
-                  <input type="radio" name="service" value="mechanical">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/></svg>
-                    Mechanical
-                  </span>
-                </label>
-                <label class="service-option">
-                  <input type="radio" name="service" value="fabrication">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-                    Fabrication
-                  </span>
-                </label>
-                <label class="service-option">
-                  <input type="radio" name="service" value="oilgas">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="7" cy="6" r="2"/></svg>
-                    Oil & Gas
-                  </span>
-                </label>
-                <label class="service-option">
-                  <input type="radio" name="service" value="piping">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h3l3-9 3 18 3-9h3"/></svg>
-                    Pipework
-                  </span>
-                </label>
-                <label class="service-option">
-                  <input type="radio" name="service" value="project">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83"/></svg>
-                    Project Mgmt
-                  </span>
-                </label>
-                <label class="service-option">
-                  <input type="radio" name="service" value="other">
-                  <span class="service-option-inner">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/></svg>
-                    Other
-                  </span>
-                </label>
-              </div>
-            </div>
-            <button type="button" class="form-next-btn" onclick="nextStep(2)">Next Step →</button>
+        <!-- Success message (hidden by default) -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-
-          <!-- Step 2 - Project Details -->
-          <div id="formStep2" class="form-step">
-            <div class="form-row-2">
-              <div class="form-group">
-                <label>Budget Range</label>
-                <select id="budget">
-                  <option value="" disabled selected>Select range</option>
-                  <option>Under AED 100K</option>
-                  <option>AED 100K – 500K</option>
-                  <option>AED 500K – 2M</option>
-                  <option>AED 2M – 10M</option>
-                  <option>Over AED 10M</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Timeline</label>
-                <select id="timeline">
-                  <option value="" disabled selected>Select timeline</option>
-                  <option>Urgent (under 4 weeks)</option>
-                  <option>1 – 3 months</option>
-                  <option>3 – 6 months</option>
-                  <option>6 months +</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Project Overview *</label>
-              <textarea id="message" rows="4" placeholder="Describe your engineering challenge, specifications, or requirements..." required></textarea>
-            </div>
-            <div class="form-buttons">
-              <button type="button" class="form-back-btn" onclick="prevStep(1)">← Back</button>
-              <button type="button" class="form-next-btn" onclick="nextStep(3)">Next Step →</button>
-            </div>
-          </div>
-
-          <!-- Step 3 - Contact Information -->
-          <div id="formStep3" class="form-step">
-            <div class="form-row-2">
-              <div class="form-group">
-                <label>Full Name *</label>
-                <input type="text" id="name" placeholder="Your full name" required>
-              </div>
-              <div class="form-group">
-                <label>Company *</label>
-                <input type="text" id="company" placeholder="Your company" required>
-              </div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group">
-                <label>Email *</label>
-                <input type="email" id="email" placeholder="your@email.com" required>
-              </div>
-              <div class="form-group">
-                <label>Phone</label>
-                <input type="tel" id="phone" placeholder="+971 XX XXX XXXX">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>How did you find us?</label>
-              <select id="source">
-                <option value="" disabled selected>Select option</option>
-                <option>Referral / Word of mouth</option>
-                <option>LinkedIn</option>
-                <option>Google / Search</option>
-                <option>Trade show</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-buttons">
-              <button type="button" class="form-back-btn" onclick="prevStep(2)">← Back</button>
-              <button type="submit" class="form-submit-btn">Send Enquiry →</button>
-            </div>
-          </div>
-        </form>
-
-        <!-- Success Message -->
-        <div id="formSuccess" class="form-success-message">
-          <div class="success-icon">✓</div>
-          <h4>ENQUIRY SENT</h4>
-          <p>Thank you for reaching out. Our engineering team will respond within 24 hours.</p>
-          <button onclick="resetForm()" class="reset-form-btn">Send another enquiry</button>
+          <div class="form-success-title">Message Sent</div>
+          <p class="form-success-msg">
+            Thank you for reaching out. Our team will get back to you within 24–48 hours.
+          </p>
         </div>
+
+        <!-- The actual form -->
+        <div id="formBody">
+          <div class="form-grid">
+
+            <!-- Full Name -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="fname">Full Name</label>
+              <input class="form-input" type="text" id="fname" name="fname" placeholder="Your full name" autocomplete="name"/>
+            </div>
+
+            <!-- Email / Phone -->
+            <div class="form-field">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email"/>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+971 52 581 6222" autocomplete="tel"/>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" name="subject" placeholder="e.g. Steel fabrication inquiry"/>
+            </div>
+
+            <!-- Message -->
+            <div class="form-field form-field-full">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" maxlength="600" placeholder="Describe your project, timeline, and any specific requirements…"></textarea>
+              <div class="form-char-count" id="charCount">0 / 600</div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-submit-area">
+              <p class="form-privacy">
+                By submitting you agree to our <a href="#">Privacy Policy</a>. We never share your data with third parties.
+              </p>
+              <button class="btn-submit" type="button" id="submitBtn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-     MAP SECTION — Full width interactive
-  ============================================================ -->
-  <div class="map-section">
-    <div class="map-overlay"></div>
-    <div class="map-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115263.9!2d55.5948!3d25.5648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f2fb1ec03df5%3A0x2a0e7b3f64e58ab7!2sUmm%20Al%20Quwain%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1699000000000" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-        title="MASTECH Location">
-      </iframe>
+  <!-- ======================================================
+       LOCATION / MAP
+  ====================================================== -->
+  <section class="contact-location">
+    <div class="contact-location-inner">
+
+      <div class="contact-location-header reveal">
+        <div>
+          <div class="contact-location-label">Find Us</div>
+          <h2 class="contact-location-title">Our <em>Facility</em></h2>
+        </div>
+      </div>
+
+      <div class="contact-map-grid reveal-scale">
+        <div class="contact-map-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3993.5!2d55.5547!3d25.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f4b12a6e1e1b%3A0x0!2zVW1tIEFsIFF1d2FpbiwgVUFF!5e0!3m2!1sen!2sae!4v1680000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mastech LLC location — Umm Al Quwain, UAE">
+          </iframe>
+        </div>
+
+        <div class="contact-map-sidebar">
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Mailing Address</div>
+            <div class="map-sidebar-val">
+              P.O. Box 3534<br/>
+              Umm Al Quwain<br/>
+              United Arab Emirates
+            </div>
+          </div>
+
+          <div class="map-sidebar-divider"></div>
+
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Phone</div>
+            <div class="map-sidebar-val">
+              <a href="tel:+971525816222" style="color:inherit;text-decoration:none;">+971 52 581 6222</a>
+            </div>
+          </div>
+
+          <div class="map-sidebar-divider"></div>
+
+          <div class="map-sidebar-section">
+            <div class="map-sidebar-heading">Email</div>
+            <div class="map-sidebar-val">
+              <a href="mailto:info@mastechllc.com" style="color:inherit;text-decoration:none;">info@mastechllc.com</a>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Umm+Al+Quwain+UAE" target="_blank" rel="noopener" class="map-directions-btn">
+            <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="map-caption">
-      <div class="map-caption-content">
-        <span>MASTECH TECHNICAL IRON WORKS L.L.C</span>
-        <span>Umm Al Quwain Industrial Area — UAE</span>
+  </section>
+
+  <!-- ======================================================
+       FAQ
+  ====================================================== -->
+  <section class="contact-faq">
+    <div class="contact-faq-inner">
+
+      <div class="contact-faq-left">
+        <div class="contact-faq-label reveal">FAQ</div>
+        <h2 class="contact-faq-title reveal stagger-1">Common<br><em>Questions</em></h2>
+        <p class="contact-faq-desc reveal stagger-2">
+          Everything you need to know before getting in touch with our technical team.
+        </p>
+      </div>
+
+      <div class="faq-accordion reveal-right">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is your typical project turnaround time?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Turnaround depends on scope and complexity. Small fabrication jobs are typically completed within 5–10 working days, while large structural projects are scoped with detailed timelines during the quotation phase. We always respect agreed deadlines.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you provide a free site assessment?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. For projects within the UAE, we offer a complimentary site visit and technical assessment. Our engineers will evaluate the requirements and provide a comprehensive quote within 48 hours of the visit.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Which certifications does Mastech hold?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Mastech Technical Iron Works holds ISO 9001:2015 certification for quality management and complies with UAE Ministry of Economy trade regulations. All fabricated steel structures meet ASTM and BS EN standards.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can you handle both fabrication and on-site installation?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. We are a full-service operation — from design and fabrication at our Sharjah workshop to final installation and quality inspection on-site. We manage the entire process so you have one point of contact.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you work on residential projects?
+            <span class="faq-q-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. While our core focus is industrial and commercial fabrication, we also take on premium residential projects including custom gates, staircases, handrails, pergolas, and decorative ironworks for villas and high-end properties.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============================================================
-     CERTIFICATIONS STRIP
-  ============================================================ -->
-  <div class="contact-certs-strip">
-    <div class="contact-certs-track">
-      <span>ISO 9001:2024</span>
-      <span class="sep">●</span>
-      <span>ASME Section VIII</span>
-      <span class="sep">●</span>
-      <span>API Q1</span>
-      <span class="sep">●</span>
-      <span>OHSAS 45001</span>
-      <span class="sep">●</span>
-      <span>AWS D1.1</span>
-      <span class="sep">●</span>
-      <span>CE Marking</span>
-      <span class="sep">●</span>
-      <span>EN 1090</span>
-      <!-- duplicate for seamless -->
-      <span>ISO 9001:2024</span>
-      <span class="sep">●</span>
-      <span>ASME Section VIII</span>
-      <span class="sep">●</span>
-      <span>API Q1</span>
-      <span class="sep">●</span>
-      <span>OHSAS 45001</span>
-      <span class="sep">●</span>
-      <span>AWS D1.1</span>
-      <span class="sep">●</span>
-      <span>CE Marking</span>
-      <span class="sep">●</span>
-      <span>EN 1090</span>
-    </div>
-  </div>
-
-  <!-- ============================================================
-     CTA BANNER — Final prompt
-  ============================================================ -->
-  <div class="contact-cta-banner">
-    <div class="contact-cta-bg"></div>
-    <div class="contact-cta-content">
-      <h3>Urgent fabrication or maintenance need?</h3>
-      <p>Our emergency response team is available 24/7 for critical shutdowns and urgent repairs.</p>
-      <a href="tel:+97168888888" class="emergency-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
-        Emergency Contact
-      </a>
-    </div>
-  </div>
-
-  <!-- ============================================================
-     FOOTER
-  ============================================================ -->
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
   <footer>
-    <div class="footer-ring-wrap" aria-hidden="true"><div class="footer-ring"><div class="footer-ring-inner">EST<br>2007</div></div></div>
     <div class="footer-main">
-      <div class="footer-brand-col"><a href="index.html" class="footer-logo">MASTECH</a><p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p><div class="footer-certs"><div class="footer-cert-badge">ISO 9001</div><div class="footer-cert-badge">ASME VIII</div><div class="footer-cert-badge">API Q1</div><div class="footer-cert-badge">AWS D1.1</div></div></div>
-      <div class="footer-nav-col"><h5>Services</h5><ul><li><a href="services.html">Site Erection</a></li><li><a href="services.html">Pipe Fabrication</a></li><li><a href="services.html">Structural Steel</a></li><li><a href="services.html">Offshore Services</a></li><li><a href="services.html">Dismantling</a></li></ul></div>
-      <div class="footer-nav-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="about.html">Heritage</a></li><li><a href="contact.html">Careers</a></li></ul></div>
-      <div class="footer-contact-col"><h5>Get In Touch</h5><div class="footer-contact-item"><div class="footer-contact-label">Address</div><div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div></div><div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a></div><div class="footer-contact-item"><div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888 8888</a></div><div class="footer-newsletter"><p>Subscribe to project updates</p><form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email" placeholder="your@email.com"><button type="submit" class="footer-nl-btn">Subscribe →</button></form></div></div>
+
+      <!-- Brand column -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">MASTECH</a>
+        <p class="footer-tagline-text">
+          Precision fabrication and structural ironworks crafted for the demands of modern UAE industry. Built to last. Built to perform.
+        </p>
+        <div class="footer-certs">
+          <span class="footer-cert-badge">ISO 9001</span>
+          <span class="footer-cert-badge">ASTM</span>
+          <span class="footer-cert-badge">BS EN</span>
+          <span class="footer-cert-badge">UAE Certified</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-nav-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="https://mastechllc.com/service/on-and-offshore-services/" target="_blank" rel="noopener">On &amp; Offshore Services</a></li>
+          <li><a href="https://mastechllc.com/service/site-erection-installation-and-commissioning/" target="_blank" rel="noopener">Site Erection &amp; Installation</a></li>
+          <li><a href="https://mastechllc.com/service/project-management-services/" target="_blank" rel="noopener">Project Management</a></li>
+          <li><a href="https://mastechllc.com/service/dismantling-and-re-construction-of-plants-and-equipments/" target="_blank" rel="noopener">Dismantling &amp; Reconstruction</a></li>
+          <li><a href="https://mastechllc.com/service/fabrication-in-structural-and-tubular-steel/" target="_blank" rel="noopener">Structural Steel Fabrication</a></li>
+          <li><a href="https://mastechllc.com/service/fabrication-of-heavy-lifting-equipments/" target="_blank" rel="noopener">Heavy Lifting Equipment</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-nav-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://mastechllc.com/about-us/" target="_blank" rel="noopener">About Us</a></li>
+          <li><a href="https://mastechllc.com/our-services/" target="_blank" rel="noopener">Our Services</a></li>
+          <li><a href="https://mastechllc.com/our-infrastructure/" target="_blank" rel="noopener">Our Infrastructure</a></li>
+          <li><a href="https://mastechllc.com/company-trade-license/" target="_blank" rel="noopener">Trade License</a></li>
+          <li><a href="https://mastechllc.com/membership-certificate/" target="_blank" rel="noopener">Membership Certificate</a></li>
+          <li><a href="https://mastechllc.com/contact-us/" target="_blank" rel="noopener">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:info@mastechllc.com" class="footer-contact-val">info@mastechllc.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <a href="tel:+971525816222" class="footer-contact-val">+971 52 581 6222</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Address</span>
+          <span class="footer-contact-val">P.O. Box 3534,<br/>Umm Al Quwain, UAE</span>
+        </div>
+
+        <div class="footer-newsletter">
+          <p>Industry updates &amp; project news</p>
+          <div class="footer-nl-form">
+            <input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Newsletter email"/>
+            <button class="footer-nl-btn" type="button">Subscribe →</button>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-bottom"><div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><div class="footer-socials"><a href="#" class="footer-social-btn">in</a><a href="#" class="footer-social-btn">ig</a><a href="#" class="footer-social-btn">𝕏</a></div></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; 2021 Mastech For Technical Iron Works L.L.C. All rights reserved.<br/>
+        P.O. Box 3534, Umm Al Quwain, United Arab Emirates.<br/>
+        Trade License No. 4840 &nbsp;|&nbsp; Designed with love by <a href="https://bienterprises.co" target="_blank" rel="noopener" style="color:rgba(255,255,255,.3);text-decoration:none;">Bi. Enterprises</a>
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram">ig</a>
+        <a href="#" class="footer-social-btn" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+
+    <!-- Decorative ring -->
+    <div class="footer-ring-wrap" aria-hidden="true">
+      <div class="footer-ring">
+        <div class="footer-ring-inner">MASTECH<br/>IRON WORKS</div>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- ======================================================
+       SCRIPTS
+  ====================================================== -->
   <script>
-    // Multi-step form handling
-    let currentStep = 1;
-    const totalSteps = 3;
-
-    function showStep(step) {
-      for (let i = 1; i <= totalSteps; i++) {
-        const el = document.getElementById(`formStep${i}`);
-        if (el) el.classList.remove('active');
-      }
-      const currentStepEl = document.getElementById(`formStep${step}`);
-      if (currentStepEl) currentStepEl.classList.add('active');
-      currentStep = step;
-    }
-
-    function nextStep(step) {
-      showStep(step);
-    }
-
-    function prevStep(step) {
-      showStep(step);
-    }
-
-    // Form submission
-    const form = document.getElementById('contactForm');
-    const successDiv = document.getElementById('formSuccess');
-
-    function resetForm() {
-      form.reset();
-      form.style.display = 'block';
-      successDiv.classList.remove('show');
-      showStep(1);
-      // Clear radio selection
-      document.querySelectorAll('input[name="service"]').forEach(r => r.checked = false);
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Simple validation
-      const serviceSelected = document.querySelector('input[name="service"]:checked');
-      const name = document.getElementById('name')?.value.trim();
-      const email = document.getElementById('email')?.value.trim();
-      const message = document.getElementById('message')?.value.trim();
-      
-      if (!serviceSelected) {
-        alert('Please select a service');
-        return;
-      }
-      if (!name) {
-        alert('Please enter your name');
-        return;
-      }
-      if (!email) {
-        alert('Please enter your email');
-        return;
-      }
-      if (!message) {
-        alert('Please describe your project');
-        return;
-      }
-      
-      // Simulate form submission
-      form.style.display = 'none';
-      successDiv.classList.add('show');
-    });
-
-    // Scroll reveal + progress bar
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('progressBar');
     window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      const progressBar = document.getElementById('progressBar');
-      if(progressBar) progressBar.style.width = scrolled + '%';
-    });
+      const pct = (window.scrollY / (document.body.scrollHeight - innerHeight)) * 100;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
 
-    // Split letters hero
-    const heroTitle = document.querySelector('.contact-hero-title');
-    if(heroTitle && heroTitle.classList.contains('split-letters')) {
-      const text = heroTitle.innerText;
-      heroTitle.innerHTML = text.split('').map((char, i) => 
-        char === ' ' ? ' ' : `<span class="char" style="--i:${i}">${char}</span>`
-      ).join('');
-      setTimeout(() => heroTitle.classList.add('visible'), 100);
-    }
+    /* ---- Nav scroll state ---- */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
 
-    // Split words
-    document.querySelectorAll('.split-words').forEach(el => {
-      const words = el.innerText.split(' ');
-      el.innerHTML = words.map((word, i) => `<span class="word" style="--i:${i}"><span>${word}</span></span>`).join(' ');
-      setTimeout(() => el.classList.add('visible'), 100);
-    });
-
-    // Reveal observer
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealElements.forEach(el => observer.observe(el));
-
-    // Mobile menu
-    const hamburger = document.getElementById('navHamburger');
+    /* ---- Hamburger / mobile menu ---- */
+    const burger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    if(hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        mobileMenu.classList.toggle('open');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    /* ---- Scroll reveal ---- */
+    const revealClasses = ['.reveal', '.reveal-left', '.reveal-right', '.reveal-scale', '.reveal-clip', '.reveal-blur', '.split-letters', '.split-words', '.section-label'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealClasses.forEach(cls => document.querySelectorAll(cls).forEach(el => observer.observe(el)));
+
+    /* ---- Split letter animation setup ---- */
+    document.querySelectorAll('.split-letters').forEach(el => {
+      if (el.dataset.splitDone) return;
+      el.dataset.splitDone = '1';
+      el.querySelectorAll('span:not(.char)').forEach(line => {
+        const text = line.textContent;
+        line.innerHTML = text.split('').map((c, i) =>
+          c === ' ' ? ' ' : `<span class="char" style="--i:${i}">${c}</span>`
+        ).join('');
+      });
+    });
+
+    /* ---- Floating particles ---- */
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 2;
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        animation-duration: ${14 + Math.random() * 20}s;
+        animation-delay: ${Math.random() * 14}s;
+        opacity: ${Math.random() * 0.4 + 0.1};
+      `;
+      container.appendChild(p);
+    }
+
+    /* ---- Char count for textarea ---- */
+    const msg = document.getElementById('message');
+    const counter = document.getElementById('charCount');
+    if (msg && counter) {
+      msg.addEventListener('input', () => {
+        const len = msg.value.length;
+        counter.textContent = len + ' / 600';
+        counter.classList.toggle('near', len > 520);
       });
     }
+
+    /* ---- Form submit (demo) ---- */
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!fname || !email) {
+        // Simple shake feedback
+        const wrap = document.querySelector('.contact-form-wrap');
+        wrap.style.animation = 'none';
+        wrap.style.transition = 'transform .1s';
+        [0,1,2,3].forEach((i) => {
+          setTimeout(() => { wrap.style.transform = i % 2 === 0 ? 'translateX(-6px)' : 'translateX(6px)'; }, i * 80);
+        });
+        setTimeout(() => { wrap.style.transform = ''; }, 360);
+        return;
+      }
+      document.getElementById('formBody').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    });
+
+    /* ---- FAQ accordion ---- */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
   </script>
 </body>
 </html>
