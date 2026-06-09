@@ -1,512 +1,836 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASTECH — Projects | Precision Engineering & Steel Fabrication Portfolio</title>
-  <meta name="description" content="Explore our portfolio of completed projects — from industrial plant erection to offshore platforms, structural steel fabrication, and oil & gas infrastructure across the UAE and beyond.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/project.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects — Mastech Technical Iron Works L.L.C</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/project.css" />
 </head>
 <body>
 
-  <!-- Progress Bar -->
+  <!-- SCROLL PROGRESS BAR -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Ambient Shapes -->
+  <!-- AMBIENT SHAPES -->
   <div class="ambient-shapes">
     <div class="ambient-blob ambient-1"></div>
     <div class="ambient-blob ambient-2"></div>
     <div class="ambient-blob ambient-3"></div>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
-    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
-    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="process.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
-    <a href="project.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-    <button class="mobile-cta" onclick="window.location.href='contact.html';">Get a Quote</button>
-  </div>
+  <!-- FLOATING PARTICLES -->
+  <div class="floating-particles" id="particles"></div>
 
-  <!-- Navigation -->
-  <nav id="mainNav">
-    <a href="index.html" class="logo">MASTECH<div class="logo-dot"></div></a>
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-dot"></span>
+      Mastech
+    </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="project.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
     </div>
-    <button class="nav-cta" onclick="window.location.href='contact.html'">Get a quote</button>
-    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+    <button class="nav-cta" onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})">
+      Get Quote
+    </button>
+    <div class="nav-hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
-  <!-- ============================================================
-     PROJECTS HERO — Full viewport industrial visual
-  ============================================================ -->
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="projects.html" onclick="closeMobileMenu()">Projects</a>
+    <a href="index.html#services" onclick="closeMobileMenu()">Services</a>
+    <a href="index.html#about" onclick="closeMobileMenu()">About</a>
+    <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+    <button class="mobile-cta">Get a Quote</button>
+  </div>
+
+  <!-- ================================================
+       HERO
+  ================================================ -->
   <section class="projects-hero">
-    <div class="projects-hero-bg">
-      <div class="projects-hero-overlay"></div>
-      <div class="projects-hero-pattern"></div>
-    </div>
-    <div class="projects-hero-content">
-      <div class="projects-hero-badge">
-        <span class="projects-hero-badge-line"></span>
-        FEATURED DELIVERIES
-      </div>
-      <h1 class="projects-hero-title split-letters">
-        BUILT TO<br>
-        <span class="projects-hero-accent">LAST.</span>
-      </h1>
-      <p class="projects-hero-desc split-words">A portfolio of excellence spanning 18+ years — from critical oil & gas infrastructure to complex industrial fabrication, each project reflects our commitment to precision, safety, and on-time delivery.</p>
-      <div class="projects-hero-stats">
-        <div class="projects-hero-stat">
-          <span class="projects-hero-stat-num">487+</span>
-          <span class="projects-hero-stat-label">Projects Delivered</span>
-        </div>
-        <div class="projects-hero-stat">
-          <span class="projects-hero-stat-num">98%</span>
-          <span class="projects-hero-stat-label">On-Time Delivery</span>
-        </div>
-        <div class="projects-hero-stat">
-          <span class="projects-hero-stat-num">32+</span>
-          <span class="projects-hero-stat-label">Satisfied Clients</span>
-        </div>
-      </div>
-    </div>
-    <div class="projects-hero-scroll">
-      <div class="projects-hero-scroll-dot"></div>
-      <span>VIEW PORTFOLIO</span>
-    </div>
-  </section>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-deco-number">28</div>
 
-  <!-- ============================================================
-     PROJECT FILTERS
-  ============================================================ -->
-  <div class="projects-filter-section">
-    <div class="projects-filter-container">
-      <div class="filter-label">FILTER BY SECTOR</div>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="oil-gas">Oil & Gas</button>
-        <button class="filter-btn" data-filter="steel">Steel Fabrication</button>
-        <button class="filter-btn" data-filter="industrial">Industrial</button>
-        <button class="filter-btn" data-filter="offshore">Offshore</button>
-      </div>
-    </div>
-  </div>
+    <div class="hero-eyebrow reveal">Portfolio</div>
 
-  <!-- ============================================================
-     PROJECTS MASONRY GRID — Featured Projects
-  ============================================================ -->
-  <section class="projects-gallery-section">
-    <div class="projects-gallery-container">
-      
-      <!-- Project 1 - Abu Dhabi Industrial Zone (Large) -->
-      <div class="project-card large" data-category="steel">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/abu.jpg" alt="Abu Dhabi Industrial Zone" loading="lazy" onerror="this.src='https://placehold.co/800x600/1c1c1e/c8a96e?text=Abu+Dhabi+Industrial+Zone'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Steel Fabrication</div>
-          <h3 class="project-card-title">Abu Dhabi Industrial Zone</h3>
-          <div class="project-card-location">KIZAD, Abu Dhabi — UAE</div>
-          <p class="project-card-desc">Complete structural steel fabrication and erection for a 45,000 m² industrial complex. Delivered 3,200 tons of steel with ±0.5mm precision.</p>
-          <div class="project-card-stats">
-            <span>3,200 tons</span>
-            <span>6 months</span>
-            <span>ISO 9001</span>
-          </div>
-          <a href="contact.html" class="project-card-link">View Case Study →</a>
-        </div>
-      </div>
+    <h1 class="projects-hero-title">
+      <span class="hero-title-row split-words">
+        <span class="word"><span>Our</span></span>&nbsp;<span class="word"><span>Completed</span></span>
+      </span>
+      <div class="hero-title-gap"></div>
+      <em class="split-words"><span class="word"><span>Projects</span></span></em>
+    </h1>
 
-      <!-- Project 2 - Ruwais Refinery Upgrade -->
-      <div class="project-card" data-category="oil-gas">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/ruwais.jpg" alt="Ruwais Refinery" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Ruwais+Refinery'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Oil & Gas</div>
-          <h3 class="project-card-title">Ruwais Refinery Upgrade</h3>
-          <div class="project-card-location">ADNOC, Ruwais — UAE</div>
-          <p class="project-card-desc">Major turnaround and piping replacement for one of the region's largest refineries.</p>
-          <div class="project-card-stats">
-            <span>12 km piping</span>
-            <span>ASME IX</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
+    <p class="hero-subtitle reveal stagger-2">
+      Precision-crafted metalwork that defines skylines, secures properties,
+      and stands the test of time — every weld, every cut, every finish.
+    </p>
 
-      <!-- Project 3 - Jebel Ali Port Expansion -->
-      <div class="project-card" data-category="industrial">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/jebel_ali.jpg" alt="Jebel Ali Port" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Jebel+Ali+Port'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Heavy Fabrication</div>
-          <h3 class="project-card-title">Port Terminal Expansion</h3>
-          <div class="project-card-location">Jebel Ali, Dubai — UAE</div>
-          <p class="project-card-desc">Fabrication and installation of heavy-duty gantry crane rails and terminal structures.</p>
-          <div class="project-card-stats">
-            <span>2,800 tons</span>
-            <span>AWS D1.1</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Project 4 - Offshore Platform (New) -->
-      <div class="project-card" data-category="offshore">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/offshore.jpg" alt="Offshore Platform" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Offshore+Platform'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Offshore</div>
-          <h3 class="project-card-title">Upper Zakum Offshore Platform</h3>
-          <div class="project-card-location">ADNOC Offshore — UAE</div>
-          <p class="project-card-desc">Fabrication and installation of topside modules and subsea piping for one of the world's largest offshore fields.</p>
-          <div class="project-card-stats">
-            <span>4,500 tons</span>
-            <span>API Q1</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Project 5 - Power Plant Piping -->
-      <div class="project-card" data-category="oil-gas">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/power-plant.jpg" alt="Power Plant Piping" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Power+Plant+Piping'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Pipework</div>
-          <h3 class="project-card-title">Al Mirfa Power Plant Piping</h3>
-          <div class="project-card-location">Al Mirfa, Abu Dhabi — UAE</div>
-          <p class="project-card-desc">High-pressure steam and water piping fabrication and installation. GTAW welding with 100% RT inspection.</p>
-          <div class="project-card-stats">
-            <span>8 km piping</span>
-            <span>ASME B31.1</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Project 6 - Steel Bridge Structure -->
-      <div class="project-card" data-category="steel">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/bridge.jpg" alt="Steel Bridge" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Steel+Bridge'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Structural Steel</div>
-          <h3 class="project-card-title">Shindagha Bridge Steelwork</h3>
-          <div class="project-card-location">Dubai Creek — UAE</div>
-          <p class="project-card-desc">Complex curved steel box girder fabrication and site erection for a landmark bridge project.</p>
-          <div class="project-card-stats">
-            <span>1,800 tons</span>
-            <span>EN 1090</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Project 7 - Plant Dismantling -->
-      <div class="project-card" data-category="industrial">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/dismantling.jpg" alt="Plant Dismantling" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Plant+Dismantling'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Dismantling</div>
-          <h3 class="project-card-title">Fertilizer Plant Decommissioning</h3>
-          <div class="project-card-location">Ruwais, Abu Dhabi — UAE</div>
-          <p class="project-card-desc">Complete dismantling, relocation, and reconstruction of a 25-year-old process unit.</p>
-          <div class="project-card-stats">
-            <span>2,200 tons</span>
-            <span>Zero LTI</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Project 8 - Storage Tank Farm -->
-      <div class="project-card" data-category="oil-gas">
-        <div class="project-card-image">
-          <img src="assets/img/gallery/tank-farm.jpg" alt="Storage Tank Farm" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=Storage+Tank+Farm'">
-        </div>
-        <div class="project-card-overlay">
-          <div class="project-card-category">Storage Tanks</div>
-          <h3 class="project-card-title">Hamriyah Tank Farm</h3>
-          <div class="project-card-location">Hamriyah Free Zone — UAE</div>
-          <p class="project-card-desc">Fabrication and erection of 6 API 650 storage tanks with a total capacity of 120,000 m³.</p>
-          <div class="project-card-stats">
-            <span>120K m³</span>
-            <span>API 650</span>
-          </div>
-          <a href="contact.html" class="project-card-link">Learn More →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Load More Button -->
-    <div class="load-more-container">
-      <button class="load-more-btn" id="loadMoreBtn">Load More Projects →</button>
-    </div>
-  </section>
-
-  <!-- ============================================================
-     KEY METRICS SECTION
-  ============================================================ -->
-  <div class="project-metrics">
-    <div class="project-metrics-inner">
-      <div class="project-metric reveal">
-        <div class="project-metric-num">487</div>
-        <div class="project-metric-label">Projects Completed</div>
-      </div>
-      <div class="project-metric reveal stagger-2">
-        <div class="project-metric-num">98<sup>%</sup></div>
-        <div class="project-metric-label">On-Time Delivery</div>
-      </div>
-      <div class="project-metric reveal stagger-3">
-        <div class="project-metric-num">12,500</div>
-        <div class="project-metric-label">Tons Monthly Capacity</div>
-      </div>
-      <div class="project-metric reveal stagger-4">
-        <div class="project-metric-num">100<sup>%</sup></div>
-        <div class="project-metric-label">HSE Compliance</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
-     TESTIMONIALS SECTION
-  ============================================================ -->
-  <section class="testimonials-section">
-    <div class="testimonials-container">
-      <div class="testimonials-header">
-        <div class="section-label reveal">Client Voices</div>
-        <h2 class="section-title reveal stagger-1 split-words">Trusted by <em>industry</em><br>leaders.</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="testimonial-quote">“</div>
-          <p class="testimonial-text">MASTECH delivered a complex piping package for our refinery turnaround with zero safety incidents and ahead of schedule. Their technical expertise and project management are exceptional.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-author-name">Ahmed Al Falasi</div>
-            <div class="testimonial-author-title">Project Director, ADNOC</div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal stagger-2">
-          <div class="testimonial-quote">“</div>
-          <p class="testimonial-text">The steel structure for our new industrial facility was fabricated and erected flawlessly. MASTECH's attention to detail and quality control is unmatched in the region.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-author-name">Sarah Al Marzouqi</div>
-            <div class="testimonial-author-title">Operations Director, STRABAG</div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal stagger-3">
-          <div class="testimonial-quote">“</div>
-          <p class="testimonial-text">We've partnered with MASTECH on multiple offshore projects. Their fabrication quality and on-site installation teams consistently exceed expectations.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-author-name">James O'Connor</div>
-            <div class="testimonial-author-title">Project Manager, McDermott</div>
-          </div>
-        </div>
+    <!-- Scroll hint — bottom right -->
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-     CERTIFICATIONS STRIP
-  ============================================================ -->
-  <div class="projects-certs-strip">
-    <div class="projects-certs-track">
-      <span>ISO 9001:2024</span>
-      <span class="sep">●</span>
-      <span>ASME Section VIII</span>
-      <span class="sep">●</span>
-      <span>API Q1</span>
-      <span class="sep">●</span>
-      <span>OHSAS 45001</span>
-      <span class="sep">●</span>
-      <span>AWS D1.1</span>
-      <span class="sep">●</span>
-      <span>CE Marking</span>
-      <span class="sep">●</span>
-      <span>EN 1090</span>
-      <span class="sep">●</span>
-      <span>API 650</span>
-      <span class="sep">●</span>
-      <span>ASME B31.3</span>
+  <!-- ================================================
+       TICKER STRIP
+  ================================================ -->
+  <div class="ticker-strip">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-item"><span class="ticker-star">✦</span> Custom Fabrication <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Steel Gates &amp; Railings <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Industrial Structures <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Architectural Metalwork <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Security Doors <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Ornamental Ironwork <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Custom Fabrication <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Steel Gates &amp; Railings <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Industrial Structures <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Architectural Metalwork <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Security Doors <span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-star">✦</span> Ornamental Ironwork <span class="ticker-dot"></span></div>
     </div>
   </div>
 
-  <!-- ============================================================
-     CTA BANNER
-  ============================================================ -->
-  <div class="projects-cta">
-    <div class="projects-cta-bg"></div>
-    <div class="projects-cta-content">
-      <div class="projects-cta-label">READY TO START YOUR PROJECT?</div>
-      <h2 class="projects-cta-title">Let's discuss your<br><em>next milestone</em></h2>
-      <div class="projects-cta-buttons">
-        <a href="contact.html" class="projects-cta-primary">Request a consultation →</a>
-        <a href="tel:+97168888888" class="projects-cta-secondary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
-          Call us
+  <!-- ================================================
+       FEATURED PROJECTS
+  ================================================ -->
+  <section class="projects-section" id="projects">
+    <div class="projects-section-head">
+      <div class="reveal">
+        <div class="section-label">Featured Work</div>
+        <div class="projects-count">
+          28<sup>+ Projects</sup>
+        </div>
+      </div>
+      <div class="projects-filter reveal stagger-2">
+        <button class="filter-pill active" data-filter="all">All Work</button>
+        <button class="filter-pill" data-filter="gates">Gates</button>
+        <button class="filter-pill" data-filter="railings">Railings</button>
+        <button class="filter-pill" data-filter="industrial">Industrial</button>
+        <button class="filter-pill" data-filter="custom">Custom</button>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Card 1 -->
+      <article class="project-card reveal" data-category="gates">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-steel-gates"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Steel Gates</span>
+          <h3 class="project-card-title">Grand Estate Security Gates</h3>
+          <p class="project-card-desc">
+            Double-leaf ornamental steel gates with automated access control,
+            featuring hand-forged spear tips and a powder-coated satin black finish
+            for a luxury residential compound in Dubai.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Dubai, UAE</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2024</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Material</span>
+              <span class="project-meta-val">Mild Steel</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project-card reveal stagger-2" data-category="railings">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-ornamental"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Railings</span>
+          <h3 class="project-card-title">Curved Staircase Balustrade</h3>
+          <p class="project-card-desc">
+            Helical wrought-iron balustrade with hand-scrolled decorative
+            panels, finished in antique bronze for a heritage villa renovation.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Sharjah, UAE</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2024</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="project-card reveal stagger-3" data-category="industrial">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-industrial"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Industrial</span>
+          <h3 class="project-card-title">Structural Steel Framework</h3>
+          <p class="project-card-desc">
+            Heavy-duty I-beam framework for a commercial warehouse complex,
+            engineered to carry 40-tonne overhead crane loads.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Abu Dhabi, UAE</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2023</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="project-card reveal" data-category="custom">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-architectural"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Architectural</span>
+          <h3 class="project-card-title">Arched Window Grilles</h3>
+          <p class="project-card-desc">
+            Custom arched window grilles matching 1920s colonial architecture,
+            hot-dip galvanised for corrosion resistance in coastal climate.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Ajman, UAE</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2023</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="project-card reveal stagger-2" data-category="custom">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-custom"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Custom</span>
+          <h3 class="project-card-title">Spiral Feature Staircase</h3>
+          <p class="project-card-desc">
+            Bespoke spiral staircase with floating oak treads and a central
+            steel spine — a statement piece for a penthouse interior.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Dubai, UAE</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2024</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="project-card reveal stagger-3" data-category="gates">
+        <div class="project-card-image">
+          <div class="project-card-image-inner img-security"></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-category-badge">Security Gates</span>
+          <h3 class="project-card-title">Industrial Perimeter Security</h3>
+          <p class="project-card-desc">
+            500-metre sliding gate system with automated motorised panels,
+            vehicle access management, and anti-climb powder-coated picket
+            fencing for a logistics hub.
+          </p>
+          <div class="project-card-meta">
+            <div class="project-meta-item">
+              <span class="project-meta-label">Scale</span>
+              <span class="project-meta-val">500m</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Year</span>
+              <span class="project-meta-val">2023</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="project-meta-label">Location</span>
+              <span class="project-meta-val">Abu Dhabi</span>
+            </div>
+            <div class="project-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+  </section>
+
+  <!-- ================================================
+       STATISTICS
+  ================================================ -->
+  <section class="stats-section">
+    <div class="stats-header">
+      <div class="section-label reveal" style="justify-content:center;">Numbers That Speak</div>
+      <h2 class="stats-title reveal stagger-2">
+        Proven <em>Excellence</em>
+      </h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <span class="stat-icon">⚙</span>
+        <div class="stat-number">
+          <span class="counter" data-target="280">0</span><span class="stat-suffix">+</span>
+        </div>
+        <div class="stat-label">Projects Completed</div>
+        <div class="stat-sublabel">Across UAE &amp; GCC</div>
+      </div>
+      <div class="stat-card reveal stagger-2">
+        <span class="stat-icon">◈</span>
+        <div class="stat-number">
+          <span class="counter" data-target="15">0</span><span class="stat-suffix">+</span>
+        </div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-sublabel">In Metal Fabrication</div>
+      </div>
+      <div class="stat-card reveal stagger-3">
+        <span class="stat-icon">◎</span>
+        <div class="stat-number">
+          <span class="counter" data-target="140">0</span><span class="stat-suffix">+</span>
+        </div>
+        <div class="stat-label">Happy Clients</div>
+        <div class="stat-sublabel">Residential &amp; Commercial</div>
+      </div>
+      <div class="stat-card reveal stagger-4">
+        <span class="stat-icon">▲</span>
+        <div class="stat-number">
+          <span class="counter" data-target="38">0</span>
+        </div>
+        <div class="stat-label">Expert Craftsmen</div>
+        <div class="stat-sublabel">Certified &amp; Trained</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       GALLERY — Uniform Professional Card Grid
+  ================================================ -->
+  <section class="gallery-section">
+    <div class="gallery-head">
+      <div class="reveal">
+        <div class="section-label">Project Gallery</div>
+        <h2 class="section-title">
+          The <em>Craft</em><br>In Detail
+        </h2>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Card 1 -->
+      <article class="gallery-card reveal">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-1"></div>
+          <span class="gallery-card-tag">Steel Gates</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Gates &amp; Entrances</div>
+          <h3 class="gallery-card-title">Ornamental Estate Gates</h3>
+          <p class="gallery-card-desc">
+            Double-leaf powder-coated mild steel gates with hand-forged spear
+            tips and integrated motorised access control for a luxury compound.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Dubai, UAE · 2024</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="gallery-card reveal stagger-2">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-2"></div>
+          <span class="gallery-card-tag">Industrial</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Structural Fabrication</div>
+          <h3 class="gallery-card-title">Heavy Steel Framework</h3>
+          <p class="gallery-card-desc">
+            I-beam structural framework engineered to carry 40-tonne overhead
+            crane loads across a commercial warehouse complex.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Abu Dhabi, UAE · 2023</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="gallery-card reveal stagger-3">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-3"></div>
+          <span class="gallery-card-tag">Architectural</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Architectural Metalwork</div>
+          <h3 class="gallery-card-title">Arched Window Grilles</h3>
+          <p class="gallery-card-desc">
+            Custom colonial-style arched grilles, hot-dip galvanised for full
+            corrosion resistance in a high-humidity coastal environment.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Ajman, UAE · 2023</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="gallery-card reveal">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-4"></div>
+          <span class="gallery-card-tag">Security</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Perimeter Security</div>
+          <h3 class="gallery-card-title">Industrial Sliding Gate System</h3>
+          <p class="gallery-card-desc">
+            500-metre motorised sliding gate perimeter with anti-climb fencing
+            and vehicle access management for a logistics hub.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Abu Dhabi, UAE · 2023</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="gallery-card reveal stagger-2">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-5"></div>
+          <span class="gallery-card-tag">Railings</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Balustrades &amp; Railings</div>
+          <h3 class="gallery-card-title">Curved Staircase Balustrade</h3>
+          <p class="gallery-card-desc">
+            Helical wrought-iron balustrade with hand-scrolled decorative
+            panels in antique bronze finish for a heritage villa renovation.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Sharjah, UAE · 2024</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="gallery-card reveal stagger-3">
+        <div class="gallery-card-img">
+          <div class="gallery-card-img-inner gimg-6"></div>
+          <span class="gallery-card-tag">Custom</span>
+        </div>
+        <div class="gallery-card-body">
+          <div class="gallery-card-category">Custom Fabrication</div>
+          <h3 class="gallery-card-title">Spiral Feature Staircase</h3>
+          <p class="gallery-card-desc">
+            Bespoke spiral staircase with floating oak treads and a precision-
+            welded central steel spine — a signature piece for a penthouse.
+          </p>
+          <div class="gallery-card-footer">
+            <span class="gallery-card-meta">Dubai, UAE · 2024</span>
+            <div class="gallery-card-arrow">↗</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       PROCESS TIMELINE
+  ================================================ -->
+  <section class="process-section">
+    <div class="process-bg-word">PROCESS</div>
+
+    <div class="process-head">
+      <div class="section-label reveal" style="justify-content:center;">How We Work</div>
+      <h2 class="section-title reveal stagger-2" style="text-align:center;">
+        From Concept to<br><em>Installation</em>
+      </h2>
+    </div>
+
+    <div class="process-timeline reveal" id="processTimeline">
+
+      <div class="process-step stagger-1">
+        <div class="process-step-num">
+          01
+          <span class="process-step-icon">✦</span>
+        </div>
+        <div>
+          <div class="process-step-label">Consultation</div>
+          <p class="process-step-desc">
+            Site visit, measurements, material discussions and
+            full specification review with our senior engineer.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step stagger-2">
+        <div class="process-step-num">
+          02
+          <span class="process-step-icon">✦</span>
+        </div>
+        <div>
+          <div class="process-step-label">Design</div>
+          <p class="process-step-desc">
+            CAD drawings and 3D renders for client approval,
+            ensuring structural integrity and aesthetic precision.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step stagger-3">
+        <div class="process-step-num">
+          03
+          <span class="process-step-icon">✦</span>
+        </div>
+        <div>
+          <div class="process-step-label">Fabrication</div>
+          <p class="process-step-desc">
+            In-house workshop production using premium grade steel
+            with precision cutting, welding, and forming.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step stagger-4">
+        <div class="process-step-num">
+          04
+          <span class="process-step-icon">✦</span>
+        </div>
+        <div>
+          <div class="process-step-label">Installation</div>
+          <p class="process-step-desc">
+            Expert on-site installation by our certified team,
+            fully insured with zero-compromise safety standards.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step stagger-5">
+        <div class="process-step-num">
+          05
+          <span class="process-step-icon">✦</span>
+        </div>
+        <div>
+          <div class="process-step-label">Quality Check</div>
+          <p class="process-step-desc">
+            Final inspection, coating verification, and client
+            handover with a full warranty certificate.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       CTA SECTION
+  ================================================ -->
+  <section class="cta-section" id="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-inner">
+      <div class="cta-overline reveal">Ready to Build?</div>
+      <h2 class="cta-title reveal stagger-2">
+        Start Your
+        <em>Project</em>
+      </h2>
+      <p class="cta-desc reveal stagger-3">
+        From a single ornamental gate to an industrial-scale
+        security perimeter — our team is ready to bring your
+        vision to life with uncompromising craftsmanship.
+      </p>
+      <div class="cta-buttons reveal stagger-4">
+        <a href="index.html#contact" class="cta-btn-primary">
+          <span>Start Your Project</span>
         </a>
+        <a href="tel:+971525816222" class="cta-btn-secondary">Call Us Now</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============================================================
-     FOOTER
-  ============================================================ -->
+  <!-- ================================================
+       FOOTER
+  ================================================ -->
   <footer>
-    <div class="footer-ring-wrap" aria-hidden="true"><div class="footer-ring"><div class="footer-ring-inner">EST<br>2007</div></div></div>
     <div class="footer-main">
-      <div class="footer-brand-col"><a href="index.html" class="footer-logo">MASTECH</a><p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p><div class="footer-certs"><div class="footer-cert-badge">ISO 9001</div><div class="footer-cert-badge">ASME VIII</div><div class="footer-cert-badge">API Q1</div><div class="footer-cert-badge">AWS D1.1</div></div></div>
-      <div class="footer-nav-col"><h5>Services</h5><ul><li><a href="services.html">Site Erection</a></li><li><a href="services.html">Pipe Fabrication</a></li><li><a href="services.html">Structural Steel</a></li><li><a href="services.html">Offshore Services</a></li><li><a href="services.html">Dismantling</a></li></ul></div>
-      <div class="footer-nav-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="project.html">Projects</a></li><li><a href="about.html">Heritage</a></li><li><a href="contact.html">Careers</a></li></ul></div>
-      <div class="footer-contact-col"><h5>Get In Touch</h5><div class="footer-contact-item"><div class="footer-contact-label">Address</div><div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div></div><div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a></div><div class="footer-contact-item"><div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888 8888</a></div><div class="footer-newsletter"><p>Subscribe to project updates</p><form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit" class="footer-nl-btn">Subscribe →</button></form></div></div>
+      <!-- Brand -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">Mastech</a>
+        <p class="footer-tagline-text">
+          Precision metalwork and technical iron fabrication across the UAE.
+          Building structures that endure — details that define spaces and
+          stand the test of time.
+        </p>
+        <div class="footer-certs">
+          <span class="footer-cert-badge">ISO 9001</span>
+          <span class="footer-cert-badge">ASTM</span>
+          <span class="footer-cert-badge">BS EN</span>
+          <span class="footer-cert-badge">UAE Certified</span>
+          <span class="footer-cert-badge">Dubai Civil Defence</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-nav-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Steel Gates</a></li>
+          <li><a href="#">Railings &amp; Balustrades</a></li>
+          <li><a href="#">Window Grilles</a></li>
+          <li><a href="#">Structural Steel</a></li>
+          <li><a href="#">Custom Fabrication</a></li>
+          <li><a href="#">Security Fencing</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-nav-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#">Certifications</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact-col">
+        <h5>Get In Touch</h5>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Address</span>
+          <span class="footer-contact-val">P.O. Box 3534, Umm Al Quwain, UAE</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Phone</span>
+          <a href="tel:+971525816222" class="footer-contact-val">+971 52 581 6222</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:info@mastechllc.com" class="footer-contact-val">info@mastechllc.com</a>
+        </div>
+        <div class="footer-newsletter">
+          <p>Stay updated with our latest projects</p>
+          <div class="footer-nl-form">
+            <input type="email" class="footer-nl-input" placeholder="Your email address" />
+            <button class="footer-nl-btn">Send →</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><div class="footer-socials"><a href="#" class="footer-social-btn" title="LinkedIn">in</a><a href="#" class="footer-social-btn" title="Instagram">ig</a><a href="#" class="footer-social-btn" title="Twitter/X">𝕏</a></div></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2024 Mastech Technical Iron Works L.L.C. All Rights Reserved.<br>
+        Proudly crafted in the UAE.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" title="Instagram">IG</a>
+        <a href="#" class="footer-social-btn" title="LinkedIn">LI</a>
+        <a href="#" class="footer-social-btn" title="WhatsApp">WA</a>
+      </div>
+    </div>
+
+    <!-- Rotating ring -->
+    <div class="footer-ring-wrap">
+      <div class="footer-ring">
+        <div class="footer-ring-inner">MASTECH · UAE · STEEL</div>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- ================================================
+       JAVASCRIPT
+  ================================================ -->
   <script>
-    // Progress bar
+    /* ── Scroll Progress Bar ── */
+    const progressBar = document.getElementById('progressBar');
     window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      const progressBar = document.getElementById('progressBar');
-      if(progressBar) progressBar.style.width = scrolled + '%';
-    });
+      const scrolled = window.scrollY;
+      const total = document.body.scrollHeight - window.innerHeight;
+      progressBar.style.width = (scrolled / total * 100) + '%';
+    }, { passive: true });
 
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealElements.forEach(el => observer.observe(el));
+    /* ── Navbar scroll state ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 
-    // Split letters hero
-    const heroTitle = document.querySelector('.projects-hero-title');
-    if(heroTitle && heroTitle.classList.contains('split-letters')) {
-      const text = heroTitle.innerText;
-      heroTitle.innerHTML = text.split('').map((char, i) => 
-        char === ' ' ? ' ' : `<span class="char" style="--i:${i}">${char}</span>`
-      ).join('');
-      setTimeout(() => heroTitle.classList.add('visible'), 100);
-    }
-
-    // Split words for paragraphs
-    document.querySelectorAll('.split-words').forEach(el => {
-      const words = el.innerText.split(' ');
-      el.innerHTML = words.map((word, i) => `<span class="word" style="--i:${i}"><span>${word}</span></span>`).join(' ');
-      setTimeout(() => el.classList.add('visible'), 100);
-    });
-
-    // Mobile menu toggle
-    const hamburger = document.getElementById('navHamburger');
+    /* ── Hamburger / mobile menu ── */
+    const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    if(hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        mobileMenu.classList.toggle('open');
-        const expanded = hamburger.classList.contains('open');
-        hamburger.setAttribute('aria-expanded', expanded);
-      });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
     }
 
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    let visibleCount = 6; // Initially show 6 projects
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    /* ── Floating Particles ── */
+    const particleContainer = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 1.5;
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        animation-duration: ${14 + Math.random() * 20}s;
+        animation-delay: ${Math.random() * 14}s;
+        opacity: ${0.2 + Math.random() * 0.3};
+      `;
+      particleContainer.appendChild(p);
+    }
 
-    function filterProjects(category) {
-      let visible = 0;
-      projectCards.forEach((card, index) => {
-        if (category === 'all' || card.dataset.category === category) {
-          if (visible < visibleCount) {
-            card.style.display = 'block';
-            visible++;
-          } else {
-            card.style.display = 'none';
-          }
-        } else {
-          card.style.display = 'none';
+    /* ── Scroll Reveal ── */
+    const revealEls = document.querySelectorAll(
+      '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip, .reveal-blur, .split-words, .split-letters, .section-label'
+    );
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
         }
       });
-      
-      // Hide load more if all visible projects are shown
-      const totalVisible = Array.from(projectCards).filter(card => 
-        card.style.display === 'block' && (category === 'all' || card.dataset.category === category)
-      ).length;
-      
-      if (loadMoreBtn) {
-        loadMoreBtn.style.display = totalVisible < projectCards.length ? 'inline-flex' : 'none';
-      }
-    }
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    revealEls.forEach(el => io.observe(el));
 
-    // Load more functionality
-    function loadMore() {
-      const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
-      let currentVisible = 0;
-      visibleCount += 4;
-      
-      projectCards.forEach((card, index) => {
-        if ((activeFilter === 'all' || card.dataset.category === activeFilter)) {
-          if (currentVisible < visibleCount) {
-            card.style.display = 'block';
-            currentVisible++;
-          } else {
-            card.style.display = 'none';
-          }
+    /* ── Process timeline reveal ── */
+    const processTimeline = document.getElementById('processTimeline');
+    const ptObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          ptObs.unobserve(entry.target);
         }
       });
-      
-      // Hide load more if all are shown
-      const totalInCategory = Array.from(projectCards).filter(card => 
-        activeFilter === 'all' || card.dataset.category === activeFilter
-      ).length;
-      
-      if (currentVisible >= totalInCategory && loadMoreBtn) {
-        loadMoreBtn.style.display = 'none';
+    }, { threshold: 0.2 });
+    if (processTimeline) ptObs.observe(processTimeline);
+
+    /* ── Animated counters ── */
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 2000;
+      const start = performance.now();
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
       }
+      requestAnimationFrame(step);
     }
 
-    // Filter button click handlers
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        visibleCount = 6;
-        filterProjects(btn.dataset.filter);
+    const counters = document.querySelectorAll('.counter');
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObs.observe(c));
+
+    /* ── Filter pills ── */
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        document.querySelectorAll('.project-card').forEach(card => {
+          const cat = card.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            card.style.opacity = '1';
+            card.style.transform = '';
+            card.style.pointerEvents = '';
+          } else {
+            card.style.opacity = '0.15';
+            card.style.transform = 'scale(0.97)';
+            card.style.pointerEvents = 'none';
+          }
+        });
       });
     });
 
-    // Load more button click
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', loadMore);
+    /* ── Ticker duplicate for seamless loop ── */
+    const track = document.getElementById('tickerTrack');
+    if (track) {
+      const clone = track.cloneNode(true);
+      track.parentElement.appendChild(clone);
     }
 
-    // Initialize filter (show first 6 projects)
-    visibleCount = 6;
-    filterProjects('all');
+    /* ── Lazy load images ── */
+    if ('loading' in HTMLImageElement.prototype === false) {
+      const images = document.querySelectorAll('[loading="lazy"]');
+      images.forEach(img => { img.src = img.dataset.src; });
+    }
   </script>
 </body>
 </html>
