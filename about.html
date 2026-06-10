@@ -1,397 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MASTECH — About | Precision Engineering & Steel Fabrication</title>
-  <meta name="description" content="Discover the heritage, values, and precision-driven culture behind Mastech Technical Iron Works — engineering the future since 2007.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <!-- main.css (tokens, nav, footer, keyframes, reveal) - assumed shared -->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Mastech Technical Iron Works L.L.C</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ── */
+:root {
+  --rust:       #C0392B;
+  --rust-2:     #D35400;
+  --rust-light: #E8651A;
+  --rust-glow:  rgba(211,84,0,0.28);
+  --rust-pale:  rgba(211,84,0,0.07);
+  --white:  #FFFFFF;
+  --cream:  #F5F0EA;
+  --off:    #F0EBE3;
+  --dark:   #0D0D0D;
+  --dark2:  #111111;
+  --charcoal: #1C1C1C;
+  --mid:    #444444;
+  --muted:  #888888;
+  --border-light: rgba(0,0,0,0.09);
+  --border-dark:  rgba(255,255,255,0.08);
+  --fn-display: 'Bebas Neue', sans-serif;
+  --fn-body:    'Inter', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
+  --r-sm: 8px; --r-md: 16px; --r-lg: 28px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--dark);font-family:var(--fn-body);line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+em{font-style:normal;color:var(--rust);}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--rust);border-radius:2px;}
+
+/* ── PROGRESS ── */
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--rust);width:0%;z-index:9999;transition:width 0.1s linear;box-shadow:0 0 6px var(--rust-glow);}
+
+/* ── PARTICLES ── */
+.floating-particles{position:fixed;inset:0;pointer-events:none;z-index:0;}
+.particle{position:absolute;border-radius:50%;background:var(--rust);animation:floatUp linear infinite;bottom:-10px;}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0;}10%{opacity:0.6;}90%{opacity:0.1;}100%{transform:translateY(-100vh);opacity:0;}}
+
+/* ── NAVBAR ── */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;padding:0 56px;height:72px;background:var(--white);border-bottom:1px solid var(--border-light);transition:all 0.3s var(--ease);}
+#navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.logo{font-family:var(--fn-display);font-size:1.55rem;letter-spacing:4px;color:var(--dark);display:flex;align-items:center;gap:7px;transition:color 0.3s;}
+.logo:hover{color:var(--rust);}
+.logo-dot{width:8px;height:8px;background:var(--rust);border-radius:50%;}
+.nav-links{display:flex;gap:40px;margin:0 auto;}
+.nav-links a{font-family:var(--fn-body);font-size:0.75rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);position:relative;transition:color 0.3s;padding:4px 0;}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:var(--rust);transition:width 0.3s var(--ease);}
+.nav-links a:hover,.nav-links a.active{color:var(--dark);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{background:transparent;color:var(--dark);border:1.5px solid var(--dark);padding:9px 24px;border-radius:2px;font-family:var(--fn-body);font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s var(--ease);}
+.nav-cta:hover{background:var(--rust);border-color:var(--rust);color:var(--white);}
+.nav-hamburger{display:none!important;}
+.nav-hamburger span{width:22px;height:1.5px;background:var(--dark);border-radius:2px;transition:all 0.3s;}
+.mobile-menu{position:fixed;inset:0;background:var(--white);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transform:translateX(100%);transition:transform 0.4s var(--ease);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{font-family:var(--fn-display);font-size:2.8rem;letter-spacing:3px;color:var(--dark);transition:color 0.3s;}
+.mobile-menu a:hover{color:var(--rust);}
+.mobile-cta{background:var(--rust);color:var(--white);border:none;padding:14px 36px;border-radius:2px;font-family:var(--fn-body);font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:1px;text-transform:uppercase;}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--rust);overflow:hidden;white-space:nowrap;padding:12px 0;user-select:none;}
+.ticker-track{display:inline-flex;animation:ticker 28s linear infinite;}
+.ticker-track:hover{animation-play-state:paused;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.ticker-item{font-family:var(--fn-body);font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--white);padding:0 40px;display:inline-flex;align-items:center;gap:16px;}
+.ticker-item::after{content:'•';color:rgba(255,255,255,0.5);}
+
+/* ── REVEAL ── */
+.reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}
+.reveal{transform:translateY(36px);}
+.reveal-left{transform:translateX(-40px);}
+.reveal-right{transform:translateX(40px);}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translate(0);}
+.stagger-1{transition-delay:0.1s!important;}
+.stagger-2{transition-delay:0.2s!important;}
+.stagger-3{transition-delay:0.3s!important;}
+.stagger-4{transition-delay:0.4s!important;}
+
+/* ── SECTION UTILS ── */
+.section-label{font-family:var(--fn-body);font-size:0.68rem;letter-spacing:4px;color:var(--rust);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:12px;}
+.section-label::before{content:'';width:28px;height:1.5px;background:var(--rust);}
+.section-title{font-family:var(--fn-display);font-size:clamp(2.8rem,5vw,4.5rem);letter-spacing:1.5px;line-height:1.05;color:var(--dark);}
+.section-title.white{color:var(--white);}
+
+/* ── HERO ── */
+.about-hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 56px 80px;background:var(--dark);overflow:hidden;margin-top:72px;}
+.hero-bg-img{position:absolute;inset:0;background-image:url('https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2');background-size:cover;background-position:center;opacity:0.18;pointer-events:none;}
+.hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;opacity:0.5;}
+.hero-glow{position:absolute;top:-10%;right:-5%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(211,84,0,0.12) 0%,transparent 65%);pointer-events:none;}
+.hero-eyebrow{font-family:var(--fn-body);font-size:0.68rem;letter-spacing:5px;color:var(--rust);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--rust);}
+.hero-title{font-family:var(--fn-display);font-size:clamp(5rem,12vw,10rem);line-height:0.92;color:var(--white);letter-spacing:2px;max-width:900px;}
+.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.5);max-width:500px;margin-top:2.5rem;line-height:1.75;font-weight:300;}
+.hero-stats-row{display:flex;gap:0;margin-top:4rem;border:1px solid rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;width:fit-content;}
+.h-stat{padding:1.2rem 2.4rem;border-right:1px solid rgba(255,255,255,0.1);transition:background 0.3s;cursor:default;}
+.h-stat:last-child{border-right:none;}
+.h-stat:hover{background:rgba(211,84,0,0.15);}
+.h-stat-num{font-family:var(--fn-display);font-size:2.2rem;color:var(--rust);letter-spacing:1px;line-height:1;}
+.h-stat-label{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:5px;}
+
+/* ── STORY — IMAGE GAP FIX ── */
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:120px 56px;background:var(--white);}
+
+.story-img-wrap{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  /* Fix: remove any inline/descender gap below the image */
+  font-size:0;
+  line-height:0;
+  min-height:560px;
+  display:flex;
+  flex-direction:column;
+}
+
+.story-img-wrap img{
+  display:block;           /* kills inline baseline gap */
+  width:100%;
+  height:100%;
+  flex:1;
+  object-fit:cover;
+  vertical-align:bottom;  /* belt-and-suspenders */
+  line-height:0;
+  transition:transform 0.8s var(--ease);
+}
+.story-img-wrap:hover img{transform:scale(1.04);}
+
+/* Caption: absolute so zero layout contribution, always flush to bottom */
+.story-img-tag{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  margin:0;padding:2.4rem 1.5rem 1.1rem;
+  background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,transparent 100%);
+  font-size:0.68rem;      /* restore — parent is font-size:0 */
+  line-height:1.4;        /* restore readable line-height */
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.75);
+  font-weight:500;
+}
+
+.story-img-accent{position:absolute;top:0;left:0;width:4px;height:60px;background:var(--rust);z-index:1;}
+.story-badge{display:inline-flex;align-items:center;gap:8px;font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:1.5rem;font-family:var(--fn-body);}
+.story-badge::before{content:'';width:20px;height:1.5px;background:var(--rust);}
+.story-content .section-title{margin-bottom:1.8rem;}
+.story-content p{font-size:0.92rem;line-height:1.85;color:var(--mid);margin-bottom:1.4rem;font-weight:400;}
+.story-rule{width:40px;height:2px;background:var(--rust);margin:2rem 0;border-radius:1px;}
+.story-tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:2rem;}
+.story-tag{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--border-light);padding:6px 14px;border-radius:2px;color:var(--mid);font-weight:500;transition:all 0.3s;cursor:default;}
+.story-tag:hover{border-color:var(--rust);color:var(--rust);}
+
+/* ── CARDS SECTION ── */
+.cards-section{padding:100px 56px;background:var(--cream);}
+.cards-section.dark{background:var(--dark);}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;border:2px solid var(--border-light);border-radius:4px;overflow:hidden;}
+.cards-grid.dark-grid{border-color:var(--border-dark);}
+.cards-grid-6{grid-template-columns:repeat(3,1fr);}
+
+/* ── VALUE CARDS — PREMIUM HOVER ── */
+.value-card{
+  background:var(--white);
+  padding:2.8rem 2.2rem;
+  display:flex;flex-direction:column;
+  cursor:default;
+  /* Border on all sides so glow color shows */
+  border:2px solid var(--border-light);
+  /* All transitions in one declaration */
+  transition:
+    background    0.35s var(--ease),
+    border-color  0.35s var(--ease),
+    box-shadow    0.35s var(--ease),
+    transform     0.35s var(--ease);
+  will-change:transform,box-shadow;
+  /* Lift needs to escape overflow:hidden on parent grid */
+  position:relative;
+  z-index:0;
+}
+
+.cards-grid.dark-grid .value-card{
+  background:var(--dark2);
+  border-color:var(--border-dark);
+}
+
+/* HOVER / TOUCH — full orange fill */
+.value-card:hover,
+.value-card:active{
+  background:#BC3C2E;
+  border-color:#BC3C2E;
+  transform:translateY(-7px) scale(1.018);
+  box-shadow:
+    0 16px 40px rgba(188,60,46,0.38),
+    0 4px  14px rgba(188,60,46,0.22);
+  z-index:2;
+}
+
+/* dark-grid cards same fill */
+.cards-grid.dark-grid .value-card:hover,
+.cards-grid.dark-grid .value-card:active{
+  background:#BC3C2E;
+  border-color:#BC3C2E;
+  box-shadow:
+    0 16px 44px rgba(188,60,46,0.42),
+    0 4px  16px rgba(188,60,46,0.28);
+  z-index:2;
+}
+
+/* Icon — white ghost on orange */
+.value-card:hover .value-icon,
+.value-card:active .value-icon{
+  background:rgba(255,255,255,0.15);
+  border-color:rgba(255,255,255,0.30);
+  color:var(--white);
+  box-shadow:none;
+}
+
+/* Heading — white */
+.value-card:hover h3,
+.value-card:active h3,
+.cards-grid.dark-grid .value-card:hover h3,
+.cards-grid.dark-grid .value-card:active h3{
+  color:var(--white);
+}
+
+/* Body text — white at 88% */
+.value-card:hover p,
+.value-card:active p,
+.cards-grid.dark-grid .value-card:hover p,
+.cards-grid.dark-grid .value-card:active p{
+  color:rgba(255,255,255,0.88);
+}
+
+/* Ghost number — barely visible on orange */
+.value-card:hover .v-num,
+.value-card:active .v-num{
+  color:rgba(255,255,255,0.12);
+}
+
+/* Sub-elements */
+.v-num{font-family:var(--fn-display);font-size:3rem;color:rgba(0,0,0,0.04);line-height:1;margin-bottom:1rem;letter-spacing:2px;transition:color 0.35s var(--ease);}
+.cards-grid.dark-grid .v-num{color:rgba(255,255,255,0.04);}
+
+.value-icon{
+  width:52px;height:52px;background:var(--rust-pale);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.4rem;color:var(--rust);border:1px solid rgba(211,84,0,0.15);
+  transition:background 0.35s var(--ease),border-color 0.35s var(--ease),box-shadow 0.35s var(--ease),color 0.35s var(--ease);
+}
+.value-icon svg{width:24px;height:24px;stroke-width:1.5;}
+
+.value-card h3{font-family:var(--fn-display);font-size:1.6rem;letter-spacing:1px;color:var(--dark);margin-bottom:0.8rem;transition:color 0.35s var(--ease);}
+.cards-grid.dark-grid .value-card h3{color:var(--white);}
+.value-card p{font-size:0.85rem;line-height:1.7;color:var(--muted);flex-grow:1;transition:color 0.35s var(--ease);}
+.cards-grid.dark-grid .value-card p{color:rgba(255,255,255,0.45);}
+
+/* ── STATS ── */
+.stats-section{background:var(--dark);padding:80px 56px;position:relative;overflow:hidden;}
+.stats-section::before{content:'MASTECH';position:absolute;right:-20px;bottom:-40px;font-family:var(--fn-display);font-size:18rem;color:rgba(255,255,255,0.015);letter-spacing:4px;pointer-events:none;line-height:1;user-select:none;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-dark);border-radius:4px;overflow:hidden;}
+
+.stat-item{
+  padding:2.5rem 2rem;
+  border-right:1px solid var(--border-dark);
+  text-align:center;cursor:default;
+  transition:
+    background    0.35s var(--ease),
+    border-color  0.35s var(--ease),
+    box-shadow    0.35s var(--ease);
+}
+.stat-item:last-child{border-right:none;}
+
+.stat-item:hover,
+.stat-item:active{
+  background:#BC3C2E;
+  border-color:#BC3C2E;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.stat-item h4{font-family:var(--fn-display);font-size:4rem;color:var(--rust);margin-bottom:0.4rem;line-height:1;transition:color 0.35s var(--ease),text-shadow 0.35s var(--ease);}
+.stat-item:hover h4,.stat-item:active h4{color:var(--white);text-shadow:0 2px 12px rgba(0,0,0,0.15);}
+.stat-item p{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);transition:color 0.35s var(--ease);}
+.stat-item:hover p,.stat-item:active p{color:rgba(255,255,255,0.90);}
+
+/* ── CERTS ── */
+.certs-section{padding:100px 56px;background:var(--white);}
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px;border:2px solid var(--border-light);border-radius:4px;overflow:hidden;}
+
+.cert-card{
+  background:var(--cream);
+  padding:2.4rem 1.8rem;text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+  border:2px solid var(--border-light);
+  cursor:default;
+  position:relative;z-index:0;
+  transition:
+    background    0.35s var(--ease),
+    border-color  0.35s var(--ease),
+    box-shadow    0.35s var(--ease),
+    transform     0.35s var(--ease);
+  will-change:transform,box-shadow;
+}
+
+.cert-card:hover,
+.cert-card:active{
+  background:#BC3C2E;
+  border-color:#BC3C2E;
+  transform:translateY(-7px) scale(1.018);
+  box-shadow:
+    0 16px 40px rgba(188,60,46,0.38),
+    0 4px  14px rgba(188,60,46,0.22);
+  z-index:2;
+}
+
+.cert-card svg{width:40px;height:40px;color:var(--rust);margin-bottom:1rem;stroke-width:1.5;transition:color 0.35s var(--ease),filter 0.35s var(--ease);}
+.cert-card:hover svg,.cert-card:active svg{color:var(--white);filter:none;}
+.cert-card h4{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:0.3rem;transition:color 0.35s var(--ease);}
+.cert-card:hover h4,.cert-card:active h4{color:var(--white);}
+.cert-card p{font-size:0.75rem;color:var(--muted);transition:color 0.35s var(--ease);}
+.cert-card:hover p,.cert-card:active p{color:rgba(255,255,255,0.88);}
+
+/* ── GALLERY ── */
+.gallery-section{padding:100px 56px;background:var(--cream);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:3px;margin-top:56px;border-radius:4px;overflow:hidden;}
+.gallery-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;}
+.gallery-item.tall{aspect-ratio:3/4;grid-row:span 2;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s var(--ease);}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(192,57,43,0.88) 0%,transparent 55%);opacity:0;transition:opacity 0.35s;display:flex;align-items:flex-end;padding:1.2rem;}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-overlay span{font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--white);}
+
+/* ── CTA ── */
+.cta-section{padding:120px 56px;text-align:center;background:var(--dark);position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(211,84,0,0.07) 0%,transparent 65%);pointer-events:none;}
+.cta-label{display:block;font-size:0.68rem;letter-spacing:5px;text-transform:uppercase;color:var(--rust);margin-bottom:1.2rem;}
+.cta-title{font-family:var(--fn-display);font-size:clamp(3.5rem,8vw,7rem);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:3rem;}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--rust);color:var(--white);padding:14px 36px;border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:2px solid var(--rust);transition:all 0.3s var(--ease);box-shadow:0 4px 20px rgba(211,84,0,0.3);}
+.btn-primary:hover{background:var(--rust-light);border-color:var(--rust-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(211,84,0,0.4);}
+.btn-ghost{background:transparent;color:var(--white);padding:14px 36px;border-radius:2px;font-size:0.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;border:2px solid rgba(255,255,255,0.2);transition:all 0.3s var(--ease);}
+.btn-ghost:hover{background:var(--rust);border-color:var(--rust);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:var(--dark2);border-top:1px solid var(--border-dark);}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px;padding:72px 56px 48px;}
+.footer-logo{font-family:var(--fn-display);font-size:1.8rem;letter-spacing:5px;color:var(--white);display:block;margin-bottom:1.2rem;}
+.footer-tagline-text{font-size:0.8rem;color:rgba(255,255,255,0.35);line-height:1.75;margin-bottom:1.5rem;font-weight:300;}
+.footer-certs{display:flex;flex-wrap:wrap;gap:8px;}
+.footer-cert-badge{font-size:0.6rem;letter-spacing:1.5px;background:rgba(211,84,0,0.1);color:var(--rust);border:1px solid rgba(211,84,0,0.2);padding:4px 12px;border-radius:2px;}
+.footer-nav-col h5{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.5rem;}
+.footer-nav-col ul{list-style:none;}
+.footer-nav-col ul li{margin-bottom:0.75rem;}
+.footer-nav-col ul li a{font-size:0.85rem;color:rgba(255,255,255,0.5);transition:color 0.3s;}
+.footer-nav-col ul li a:hover{color:var(--rust);}
+.footer-contact-col h5{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.5rem;}
+.footer-contact-item{display:flex;flex-direction:column;gap:2px;margin-bottom:1rem;}
+.footer-contact-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+.footer-contact-val{font-size:0.85rem;color:rgba(255,255,255,0.6);transition:color 0.3s;}
+.footer-contact-val:hover{color:var(--rust);}
+.footer-newsletter p{font-size:0.78rem;color:rgba(255,255,255,0.35);margin:1.5rem 0 0.8rem;}
+.footer-nl-form{display:flex;border:1px solid var(--border-dark);border-radius:2px;overflow:hidden;}
+.footer-nl-input{flex:1;background:transparent;border:none;padding:10px 14px;font-size:0.8rem;color:var(--white);outline:none;font-family:var(--fn-body);}
+.footer-nl-input::placeholder{color:rgba(255,255,255,0.2);}
+.footer-nl-btn{background:var(--rust);color:var(--white);border:none;padding:10px 18px;font-size:0.78rem;cursor:pointer;transition:background 0.3s;font-weight:600;}
+.footer-nl-btn:hover{background:var(--rust-light);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-top:1px solid var(--border-dark);flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.2);}
+.footer-bottom-links{display:flex;gap:24px;}
+.footer-bottom-links a{font-size:0.72rem;color:rgba(255,255,255,0.25);transition:color 0.3s;}
+.footer-bottom-links a:hover{color:var(--rust);}
+.footer-socials{display:flex;gap:8px;}
+.footer-social-btn{width:34px;height:34px;border:1px solid var(--border-dark);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:0.72rem;color:rgba(255,255,255,0.35);font-weight:700;transition:all 0.3s;}
+.footer-social-btn:hover{background:var(--rust);border-color:var(--rust);color:var(--white);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  #navbar,.about-hero,.story-section,.cards-section,.stats-section,.certs-section,.gallery-section,.cta-section{padding-left:32px!important;padding-right:32px!important;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .certs-grid{grid-template-columns:repeat(2,1fr);}
+  .cards-grid,.cards-grid-6{grid-template-columns:repeat(2,1fr);}
+  .footer-main{grid-template-columns:1fr 1fr;padding:48px 32px 32px;}
+  .footer-bottom{padding:16px 32px;}
+}
+@media(max-width:768px){
+  #navbar{padding:0 16px;height:auto;flex-wrap:wrap;}
+  .logo{padding:14px 0;font-size:1.2rem;}
+  .nav-cta{display:none;}
+  .nav-hamburger{display:none!important;}
+  .nav-links{order:3;width:100%;gap:0;margin:0;display:flex!important;flex-wrap:wrap;justify-content:center;border-top:1px solid var(--border-light);padding:6px 0;}
+  .nav-links a{font-size:0.65rem;letter-spacing:1px;padding:8px 10px;}
+  .about-hero{padding:130px 24px 64px!important;min-height:80vh;}
+  .hero-title{font-size:clamp(4rem,14vw,7rem);}
+  .hero-stats-row{flex-direction:column;border-radius:4px;}
+  .h-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .h-stat:last-child{border-bottom:none;}
+  .story-section{grid-template-columns:1fr!important;padding:60px 24px!important;gap:40px;}
+  .story-img-wrap{min-height:320px;}
+  .cards-section,.certs-section,.gallery-section,.stats-section,.cta-section{padding:60px 24px!important;}
+  .cards-grid,.cards-grid-6,.certs-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr;}
+  .gallery-item.tall{aspect-ratio:4/3;grid-row:span 1;}
+  .footer-main{grid-template-columns:1fr;gap:32px;padding:40px 24px 24px;}
+  .footer-bottom{padding:16px 24px;flex-direction:column;text-align:center;}
+  /* Reduce lift on mobile — keep orange fill */
+  .value-card:hover,.value-card:active,
+  .cert-card:hover,.cert-card:active{
+    transform:translateY(-4px) scale(1.01);
+    background:#BC3C2E;
+    border-color:#BC3C2E;
+  }
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:clamp(3.5rem,16vw,5rem);}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
+}
+</style>
 </head>
 <body>
 
-  <!-- Progress Bar & Ambient Shapes (consistent with homepage) -->
-  <div class="progress-bar" id="progressBar"></div>
-  <div class="ambient-shapes">
-    <div class="ambient-blob ambient-1"></div>
-    <div class="ambient-blob ambient-2"></div>
-    <div class="ambient-blob ambient-3"></div>
+<div class="progress-bar" id="progressBar"></div>
+<div class="floating-particles" id="particleContainer"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo"><span class="logo-dot"></span>MASTECH</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </div>
+  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
 
-  <!-- Mobile Menu Overlay (matching main.css) -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
-    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
-    <a href="index.html#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
-    <a href="index.html#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
-    <a href="index.html#projects" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
-    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-    <a href="index.html#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
-    <button class="mobile-cta" onclick="window.location.href='index.html#contact'; document.getElementById('mobileMenu').classList.remove('open');">Get a Quote</button>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <button class="mobile-cta">Get a Quote</button>
+</div>
+
+<section class="about-hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-glow"></div>
+  <p class="hero-eyebrow reveal">About Mastech</p>
+  <h1 class="hero-title reveal stagger-1">BUILT ON<br><em>PRECISION.</em><br>EXPERTISE.</h1>
+  <p class="hero-sub reveal stagger-2">For nearly two decades, Mastech Technical Iron Works has been at the forefront of mechanical engineering, steel fabrication, and plant services across the UAE.</p>
+  <div class="hero-stats-row reveal stagger-3">
+    <div class="h-stat"><div class="h-stat-num">200+</div><div class="h-stat-label">Projects</div></div>
+    <div class="h-stat"><div class="h-stat-num">17+</div><div class="h-stat-label">Years</div></div>
+    <div class="h-stat"><div class="h-stat-num">120+</div><div class="h-stat-label">Workforce</div></div>
+    <div class="h-stat"><div class="h-stat-num">50+</div><div class="h-stat-label">Clients</div></div>
   </div>
+</section>
 
-  <!-- Navigation (identical to main site style) -->
-  <nav id="mainNav">
-    <a href="index.html" class="logo">MASTECH<div class="logo-dot"></div></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#process">Process</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="about.html">About</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-    <button class="nav-cta" onclick="window.location.href='index.html#contact'">Get a quote</button>
-    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Free Site Assessment</span>
+    <span class="ticker-item">ISO Certified Fabrication</span>
+    <span class="ticker-item">UAE Based Operations</span>
+    <span class="ticker-item">20+ Years Experience</span>
+    <span class="ticker-item">500+ Projects Delivered</span>
+    <span class="ticker-item">ASME IX Certified Welders</span>
+    <span class="ticker-item">Oil &amp; Gas Specialists</span>
+    <span class="ticker-item">Free Site Assessment</span>
+    <span class="ticker-item">ISO Certified Fabrication</span>
+    <span class="ticker-item">UAE Based Operations</span>
+    <span class="ticker-item">20+ Years Experience</span>
+    <span class="ticker-item">500+ Projects Delivered</span>
+    <span class="ticker-item">ASME IX Certified Welders</span>
+    <span class="ticker-item">Oil &amp; Gas Specialists</span>
+  </div>
+</div>
 
-  <!-- ============================================================
-     ABOUT HERO — Full viewport, diagonal split composition (fresh layout)
-  ============================================================ -->
-  <section class="about-hero">
-    <!-- left panel: text -->
-    <div class="ah-left">
-      <div class="ah-grid"></div>
-      <div class="ah-glow"></div>
-      <div class="ah-bg-word">HERITAGE</div>
-      <div class="ah-badge">
-        <span class="ah-badge-line"></span> SINCE 2007
-      </div>
-      <h1 class="ah-title">
-        WHERE <span class="t-em">STEEL</span><br>
-        MEETS <span class="t-accent">PRECISION</span>
-      </h1>
-      <div class="ah-descriptor">
-        <div class="ah-descriptor-line"></div>
-        <p>Engineering the backbone of industry — from concept to critical infrastructure, with uncompromising integrity.</p>
-      </div>
-      <div class="ah-scroll">
-        <div class="ah-scroll-dot"></div>
-      </div>
-    </div>
-
-    <!-- right panel: dynamic photo mosaic + stats -->
-    <div class="ah-right">
-      <img class="ah-img-main" src="assets/img/gallery/about-hero-desk.jpg" alt="Mastech facility overview" loading="eager" onerror="this.src='https://placehold.co/1600x1200/1c1c1e/c8a96e?text=MASTECH+Facility'">
-      <div class="ah-right-overlay"></div>
-      <div class="ah-stat-cluster">
-        <div class="ah-stat-card">
-          <div class="ah-stat-num">18<sup>+</sup><em> yrs</em></div>
-          <div class="ah-stat-label">industry leadership</div>
-        </div>
-        <div class="ah-stat-card">
-          <div class="ah-stat-num">12,500<sup>t</sup></div>
-          <div class="ah-stat-label">monthly capacity</div>
-        </div>
-      </div>
-      <div class="ah-year-badge">
-        <div class="ah-year-ring">
-          <div class="ah-year-inner">
-            <div class="ah-year-num">2007</div>
-            <div class="ah-year-lbl">EST.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-     IDENTITY STRIP — Manifesto & facts (original design)
-  ============================================================ -->
-  <div class="identity-strip">
-    <div class="identity-quote-block">
-      <div class="identity-quote-mark">“</div>
-      <div class="identity-quote">We don't just fabricate steel — we forge <em>legacy</em>. Every weld, every blueprint, every innovation carries the weight of precision and the promise of endurance.</div>
-      <div class="identity-attribution">— FOUNDER'S PHILOSOPHY</div>
-    </div>
-    <div class="identity-facts">
-      <div class="identity-fact">
-        <div class="identity-fact-label">MANUFACTURING FOOTPRINT</div>
-        <div class="identity-fact-val">52,000 m²</div>
-        <div class="identity-fact-desc">Umm Al Quwain facility • dedicated fabrication bays + R&D center</div>
-      </div>
-      <div class="identity-fact">
-        <div class="identity-fact-label">WORKFORCE</div>
-        <div class="identity-fact-val">480+</div>
-        <div class="identity-fact-desc">Engineers, technicians, welders, and quality specialists</div>
-      </div>
-      <div class="identity-fact">
-        <div class="identity-fact-label">GLOBAL REACH</div>
-        <div class="identity-fact-val">32+</div>
-        <div class="identity-fact-desc">Countries served across MENA, Asia, and Europe</div>
-      </div>
+<div class="story-section">
+  <div class="story-img-wrap reveal-left">
+    <div class="story-img-accent"></div>
+    <img src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=900&h=700&dpr=2" alt="Industrial steel fabrication" loading="lazy"/>
+    <div class="story-img-tag">Mastech Workshop · Umm Al Quwain, UAE</div>
+  </div>
+  <div class="story-content reveal-right">
+    <span class="story-badge">Our Legacy</span>
+    <h2 class="section-title">Engineered <em>Excellence</em><br>Since 2007</h2>
+    <div class="story-rule"></div>
+    <p>Founded in 2007 under Umm Al Quwain License No. 4840, Mastech Technical Iron Works L.L.C has grown into a diversified engineering powerhouse, specializing in Mechanical Engineering, Steel Fabrication, Manufacturing, Plant Maintenance, Oil Field Services, and Equipment Manufacturing.</p>
+    <p>Our 17+ years of hands-on industrial experience enable us to deliver complex projects across oil & gas, petrochemical, infrastructure, and offshore sectors — always with precision, safety, and a relentless pursuit of perfection.</p>
+    <div class="story-tag-row">
+      <span class="story-tag">Oil &amp; Gas</span>
+      <span class="story-tag">Petrochemical</span>
+      <span class="story-tag">Offshore</span>
+      <span class="story-tag">Infrastructure</span>
+      <span class="story-tag">ADNOC Approved</span>
     </div>
   </div>
+</div>
 
-  <!-- ============================================================
-     STORY TIMELINE — Horizontal chapters (original narrative)
-  ============================================================ -->
-  <section class="story-section">
-    <div class="story-header">
-      <div>
-        <div class="section-label reveal">Our Timeline</div>
-        <h2 class="section-title reveal stagger-1 split-words">From <em>forge</em><br>to future.</h2>
-      </div>
-      <div class="story-intro reveal stagger-2">Built on decades of industrial mastery — each chapter represents a leap in capability, certification, and engineering excellence.</div>
+<section class="cards-section">
+  <div class="section-label reveal">Our Foundation</div>
+  <h2 class="section-title reveal stagger-1">What <em>Drives</em> Us</h2>
+  <div class="cards-grid">
+    <div class="value-card reveal">
+      <div class="v-num">01</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Mission</h3>
+      <p>To deliver superior engineering and fabrication solutions that exceed client expectations through innovation, skilled craftsmanship, and unwavering safety standards.</p>
     </div>
-    <div class="story-chapters">
-      <div class="story-spine" id="storySpine"></div>
-      <div class="story-grid">
-        <div class="story-chapter reveal">
-          <div class="story-chapter-year">2007</div>
-          <div class="story-chapter-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h4>Foundation</h4>
-          <p>Started as a modest fabrication unit with 12 engineers, driven by a vision to redefine industrial contracting in the UAE.</p>
-        </div>
-        <div class="story-chapter reveal stagger-2">
-          <div class="story-chapter-year">2012</div>
-          <div class="story-chapter-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 0-14.14 0"/></svg>
-          </div>
-          <h4>Oil & Gas Breakthrough</h4>
-          <p>Landmark ADNOC project — delivered 3,200 tons of structural steel for offshore expansion, setting new quality benchmarks.</p>
-        </div>
-        <div class="story-chapter reveal stagger-3">
-          <div class="story-chapter-year">2016</div>
-          <div class="story-chapter-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-          </div>
-          <h4>Certification Milestone</h4>
-          <p>ISO 9001:2015, ASME Section VIII, and API Q1 — cementing our role as a premier fabrication partner.</p>
-        </div>
-        <div class="story-chapter reveal stagger-4">
-          <div class="story-chapter-year">2022</div>
-          <div class="story-chapter-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h4>Industry 4.0</h4>
-          <p>AI-driven design, robotic welding cells, and digital twin integration — precision at an unprecedented scale.</p>
-        </div>
-      </div>
+    <div class="value-card reveal stagger-1">
+      <div class="v-num">02</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Vision</h3>
+      <p>To be the most trusted industrial partner in the Middle East, known for engineering integrity, operational excellence, and enduring client partnerships.</p>
     </div>
-    <div class="story-bg-num">18</div>
-  </section>
+    <div class="value-card reveal stagger-2">
+      <div class="v-num">03</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h3>Values</h3>
+      <p>Safety First · Quality Without Compromise · Integrity · Innovation · Client-Centric Collaboration · Timely Delivery.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ============================================================
-     TEAM + PHOTO MOSAIC — Dark section (fresh mosaic)
-  ============================================================ -->
-  <section class="mosaic-section">
-    <div class="mosaic-inner">
-      <div class="section-label reveal" style="color: var(--rust);">Leadership & Craft</div>
-      <h2 class="section-title reveal stagger-1 split-words" style="color:#fff;">Minds behind <em>the metal</em></h2>
-      <div class="mosaic-layout">
-        <!-- left: dynamic image grid -->
-        <div class="mosaic-photos">
-          <div class="mosaic-photo span-2 reveal-scale">
-            <img src="assets/img/gallery/team-workshop.jpg" alt="Workshop panorama" onerror="this.src='https://placehold.co/800x500/1c1c1e/c8a96e?text=Advanced+Fabrication'">
-            <div class="mosaic-photo-tag">Robotic Welding Cell</div>
-          </div>
-          <div class="mosaic-photo reveal">
-            <img src="assets/img/gallery/engineer-fea.jpg" alt="Engineering simulation" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=FEA+Simulation'">
-            <div class="mosaic-photo-tag">Finite Element Analysis</div>
-          </div>
-          <div class="mosaic-photo reveal">
-            <img src="assets/img/gallery/ndt-inspection.jpg" alt="NDT inspection" onerror="this.src='https://placehold.co/400x300/1c1c1e/c8a96e?text=NDT+Inspection'">
-            <div class="mosaic-photo-tag">Non-Destructive Testing</div>
-          </div>
-        </div>
-        <!-- right: leadership rows -->
-        <div class="mosaic-team">
-          <div class="mosaic-team-intro reveal">A collective of industry veterans, certified welding engineers, and digital manufacturing experts — each leader brings decades of field experience and a commitment to zero-defect delivery.</div>
-          <div class="leader-row reveal">
-            <div class="leader-avatar"><img src="assets/img/gallery/leader-1.jpg" alt="Rashid Al Maktoum" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=RA'"></div>
-            <div class="leader-info"><div class="leader-name">Rashid Al Mansoori</div><div class="leader-role">Managing Director</div></div>
-            <div class="leader-years">22 yrs industry</div>
-          </div>
-          <div class="leader-row reveal stagger-2">
-            <div class="leader-avatar"><img src="assets/img/gallery/leader-2.jpg" alt="Elena Voss" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=EV'"></div>
-            <div class="leader-info"><div class="leader-name">Elena Voss</div><div class="leader-role">Head of Engineering</div></div>
-            <div class="leader-years">18 yrs, PE structural</div>
-          </div>
-          <div class="leader-row reveal stagger-3">
-            <div class="leader-avatar"><img src="assets/img/gallery/leader-3.jpg" alt="Khalid Hamad" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=KH'"></div>
-            <div class="leader-info"><div class="leader-name">Khalid Hamad</div><div class="leader-role">Fabrication Director</div></div>
-            <div class="leader-years">AWS CWI, 15 yrs</div>
-          </div>
-          <div class="leader-row reveal stagger-4">
-            <div class="leader-avatar"><img src="assets/img/gallery/leader-4.jpg" alt="Sophia Chen" onerror="this.src='https://placehold.co/100x100/2c2c2e/c8a96e?text=SC'"></div>
-            <div class="leader-info"><div class="leader-name">Sophia Chen</div><div class="leader-role">QA/QC & NDT Lead</div></div>
-            <div class="leader-years">ASNT Level III</div>
-          </div>
-        </div>
-      </div>
+<section class="cards-section dark" style="padding-top:100px;padding-bottom:100px;">
+  <div class="section-label reveal"><span style="color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:12px;"><span style="width:28px;height:1.5px;background:var(--rust);display:block;"></span>Why Choose Us</span></div>
+  <h2 class="section-title white reveal stagger-1" style="margin-bottom:0;">The <em>Mastech</em> Advantage</h2>
+  <div class="cards-grid dark-grid cards-grid-6" style="margin-top:56px;">
+    <div class="value-card reveal">
+      <div class="v-num">01</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>Quality Assurance</h3>
+      <p>ISO-aligned processes, ASME IX certified welders, and rigorous NDT testing at every stage.</p>
     </div>
-  </section>
+    <div class="value-card reveal stagger-1">
+      <div class="v-num">02</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Skilled Workforce</h3>
+      <p>100+ in-house engineers, certified welders, riggers, and technicians on every project.</p>
+    </div>
+    <div class="value-card reveal stagger-2">
+      <div class="v-num">03</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Innovative Engineering</h3>
+      <p>Cutting-edge CAD/CAM tools and digital project management for precision delivery.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="v-num">04</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Safety Standards</h3>
+      <p>Strict HSE protocols and a zero-incident culture embedded at every level of operations.</p>
+    </div>
+    <div class="value-card reveal stagger-1">
+      <div class="v-num">05</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Timely Delivery</h3>
+      <p>99% on-time project completion record across over 200 industrial projects.</p>
+    </div>
+    <div class="value-card reveal stagger-2">
+      <div class="v-num">06</div>
+      <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3>Client Satisfaction</h3>
+      <p>Long-term relationships with ADNOC, ENOC, and leading industrial groups across the UAE.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ============================================================
-     VALUES — Light magazine grid with animated fill bars (original)
-  ============================================================ -->
-  <section class="values-section">
-    <div class="section-label reveal">Core DNA</div>
-    <h2 class="section-title reveal stagger-1 split-words">Values <em>forged</em><br>in steel.</h2>
-    <div class="values-layout">
-      <div class="values-intro-text reveal stagger-2">
-        <strong>Our Codex</strong>
-        More than a mission statement — these principles guide every weld, every calculation, every client relationship.
-      </div>
-      <div class="values-cards">
-        <div class="value-card reveal" data-percent="98">
-          <div class="value-card-num">01</div>
-          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg></div>
-          <h3>Zero Compromise</h3>
-          <p>Safety and precision are non-negotiable. Every project undergoes triple QC gates and independent audits.</p>
-          <div class="value-bar"><div class="value-bar-fill" style="--w:98%"></div></div>
-        </div>
-        <div class="value-card reveal stagger-2" data-percent="100">
-          <div class="value-card-num">02</div>
-          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <h3>Radical Transparency</h3>
-          <p>Real-time digital dashboards for clients — from material sourcing to final delivery, full traceability.</p>
-          <div class="value-bar"><div class="value-bar-fill" style="--w:100%"></div></div>
-        </div>
-        <div class="value-card reveal stagger-3" data-percent="94">
-          <div class="value-card-num">03</div>
-          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8M16 6l-4-4-4 4M12 2v12"/></svg></div>
-          <h3>Relentless Innovation</h3>
-          <p>Dedicated R&D lab exploring advanced alloys, AI defect detection, and carbon-neutral fabrication.</p>
-          <div class="value-bar"><div class="value-bar-fill" style="--w:94%"></div></div>
-        </div>
-        <div class="value-card reveal stagger-4" data-percent="100">
-          <div class="value-card-num">04</div>
-          <div class="value-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-          <h3>Partnership DNA</h3>
-          <p>We don't just deliver components — we embed with your teams for lifecycle support and continuous improvement.</p>
-          <div class="value-bar"><div class="value-bar-fill" style="--w:100%"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="stats-section reveal">
+  <div class="stats-grid">
+    <div class="stat-item"><h4 class="counter" data-target="17">0</h4><p>Years of Experience</p></div>
+    <div class="stat-item"><h4 class="counter" data-target="200">0</h4><p>Completed Projects</p></div>
+    <div class="stat-item"><h4 class="counter" data-target="120">0</h4><p>Skilled Workforce</p></div>
+    <div class="stat-item"><h4 class="counter" data-target="98">0</h4><p>Client Satisfaction %</p></div>
+  </div>
+</section>
 
-  <!-- ============================================================
-     CERTIFICATIONS — premium dark grid (extended)
-  ============================================================ -->
-  <section class="certs-about-section">
-    <div class="section-label reveal">Accreditations</div>
-    <h2 class="section-title reveal stagger-1 split-words">Certified to <em>deliver</em><br>excellence.</h2>
-    <div class="certs-grid">
-      <div class="cert-card reveal">
-        <div class="cert-card-code">ISO 9001:2024</div>
-        <div class="cert-card-name">Quality Management</div>
-        <div class="cert-card-body">Integrated design, production, and after-sales processes audited annually.</div>
-        <div class="cert-card-corner"></div>
-      </div>
-      <div class="cert-card reveal stagger-2">
-        <div class="cert-card-code">ASME SEC VIII</div>
-        <div class="cert-card-name">Pressure Vessels</div>
-        <div class="cert-card-body">Div. 1 & 2 — design and fabrication of unfired pressure vessels.</div>
-        <div class="cert-card-corner"></div>
-      </div>
-      <div class="cert-card reveal stagger-3">
-        <div class="cert-card-code">API Q1</div>
-        <div class="cert-card-name">Oil & Gas Equipment</div>
-        <div class="cert-card-body">Specification for quality programs for the petroleum and natural gas industry.</div>
-        <div class="cert-card-corner"></div>
-      </div>
-      <div class="cert-card reveal stagger-4">
-        <div class="cert-card-code">AWS D1.1</div>
-        <div class="cert-card-name">Structural Welding</div>
-        <div class="cert-card-body">Code for steel structures — certified welding procedures and inspectors.</div>
-        <div class="cert-card-corner"></div>
-      </div>
-      <div class="cert-card reveal stagger-5">
-        <div class="cert-card-code">OHSAS 45001</div>
-        <div class="cert-card-name">Occupational Health</div>
-        <div class="cert-card-body">Safety management system with zero-LTI record for 6 consecutive years.</div>
-        <div class="cert-card-corner"></div>
-      </div>
-      <div class="cert-card reveal stagger-6">
-        <div class="cert-card-code">CE MARKING</div>
-        <div class="cert-card-name">EU Compliance</div>
-        <div class="cert-card-body">Structural steel and machinery directive compliant for European exports.</div>
-        <div class="cert-card-corner"></div>
-      </div>
+<section class="certs-section">
+  <div class="section-label reveal">Certifications &amp; Standards</div>
+  <h2 class="section-title reveal stagger-1">Global <em>Compliance</em></h2>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      <h4>ISO 9001:2015</h4><p>Quality Management System</p>
     </div>
-  </section>
+    <div class="cert-card reveal stagger-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5zM3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14zM14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5zM10 9.5c0 .83-.67 1.5-1.5 1.5h-5C2.67 11 2 10.33 2 9.5S2.67 8 3.5 8h5c.83 0 1.5.67 1.5 1.5z"/></svg>
+      <h4>ASME IX</h4><p>Welding &amp; Brazing Standards</p>
+    </div>
+    <div class="cert-card reveal stagger-2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <h4>BS EN 1090</h4><p>Structural Steel Execution</p>
+    </div>
+    <div class="cert-card reveal stagger-3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <h4>UAE Licensed</h4><p>License No. 4840 · UAQ</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ============================================================
-     CTA SPLIT — Two-tone banner with action (fresh design)
-  ============================================================ -->
-  <div class="cta-split">
-    <div class="cta-split-left">
-      <div class="cta-split-label">START YOUR PROJECT</div>
-      <div class="cta-split-title">Engineering <em>your</em><br>next milestone.</div>
-      <div class="cta-split-sub">From feasibility to fabrication, our team of engineers is ready to bring your vision to life with precision and speed.</div>
+<section class="gallery-section">
+  <div class="section-label reveal">Industrial Gallery</div>
+  <h2 class="section-title reveal stagger-1">Steel &amp; <em>Structure</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <img src="https://images.pexels.com/photos/30180598/pexels-photo-30180598.jpeg" alt="Precision Welding" loading="lazy"/>
+      <div class="gallery-overlay"><span>Precision Welding</span></div>
     </div>
-    <div class="cta-split-right">
-      <div class="cta-action-row">
-        <h4>READY TO BUILD?</h4>
-        <a href="index.html#contact" class="cta-main-btn">Request a consultation →</a>
+    <div class="gallery-item reveal stagger-1">
+      <img src="https://images.pexels.com/photos/36003964/pexels-photo-36003964.jpeg" alt="Heavy Fabrication" loading="lazy"/>
+      <div class="gallery-overlay"><span>Heavy Fabrication</span></div>
+    </div>
+    <div class="gallery-item reveal stagger-2">
+      <img src="https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=2" alt="Structural Erection" loading="lazy"/>
+      <div class="gallery-overlay"><span>Structural Erection</span></div>
+    </div>
+    <div class="gallery-item reveal">
+      <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=2" alt="Pipe Spool Assembly" loading="lazy"/>
+      <div class="gallery-overlay"><span>Pipe Spool Assembly</span></div>
+    </div>
+    <div class="gallery-item reveal stagger-1">
+      <img src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=2" alt="Industrial Machinery" loading="lazy"/>
+      <div class="gallery-overlay"><span>Industrial Machinery</span></div>
+    </div>
+    <div class="gallery-item reveal stagger-2">
+      <img src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=2" alt="Oil &amp; Gas Infrastructure" loading="lazy"/>
+      <div class="gallery-overlay"><span>Oil &amp; Gas Infrastructure</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <span class="cta-label reveal">Start a Project</span>
+  <h2 class="cta-title reveal stagger-1">LET'S BUILD <em>TOGETHER</em></h2>
+  <div class="cta-actions reveal stagger-2">
+    <a href="contact.html" class="btn-primary">Request a Quote</a>
+    <a href="services.html" class="btn-ghost">Our Services</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="index.html" class="footer-logo">MASTECH</a>
+      <p class="footer-tagline-text">Mastech Technical Iron Works L.L.C — Mechanical Engineering, Steel Fabrication and Manufacturing. Established 2007, Umm Al Quwain, UAE.</p>
+      <div class="footer-certs">
+        <span class="footer-cert-badge">ISO Aligned</span>
+        <span class="footer-cert-badge">ASME IX</span>
+        <span class="footer-cert-badge">UAE Licensed</span>
+        <span class="footer-cert-badge">BS EN 1090</span>
       </div>
-      <div class="cta-contact-list">
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div class="cta-contact-txt"><span class="cta-contact-lbl">Email Direct</span><span class="cta-contact-val">enquiries@mastech-uae.com</span></div>
-        </div>
-        <div class="cta-contact-item">
-          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg></div>
-          <div class="cta-contact-txt"><span class="cta-contact-lbl">WhatsApp</span><span class="cta-contact-val">+971 50 123 4567</span></div>
+    </div>
+    <div class="footer-nav-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+    <div class="footer-nav-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Steel Fabrication</a></li>
+        <li><a href="#">Pipe Spool Works</a></li>
+        <li><a href="#">Plant Maintenance</a></li>
+        <li><a href="#">Offshore Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact-col">
+      <h5>Contact</h5>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Phone</span>
+        <a href="tel:+971525816222" class="footer-contact-val">+971 52 581 6222</a>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Email</span>
+        <a href="mailto:info@mastechllc.com" class="footer-contact-val">info@mastechllc.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Address</span>
+        <span class="footer-contact-val">P.O. Box 3534, Umm Al Quwain, UAE</span>
+      </div>
+      <div class="footer-newsletter">
+        <p>Stay updated with our latest projects</p>
+        <div class="footer-nl-form">
+          <input type="email" class="footer-nl-input" placeholder="Your email address"/>
+          <button class="footer-nl-btn">Send →</button>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- ============================================================
-     FOOTER (identical to main site)
-  ============================================================ -->
-  <footer>
-    <div class="footer-ring-wrap" aria-hidden="true"><div class="footer-ring"><div class="footer-ring-inner">EST<br>2007</div></div></div>
-    <div class="footer-main">
-      <div class="footer-brand-col"><a href="#" class="footer-logo">MASTECH</a><p class="footer-tagline-text">Precision engineering, steel fabrication, and oilfield services from the heart of the UAE — built for the world's most demanding industries.</p><div class="footer-certs"><div class="footer-cert-badge">ISO 9001</div><div class="footer-cert-badge">ASME VIII</div><div class="footer-cert-badge">API Q1</div><div class="footer-cert-badge">AWS D1.1</div></div></div>
-      <div class="footer-nav-col"><h5>Services</h5><ul><li><a href="index.html#services">Mechanical Engineering</a></li><li><a href="index.html#services">Steel Fabrication</a></li><li><a href="index.html#services">Oil & Gas</a></li><li><a href="index.html#services">Plant Maintenance</a></li><li><a href="index.html#services">Instrumentation</a></li></ul></div>
-      <div class="footer-nav-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="index.html#process">Our Process</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="#timeline">Heritage</a></li><li><a href="index.html#contact">Careers</a></li></ul></div>
-      <div class="footer-contact-col"><h5>Get In Touch</h5><div class="footer-contact-item"><div class="footer-contact-label">Address</div><div class="footer-contact-val">P.O. Box 3534<br>Umm Al Quwain, UAE</div></div><div class="footer-contact-item"><div class="footer-contact-label">Email</div><a href="mailto:enquiries@mastech-uae.com" class="footer-contact-val">enquiries@mastech-uae.com</a></div><div class="footer-contact-item"><div class="footer-contact-label">Phone</div><a href="tel:+97168888888" class="footer-contact-val">+971 6 888 8888</a></div><div class="footer-newsletter"><p>Subscribe to project updates</p><form class="footer-nl-form" onsubmit="return false;"><input class="footer-nl-input" type="email" placeholder="your@email.com" aria-label="Email address"><button type="submit" class="footer-nl-btn">Subscribe →</button></form></div></div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Mastech Technical Iron Works L.L.C. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sitemap</a>
     </div>
-    <div class="footer-bottom"><div class="footer-copy">© 2025 Mastech Technical Iron Works L.L.C. All rights reserved.</div><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><div class="footer-socials"><a href="#" class="footer-social-btn" title="LinkedIn">in</a><a href="#" class="footer-social-btn" title="Instagram">ig</a><a href="#" class="footer-social-btn" title="Twitter/X">𝕏</a></div></div>
-  </footer>
+    <div class="footer-socials">
+      <a href="#" class="footer-social-btn">in</a>
+      <a href="#" class="footer-social-btn">fb</a>
+      <a href="#" class="footer-social-btn">wa</a>
+    </div>
+  </div>
+</footer>
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    // Ensure spine animation triggers on scroll
-    const spine = document.getElementById('storySpine');
-    const observerSpine = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.3 });
-    if(spine) observerSpine.observe(spine);
-    // Value bar "in-view" class for progress bars
-    const valueCards = document.querySelectorAll('.value-card');
-    const valueObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    }, { threshold: 0.2 });
-    valueCards.forEach(card => valueObserver.observe(card));
-    // Additional scroll reveal for about hero elements (already handled by CSS animations)
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      obs.observe(el);
+<script>
+  const pb = document.getElementById('progressBar');
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    pb.style.width = pct + '%';
+    nb.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const hb = document.getElementById('hamburger');
+  const mm = document.getElementById('mobileMenu');
+  hb.addEventListener('click', () => {
+    hb.classList.toggle('open');
+    mm.classList.toggle('open');
+    document.body.style.overflow = mm.classList.contains('open') ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a,button').forEach(el => el.addEventListener('click', () => {
+    hb.classList.remove('open'); mm.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.section-label').forEach(el => ro.observe(el));
+
+  const co = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.target;
+      let count = 0;
+      const steps = 60, inc = target / steps;
+      const tick = () => { count = Math.min(count + inc, target); el.textContent = Math.floor(count); if (count < target) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+      co.unobserve(el);
     });
-    // split words animation (simple fallback)
-    document.querySelectorAll('.split-words').forEach(el => { el.classList.add('visible'); });
-    // progress bar simulation (from main.js style)
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar') && (document.getElementById('progressBar').style.width = scrolled + '%');
-    });
-  </script>
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(c => co.observe(c));
+
+  const pc = document.getElementById('particleContainer');
+  for (let i = 0; i < 10; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const s = Math.random() * 2.5 + 0.5;
+    p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*22+14}s;animation-delay:${Math.random()*12}s;opacity:${Math.random()*0.25+0.04};`;
+    pc.appendChild(p);
+  }
+</script>
 </body>
 </html>
