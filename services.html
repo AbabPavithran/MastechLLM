@@ -287,14 +287,26 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <button class="mobile-cta">Get a Quote</button>
+  <
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
+
+    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+
+    <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
+
+    <a href="projects.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
+
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+
+    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+
+    <button class="mobile-cta"
+      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobileMenu').classList.remove('open');">Get
+
+      a Quote</button>
+
   </div>
+  
 
   <!-- ══════════════════════════════════
        HERO
