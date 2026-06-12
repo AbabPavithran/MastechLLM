@@ -1,0 +1,130 @@
+<!-- ============================================================
+   MASTECH  —  Shared Navbar Integration Guide
+   
+   HOW TO ADD THE SHARED NAVBAR TO EVERY PAGE
+   ============================================================
+
+   STEP 1 — Copy the two output files into your project:
+   
+     navbar.js            →  assets/js/navbar.js
+     navbar-dropdown.css  →  assets/css/navbar-dropdown.css
+
+
+   STEP 2 — Add these three lines to the <head> of EVERY page,
+   after your existing CSS links:
+
+     <link  rel="stylesheet" href="assets/css/main.css">
+     <link  rel="stylesheet" href="assets/css/navbar-dropdown.css">  ← ADD
+     <script src="assets/js/navbar.js" defer></script>               ← ADD
+
+
+   STEP 3 — Replace the entire existing <nav> block (and the
+   mobile menu div if present) on each page with just:
+
+     <div id="navbar-mount"></div>
+
+   The script injects everything automatically.
+
+
+   STEP 4 — Path adjustment for sub-pages:
+   The script auto-detects how deep the current page is and
+   prefixes "../" as needed. No manual path changes required.
+
+   Root pages:           index.html, services.html, about.html …
+   One level deep:       pages/about.html, company/policies.html …
+   Two levels deep:      subdir/pages/detail.html …
+
+
+   STEP 5 — Remove any old <nav> / mobile-menu HTML from pages
+   that already have one, to avoid duplicates.
+
+   ============================================================
+   COMPLETE PAGE TEMPLATE  (copy-paste base for any new page)
+   ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title — MASTECH Technical Iron Works</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/navbar-dropdown.css">
+
+  <!-- Shared navbar (injected into #navbar-mount) -->
+  <script src="assets/js/navbar.js" defer></script>
+
+  <!-- Page-specific CSS (optional) -->
+  <!-- <link rel="stylesheet" href="assets/css/process.css"> -->
+</head>
+<body>
+
+  <!-- ① Ambient background shapes (from main.css) -->
+  <div class="ambient-shapes">
+    <div class="ambient-blob ambient-1"></div>
+    <div class="ambient-blob ambient-2"></div>
+    <div class="ambient-blob ambient-3"></div>
+  </div>
+
+  <!-- ② Floating particles -->
+  <div class="floating-particles" id="particles"></div>
+
+  <!-- ③ NAVBAR MOUNT POINT — replaces the old <nav> block -->
+  <div id="navbar-mount"></div>
+
+  <!-- ════════════════════════════════════════════
+       PAGE CONTENT GOES HERE
+  ════════════════════════════════════════════ -->
+
+  <main>
+    <!-- hero / sections / etc -->
+  </main>
+
+  <!-- ④ Footer (keep existing footer HTML here) -->
+  <footer>
+    <!-- ... existing footer markup ... -->
+  </footer>
+
+  <!-- Page-specific JS -->
+  <!-- <script src="assets/js/page-specific.js"></script> -->
+
+</body>
+</html>
+
+
+<!-- ============================================================
+   DROPDOWN LINK DESTINATIONS
+
+   The dropdown points to these URLs (relative to site root).
+   Create these files or adjust the hrefs inside navbar.js:
+
+     company/trade-licenses.html
+     company/membership-certificate.html
+     company/organization-chart.html
+     company/policies.html
+
+   To change any URL, edit navbar.js — one change updates all pages.
+
+   ============================================================
+   CHECKLIST — apply to each page file:
+
+   [ ] index.html           — replace <nav>…</nav> with <div id="navbar-mount"></div>
+   [ ] services.html        — same
+   [ ] projects.html        — same
+   [ ] about.html           — same
+   [ ] contact.html         — same
+   [ ] process.html         — same  ← you mentioned this one specifically
+   [ ] company/policies.html         — same (note: one level deep, auto-handled)
+   [ ] company/trade-licenses.html   — same
+   [ ] company/membership-certificate.html — same
+   [ ] company/organization-chart.html     — same
+   [ ] Any other pages      — same
+
+   ============================================================ -->

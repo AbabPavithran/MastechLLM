@@ -1,0 +1,197 @@
+/* ==========================================
+   COMPANY PAGE
+   assets/css/company.css
+========================================== */
+
+
+/* ── HERO ── */
+
+.co-hero {
+  position: relative;
+  padding: 160px 64px 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.co-hero-glow {
+  position: absolute;
+  top: -80px;
+  right: -120px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(193,58,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.co-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.co-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 128px);
+  letter-spacing: 2px;
+  line-height: 1.0;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.co-hero-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--rust);
+  line-height: 1.15;
+  display: inline-block;
+}
+
+.co-hero-desc {
+  font-size: 0.95rem;
+  color: var(--mid);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+
+/* ── CARDS SECTION ── */
+
+.co-cards-section {
+  padding: 40px 64px 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.co-cards-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.co-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 36px 32px;
+  background: #ffffff;
+  border: 1px solid var(--smoke);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.32s var(--ease-out),
+              box-shadow 0.32s var(--ease-out),
+              border-color 0.32s;
+}
+
+.co-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rust), var(--gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.co-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+  border-color: rgba(193,58,42,0.2);
+}
+
+.co-card:hover::before {
+  transform: scaleX(1);
+}
+
+.co-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgba(193,58,42,0.06);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rust);
+  transition: background 0.3s, color 0.3s;
+}
+
+.co-card:hover .co-card-icon {
+  background: var(--rust);
+  color: #ffffff;
+}
+
+.co-card-body {
+  flex: 1;
+}
+
+.co-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.co-card:hover .co-card-title {
+  color: var(--rust);
+}
+
+.co-card-desc {
+  font-size: 0.82rem;
+  color: var(--mid);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.co-card-arrow {
+  flex-shrink: 0;
+  color: var(--mid);
+  align-self: center;
+  transition: color 0.3s, transform 0.3s var(--ease-spring);
+}
+
+.co-card:hover .co-card-arrow {
+  color: var(--rust);
+  transform: translateX(6px);
+}
+
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 900px) {
+  .co-hero {
+    padding: 120px 24px 60px;
+  }
+
+  .co-cards-section {
+    padding: 32px 24px 80px;
+  }
+
+  .co-cards-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .co-card {
+    padding: 28px 24px;
+    gap: 18px;
+  }
+
+  .co-card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .co-card-title {
+    font-size: 1.25rem;
+  }
+}

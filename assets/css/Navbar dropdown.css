@@ -1,0 +1,252 @@
+/* ============================================================
+   MASTECH TECHNICAL IRON WORKS L.L.C
+   navbar-dropdown.css
+   
+   ADD THIS FILE to every page <head> after main.css:
+     <link rel="stylesheet" href="assets/css/navbar-dropdown.css">
+   
+   Or paste the contents directly into main.css after the
+   existing "NAVIGATION" block (~line 150).
+============================================================ */
+
+/* ============================================================
+   DESKTOP DROPDOWN
+============================================================ */
+
+/* Wrapper — positioned ancestor for the panel */
+.nav-dropdown-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Trigger link — matches existing .nav-links a exactly */
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 3px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+
+  /* Underline effect — identical to other nav links */
+  transition: color .3s;
+}
+.nav-dropdown-trigger::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--rust);
+  transition: width .35s var(--ease-out);
+}
+.nav-dropdown-wrap.open .nav-dropdown-trigger::after,
+.nav-dropdown-trigger:hover::after {
+  width: 100%;
+}
+
+/* Chevron arrow */
+.nav-dropdown-arrow {
+  flex-shrink: 0;
+  transition: transform .3s var(--ease-out);
+}
+.nav-dropdown-wrap.open .nav-dropdown-arrow,
+.nav-dropdown-trigger[aria-expanded="true"] .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 220px;
+  background: rgba(245, 242, 235, 0.98);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  border: 1px solid rgba(232, 227, 218, 0.8);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.10),
+    0 2px 8px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  padding: 10px 0;
+  z-index: 600;
+
+  /* Hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity .28s var(--ease-out),
+    transform .28s var(--ease-out);
+}
+
+/* Top accent line on panel */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rust), var(--gold), transparent);
+}
+
+/* Open state */
+.nav-dropdown-wrap.open .nav-dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown items */
+.nav-dropdown a {
+  display: block;
+  padding: 11px 24px;
+  font-size: 0.74rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 400;
+  font-family: var(--font-body);
+  position: relative;
+  transition: color .25s, padding-left .25s var(--ease-spring), background .25s;
+  white-space: nowrap;
+}
+
+/* Left-bar hover accent */
+.nav-dropdown a::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 2px;
+  height: 60%;
+  background: var(--rust);
+  transition: transform .25s var(--ease-spring);
+}
+
+.nav-dropdown a:hover {
+  color: var(--rust);
+  padding-left: 30px;
+  background: rgba(193, 58, 42, 0.04);
+}
+.nav-dropdown a:hover::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Active page highlight */
+.nav-dropdown a.nav-active {
+  color: var(--rust);
+}
+
+/* nav-active style for main links too */
+.nav-links a.nav-active::after,
+.nav-links .nav-dropdown-trigger.nav-active::after {
+  width: 100%;
+}
+
+/* ============================================================
+   MOBILE DROPDOWN ACCORDION
+============================================================ */
+
+.mobile-dropdown-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Trigger button — matches .mobile-menu a style */
+.mobile-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.85);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color .3s, letter-spacing .4s var(--ease-out);
+  text-transform: uppercase;
+}
+.mobile-dropdown-trigger:hover,
+.mobile-dropdown-trigger.open {
+  color: var(--rust);
+  letter-spacing: 8px;
+}
+.mobile-dropdown-trigger .nav-dropdown-arrow {
+  width: 16px;
+  height: 10px;
+  transition: transform .35s var(--ease-out);
+}
+.mobile-dropdown-trigger.open .nav-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Accordion panel */
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  overflow: hidden;
+
+  /* Hidden state — max-height animation */
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height .45s var(--ease-out),
+    opacity .35s var(--ease-out);
+  pointer-events: none;
+}
+.mobile-dropdown.open {
+  max-height: 360px;        /* tall enough for 4 items */
+  opacity: 1;
+  pointer-events: all;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Sub-links */
+.mobile-dropdown a {
+  font-family: var(--font-body) !important;
+  font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+  letter-spacing: 3px !important;
+  color: rgba(255,255,255,0.55) !important;
+  text-decoration: none;
+  padding: 10px 20px;
+  text-align: center;
+  transition: color .3s !important;
+  display: block;
+  width: 100%;
+}
+.mobile-dropdown a:hover {
+  color: var(--rust) !important;
+  letter-spacing: 4px !important;
+}
+
+/* ============================================================
+   RESPONSIVE GUARDS
+============================================================ */
+@media (max-width: 900px) {
+  /* Hide desktop dropdown completely on mobile */
+  .nav-dropdown-wrap { display: none; }
+}
+
+@media (min-width: 901px) {
+  /* Hide mobile accordion on desktop */
+  .mobile-dropdown-wrap { display: none; }
+}

@@ -1,0 +1,335 @@
+/* ==========================================
+   COMPANY TRADE LICENSE PAGE
+   assets/css/company_trade_license.css
+========================================== */
+
+
+/* ── HERO ── */
+
+.tl-hero {
+  position: relative;
+  padding: 160px 64px 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.tl-hero-glow {
+  position: absolute;
+  top: -80px;
+  right: -120px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(193,58,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tl-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.tl-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 128px);
+  letter-spacing: 2px;
+  line-height: 1.0;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.tl-hero-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--rust);
+  line-height: 1.15;
+  display: inline-block;
+}
+
+.tl-hero-desc {
+  font-size: 0.95rem;
+  color: var(--mid);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.tl-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.tl-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border: 1px solid rgba(193,58,42,0.25);
+  background: rgba(193,58,42,0.04);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  border-radius: 2px;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+
+.tl-meta-badge svg {
+  flex-shrink: 0;
+  color: var(--rust);
+}
+
+.tl-meta-badge:hover {
+  border-color: var(--rust);
+  background: rgba(193,58,42,0.08);
+  color: var(--rust);
+}
+
+
+/* ── DIVIDER ── */
+
+.tl-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 64px;
+  margin-bottom: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.tl-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--smoke), transparent);
+}
+
+.tl-divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rust);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.tl-divider-label {
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mid);
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+
+
+/* ── SHOWCASE ── */
+
+.tl-showcase {
+  padding: 64px 64px 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.tl-showcase-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tl-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+  margin-bottom: 48px;
+  transition: color 0.3s, gap 0.3s var(--ease-spring);
+}
+
+.tl-back:hover {
+  color: var(--rust);
+  gap: 16px;
+}
+
+.tl-back svg {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.tl-back:hover svg {
+  transform: translateX(-4px);
+}
+
+
+/* ── CERTIFICATE CARDS — two columns ── */
+
+.tl-pages-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.tl-cert-wrap {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.04),
+    0 10px 35px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(232,227,218,0.6);
+}
+
+.tl-cert-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 16px rgba(0,0,0,0.06),
+    0 20px 50px rgba(0,0,0,0.12);
+}
+
+.tl-page-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tl-page-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(193,58,42,0.15);
+}
+
+.tl-cert-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+
+/* ── INFO STRIP ── */
+
+.tl-info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--smoke);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tl-info-item {
+  padding: 32px 36px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.tl-info-item:not(:last-child) {
+  border-right: 1px solid var(--smoke);
+}
+
+.tl-info-item:hover {
+  background: rgba(193,58,42,0.02);
+}
+
+.tl-info-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-family: var(--font-body);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.tl-info-value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.tl-info-sub {
+  font-size: 0.72rem;
+  color: var(--mid);
+  font-weight: 300;
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+}
+
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 900px) {
+  .tl-hero {
+    padding: 120px 24px 60px;
+  }
+
+  .tl-divider {
+    padding: 0 24px;
+  }
+
+  .tl-showcase {
+    padding: 48px 24px 80px;
+  }
+
+  /* Stack pages vertically on mobile */
+  .tl-pages-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tl-cert-wrap {
+    padding: 20px;
+  }
+
+  .tl-page-label {
+    font-size: 0.6rem;
+  }
+
+  .tl-info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-info-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid var(--smoke);
+  }
+
+  .tl-info-value {
+    font-size: 1.8rem;
+  }
+
+  .tl-hero-meta {
+    gap: 8px;
+  }
+
+  .tl-meta-badge {
+    font-size: 0.6rem;
+    padding: 7px 12px;
+  }
+}

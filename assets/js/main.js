@@ -18,14 +18,14 @@
 
   function closeMobile() {
     const mobileMenu = $("#mobileMenu");
-    const hamburger = $("#navHamburger");
+    const hamburger  = $("#navHamburger");
     if (mobileMenu) mobileMenu.classList.remove("open");
-    if (hamburger) hamburger.classList.remove("open");
+    if (hamburger)  hamburger.classList.remove("open");
     document.body.style.overflow = "";
   }
 
   // ---------- NAV SCROLL + PROGRESS BAR ----------
-  const nav = $("#mainNav");
+  const nav         = $("#mainNav");
   const progressBar = $("#progressBar");
   window.addEventListener("scroll", () => {
     if (nav) nav.classList.toggle("scrolled", window.scrollY > 60);
@@ -36,7 +36,6 @@
     const backTop = $("#backTop");
     if (backTop) backTop.classList.toggle("visible", window.scrollY > 400);
 
-    // update active nav link
     $$("section[id], div[id]").forEach(sec => {
       const top = sec.getBoundingClientRect().top;
       if (top < 140 && top > -sec.offsetHeight + 140) {
@@ -48,7 +47,7 @@
   }, { passive: true });
 
   // ---------- MOBILE MENU ----------
-  const hamburger = $("#navHamburger");
+  const hamburger  = $("#navHamburger");
   const mobileMenu = $("#mobileMenu");
   if (hamburger && mobileMenu) {
     hamburger.addEventListener("click", () => {
@@ -56,7 +55,9 @@
       mobileMenu.classList.toggle("open");
       document.body.style.overflow = mobileMenu.classList.contains("open") ? "hidden" : "";
     });
-    // close menu when any link/button inside is clicked
+
+    // Close menu when any link/button inside is clicked —
+    // EXCEPT the Company toggle (it uses stopPropagation to opt out)
     mobileMenu.querySelectorAll("a, button").forEach(el => {
       el.addEventListener("click", closeMobile);
     });
@@ -72,7 +73,8 @@
       }
     });
   }, { threshold: 0.12 });
-  $$(".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip, .reveal-blur").forEach(el => revealObserver.observe(el));
+  $$(".reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-clip, .reveal-blur")
+    .forEach(el => revealObserver.observe(el));
 
   const labelObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
@@ -81,12 +83,11 @@
 
   // ---------- ANIMATED COUNTERS ----------
   function animateCount(el, target, duration = 1800) {
-    const start = performance.now();
+    const start  = performance.now();
     const update = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const val = Math.round(eased * target);
-      el.textContent = val;
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
       if (progress < 1) requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
@@ -96,9 +97,9 @@
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       if (e.target.classList.contains("metric-num")) {
-        const target = +e.target.dataset.count;
+        const target  = +e.target.dataset.count;
         if (target) {
-          const unit = e.target.querySelector(".metric-unit");
+          const unit    = e.target.querySelector(".metric-unit");
           const unitHtml = unit ? unit.outerHTML : "";
           const tempSpan = document.createElement("span");
           tempSpan.textContent = "0";
@@ -109,7 +110,7 @@
         }
         counterObserver.unobserve(e.target);
       } else if (e.target.closest(".hero-stats")) {
-        const valEl = e.target.querySelector(".count-val");
+        const valEl  = e.target.querySelector(".count-val");
         const target = +e.target.dataset.count;
         if (valEl && target) animateCount(valEl, target);
         counterObserver.unobserve(e.target);
@@ -119,30 +120,29 @@
   $$(".metric-num[data-count]").forEach(el => counterObserver.observe(el));
   $$(".hero-stat-num[data-count]").forEach(el => counterObserver.observe(el));
 
-  // ---------- INDUSTRY TABS (bridge tabs) ----------
+  // ---------- INDUSTRY TABS ----------
   $$(".bridge-tab").forEach(btn => {
     btn.addEventListener("click", () => {
       $$(".bridge-tab").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      const filter = btn.dataset.industry;
-      // add your filtering logic here if needed
     });
   });
 
-  // ---------- SERVICE PILL FILTER (svc-pill) ----------
+  // ---------- SERVICE PILL FILTER ----------
   $$(".svc-pill").forEach(btn => {
     btn.addEventListener("click", function() {
       $$(".svc-pill").forEach(b => b.classList.remove("active"));
       this.classList.add("active");
       const filter = this.dataset.filter;
       $$(".svc-cell").forEach(cell => {
-        cell.style.opacity = (filter === "all" || cell.dataset.cat === filter) ? "1" : "0.25";
-        cell.style.pointerEvents = (filter === "all" || cell.dataset.cat === filter) ? "auto" : "none";
+        const show = filter === "all" || cell.dataset.cat === filter;
+        cell.style.opacity       = show ? "1" : "0.25";
+        cell.style.pointerEvents = show ? "auto" : "none";
       });
     });
   });
 
-  // ---------- SERVICE TABS (if any) ----------
+  // ---------- SERVICE TABS ----------
   $$(".svc-tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       $$(".svc-tab-btn").forEach(b => b.classList.remove("active"));
@@ -159,15 +159,14 @@
     });
   });
 
-  // ---------- PROJECT FILTER (legacy masonry) ----------
+  // ---------- PROJECT FILTER ----------
   $$(".proj-filter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       $$(".proj-filter-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const filter = btn.dataset.filter;
       $$(".project-item").forEach(item => {
-        const match = filter === "all" || item.dataset.category === filter;
-        item.classList.toggle("hidden", !match);
+        item.classList.toggle("hidden", filter !== "all" && item.dataset.category !== filter);
       });
     });
   });
@@ -175,28 +174,28 @@
   // ---------- PROCESS ACCORDION ----------
   $$(".acc-header").forEach(header => {
     header.addEventListener("click", () => {
-      const item = header.closest(".acc-item");
+      const item   = header.closest(".acc-item");
       const isOpen = item.classList.contains("open");
       $$(".acc-item").forEach(i => i.classList.remove("open"));
       if (!isOpen) item.classList.add("open");
     });
   });
 
-  // ---------- FORM SUBMIT (simple version) ----------
+  // ---------- FORM SUBMIT ----------
   window.handleSubmit = function(e) {
     e.preventDefault();
-    $("#contactForm").style.display = "none";
+    $("#contactForm").style.display  = "none";
     $("#successMsg").classList.add("show");
   };
 
   // ---------- HERO IMAGE PARALLAX ----------
-  const heroImg = $("#heroImg");
+  const heroImg   = $("#heroImg");
   const heroRight = document.querySelector(".hero-right");
   if (heroImg && heroRight) {
     heroRight.addEventListener("mousemove", e => {
       const rect = heroRight.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
       heroImg.style.transform = `scale(1.1) translate(${x * 14}px, ${y * 10}px)`;
     });
     heroRight.addEventListener("mouseleave", () => {
@@ -208,8 +207,8 @@
   $$(".service-tile").forEach(tile => {
     tile.addEventListener("mousemove", e => {
       const rect = tile.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
       tile.style.transform = `translateY(-8px) rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
     });
     tile.addEventListener("mouseleave", () => {
@@ -217,8 +216,8 @@
     });
   });
 
-  // ---------- PROJECT CAROUSEL (filter, dots, arrows, drag) ----------
-  const projCards = $$(".proj-card");
+  // ---------- PROJECT CAROUSEL ----------
+  const projCards   = $$(".proj-card");
   const cardRevealObs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
@@ -236,35 +235,34 @@
       const f = btn.dataset.filter;
       projCards.forEach(c => {
         const match = f === "all" || c.dataset.category === f;
-        c.style.opacity = match ? "" : "0.25";
+        c.style.opacity       = match ? "" : "0.25";
         c.style.pointerEvents = match ? "" : "none";
-        c.style.transform = match ? "" : "scale(0.97)";
+        c.style.transform     = match ? "" : "scale(0.97)";
       });
     });
   });
 
-  const track = $("#carouselTrack");
+  const track   = $("#carouselTrack");
   const navDots = $$(".nav-dot");
-  let current = 0;
+  let current   = 0;
+
   function scrollToCard(idx) {
     const cardEls = track ? track.querySelectorAll(".proj-card") : [];
     if (!cardEls[idx]) return;
-    const cardW = cardEls[idx].offsetWidth + 20;
-    track.scrollTo({ left: cardW * idx, behavior: "smooth" });
+    track.scrollTo({ left: (cardEls[idx].offsetWidth + 20) * idx, behavior: "smooth" });
     navDots.forEach(d => d.classList.remove("active"));
     if (navDots[idx]) navDots[idx].classList.add("active");
     current = idx;
   }
-  navDots.forEach(d => {
-    d.addEventListener("click", () => scrollToCard(+d.dataset.index));
-  });
+
+  navDots.forEach(d => d.addEventListener("click", () => scrollToCard(+d.dataset.index)));
   $("#nextBtn")?.addEventListener("click", () => scrollToCard(Math.min(current + 1, projCards.length - 1)));
   $("#prevBtn")?.addEventListener("click", () => scrollToCard(Math.max(current - 1, 0)));
 
   if (track) {
     track.addEventListener("scroll", () => {
       const cardW = (track.querySelectorAll(".proj-card")[0]?.offsetWidth ?? 0) + 20 || 1;
-      const idx = Math.round(track.scrollLeft / cardW);
+      const idx   = Math.round(track.scrollLeft / cardW);
       if (idx !== current) {
         navDots.forEach(d => d.classList.remove("active"));
         if (navDots[idx]) navDots[idx].classList.add("active");
@@ -272,21 +270,14 @@
       }
     }, { passive: true });
 
-    // drag to scroll
     let isDown = false, startX, scrollLeft;
-    track.addEventListener("mousedown", e => {
-      isDown = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-      track.style.cursor = "grabbing";
-    });
+    track.addEventListener("mousedown",  e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; track.style.cursor = "grabbing"; });
     track.addEventListener("mouseleave", () => { isDown = false; track.style.cursor = "grab"; });
-    track.addEventListener("mouseup", () => { isDown = false; track.style.cursor = "grab"; });
-    track.addEventListener("mousemove", e => {
+    track.addEventListener("mouseup",    () => { isDown = false; track.style.cursor = "grab"; });
+    track.addEventListener("mousemove",  e => {
       if (!isDown) return;
       e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      track.scrollLeft = scrollLeft - (x - startX) * 1.4;
+      track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.4;
     });
   }
 
@@ -295,9 +286,9 @@
   pContainer.className = "floating-particles";
   document.body.appendChild(pContainer);
   for (let i = 0; i < 18; i++) {
-    const p = document.createElement("div");
+    const p    = document.createElement("div");
     p.className = "particle";
-    const size = Math.random() * 4 + 1.5;
+    const size  = Math.random() * 4 + 1.5;
     p.style.cssText = `
       left:${Math.random() * 100}%;
       bottom:${Math.random() * 20}%;
@@ -313,47 +304,95 @@
   // ---------- BACK TO TOP ----------
   $("#backTop")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  // ---------- BUTTON HANDLERS (replace inline onclicks) ----------
-  // Hero buttons
-  $(".hero-btn-primary")?.addEventListener("click", () => {
-    document.querySelector(".services-section")?.scrollIntoView({ behavior: "smooth" });
-  });
-  $(".hero-btn-ghost")?.addEventListener("click", () => scrollTo("contact"));
-
-  // Nav CTA
-  $(".nav-cta")?.addEventListener("click", () => scrollTo("contact"));
-
-  // Mobile CTA
-  $(".mobile-cta")?.addEventListener("click", () => {
-    scrollTo("contact");
-    closeMobile();
-  });
-
-  // About CTA buttons
-  $(".hm-btn-primary")?.addEventListener("click", () => {
-    document.querySelector(".services-section")?.scrollIntoView({ behavior: "smooth" });
-  });
-  $(".btn-link-inline")?.addEventListener("click", () => {
-    // company profile link – currently logs; replace with actual URL if needed
-    console.log("Company profile clicked");
-  });
-
-  // CTA split button
-  $(".cta-left-btn")?.addEventListener("click", () => scrollTo("contact"));
-
-  // Bridge search button placeholder
+  // ---------- BUTTON HANDLERS ----------
+  $(".hero-btn-primary")?.addEventListener("click",  () => document.querySelector(".services-section")?.scrollIntoView({ behavior: "smooth" }));
+  $(".hero-btn-ghost")?.addEventListener("click",    () => scrollTo("contact"));
+  $(".nav-cta")?.addEventListener("click",           () => scrollTo("contact"));
+  $(".mobile-cta")?.addEventListener("click",        () => { scrollTo("contact"); closeMobile(); });
+  $(".hm-btn-primary")?.addEventListener("click",    () => document.querySelector(".services-section")?.scrollIntoView({ behavior: "smooth" }));
+  $(".btn-link-inline")?.addEventListener("click",   () => console.log("Company profile clicked"));
+  $(".cta-left-btn")?.addEventListener("click",      () => scrollTo("contact"));
   $(".bridge-search-btn")?.addEventListener("click", () => {
     const input = $(".bridge-search-input");
-    if (input && input.value.trim()) {
-      console.log("Searching for:", input.value.trim());
-      // implement actual search if required
-    }
+    if (input?.value.trim()) console.log("Searching for:", input.value.trim());
   });
 
-  // close mobile menu when nav-links are clicked
-  $$(".nav-links a").forEach(link => {
-    link.addEventListener("click", closeMobile);
-  });
+  $$(".nav-links a").forEach(link => link.addEventListener("click", closeMobile));
+
+  // ============================================================
+  // COMPANY DROPDOWN — DESKTOP
+  // ============================================================
+  const dropWrap    = document.querySelector(".nav-dropdown-wrap");
+  const dropTrigger = document.getElementById("companyTrigger");
+  const dropMenu    = document.getElementById("companyMenu");
+
+  if (dropWrap && dropTrigger && dropMenu) {
+
+    // Click toggles .open (touch + keyboard fallback; hover handles mouse)
+    dropTrigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = dropWrap.classList.toggle("open");
+      dropTrigger.setAttribute("aria-expanded", open);
+    });
+
+    // Outside click → close
+    document.addEventListener("click", (e) => {
+      if (!dropWrap.contains(e.target)) {
+        dropWrap.classList.remove("open");
+        dropTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Escape → close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && dropWrap.classList.contains("open")) {
+        dropWrap.classList.remove("open");
+        dropTrigger.setAttribute("aria-expanded", "false");
+        dropTrigger.focus();
+      }
+    });
+
+    // Arrow / Home / End / Tab navigation inside menu
+    const getItems = () => [...dropMenu.querySelectorAll("[role='menuitem']")];
+    dropMenu.addEventListener("keydown", (e) => {
+      const items = getItems();
+      const idx   = items.indexOf(document.activeElement);
+      if      (e.key === "ArrowDown") { e.preventDefault(); items[(idx + 1) % items.length].focus(); }
+      else if (e.key === "ArrowUp")   { e.preventDefault(); items[(idx - 1 + items.length) % items.length].focus(); }
+      else if (e.key === "Home")      { e.preventDefault(); items[0].focus(); }
+      else if (e.key === "End")       { e.preventDefault(); items[items.length - 1].focus(); }
+      else if (e.key === "Tab")       { dropWrap.classList.remove("open"); dropTrigger.setAttribute("aria-expanded", "false"); }
+    });
+
+    // Enter / Space → open + focus first item
+    dropTrigger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        dropTrigger.click();
+        if (dropWrap.classList.contains("open")) {
+          setTimeout(() => getItems()[0]?.focus(), 50);
+        }
+      }
+    });
+  }
+
+  // ============================================================
+  // COMPANY DROPDOWN — MOBILE
+  // ============================================================
+  const mobileToggle = document.getElementById("mobileCompanyToggle");
+  const mobileSub    = document.getElementById("mobileSubLinks");
+
+  if (mobileToggle && mobileSub) {
+    mobileToggle.addEventListener("click", (e) => {
+      // stopPropagation prevents the catch-all closeMobile() listener
+      // (added above via mobileMenu.querySelectorAll("a, button"))
+      // from closing the entire mobile overlay when this button is tapped.
+      e.stopPropagation();
+      const open = mobileSub.classList.toggle("open");   // expand/collapse list
+      mobileToggle.classList.toggle("open", open);       // flip chevron
+      mobileToggle.setAttribute("aria-expanded", open);
+    });
+  }
 
   console.log("[MASTECH] main.js loaded – all systems operational.");
 })();
