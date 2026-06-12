@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/services.css" />
   <style>
+    /* ── NAV DROPDOWN: remove browser default bullet dots ── */
+    .nav-dropdown,
+    .nav-dropdown li {
+      list-style: none;
+      list-style-type: none;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
        MASTECH — UNIFORM SERVICE CARDS  v4
        Goal : every card identical size, perfectly aligned grid
@@ -268,45 +275,112 @@
   <!-- ══════════════════════════════════
        NAVIGATION
   ══════════════════════════════════ -->
-  <nav id="navbar">
+  <nav id="mainNav">
     <a href="index.html" class="logo">
-      <span class="logo-dot"></span>
-      MASTECH
+      MASTECH<div class="logo-dot"></div>
     </a>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="services.html" style="color:var(--rust)">Services</a>
+
+      <!-- ── COMPANY DROPDOWN ──────────────────────────────── -->
+      <div class="nav-dropdown-wrap" role="listitem">
+        <button
+          class="nav-dropdown-trigger"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="companyMenu"
+          id="companyTrigger"
+        >
+          Company
+          <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+
+        <ul
+          class="nav-dropdown"
+          id="companyMenu"
+          role="menu"
+          aria-labelledby="companyTrigger"
+        >
+          <li role="none">
+            <a href="company/trade-licenses.html" role="menuitem">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              Trade Licenses
+            </a>
+          </li>
+          <li role="none">
+            <a href="company/membership-certificate.html" role="menuitem">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              Membership Certificate
+            </a>
+          </li>
+          <li role="none">
+            <a href="organization-chart.html" role="menuitem">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              Organization Chart
+            </a>
+          </li>
+          <li role="none">
+            <a href="policies.html" role="menuitem">
+              <span class="nav-dropdown-dot" aria-hidden="true"></span>
+              Policies
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- ── END COMPANY DROPDOWN ─────────────────────────── -->
+
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+
     <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
-    <div class="nav-hamburger" id="hamburger">
+
+    <div class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <
+  <!-- ══════════════════════════════════
+       MOBILE MENU
+  ══════════════════════════════════ -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
 
-    <a href="services.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+    <a href="index.html"    onclick="closeMobileMenu()">Home</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
 
-    <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Process</a>
+    <!-- Company accordion -->
+    <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+      <button
+        class="mobile-company-toggle"
+        id="mobileCompanyToggle"
+        aria-expanded="false"
+        aria-controls="mobileSubLinks"
+      >
+        Company
+        <span class="nav-chevron" aria-hidden="true"></span>
+      </button>
 
-    <a href="projects.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Projects</a>
+      <ul class="mobile-sub-links" id="mobileSubLinks" aria-label="Company sub-menu">
+        <li><a href="company/trade-licenses.html"         onclick="closeMobileMenu()">Trade Licenses</a></li>
+        <li><a href="company/membership-certificate.html" onclick="closeMobileMenu()">Membership Certificate</a></li>
+        <li><a href="organization-chart.html"             onclick="closeMobileMenu()">Organization Chart</a></li>
+        <li><a href="policies.html"                       onclick="closeMobileMenu()">Policies</a></li>
+      </ul>
+    </div>
 
-    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
-
-    <a href="contact.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+    <a href="projects.html" onclick="closeMobileMenu()">Projects</a>
+    <a href="about.html"    onclick="closeMobileMenu()">About</a>
+    <a href="contact.html"  onclick="closeMobileMenu()">Contact</a>
 
     <button class="mobile-cta"
-      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); document.getElementById('mobileMenu').classList.remove('open');">Get
-
-      a Quote</button>
+      onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'}); closeMobileMenu();">
+      Get a Quote
+    </button>
 
   </div>
-  
 
   <!-- ══════════════════════════════════
        HERO
@@ -389,10 +463,6 @@
   </div>
 
   <!-- ══════════════════════════════════
-       FILTER NAV
-  ══════════════════════════════════ -->
-  
-  <!-- ══════════════════════════════════
        BENTO SERVICES GRID
   ══════════════════════════════════ -->
   <div class="services-bento" id="services">
@@ -437,7 +507,7 @@
       <span class="svc-arrow">↗</span>
     </div>
 
-    <!-- Card C — Gold -->
+    <!-- Card C — White override -->
     <div class="svc-card svc-card--c svc-card--gold reveal stagger-2" data-category="fabrication">
       <div class="svc-bg-text">03</div>
       <div class="svc-num">SVC — 03</div>
@@ -517,7 +587,7 @@
       <span class="svc-arrow">↗</span>
     </div>
 
-    <!-- Card G — Dark -->
+    <!-- Card G — White override -->
     <div class="svc-card svc-card--g svc-card--dark reveal stagger-2" data-category="maintenance">
       <div class="svc-bg-text">07</div>
       <div class="svc-num">SVC — 07</div>
@@ -588,7 +658,7 @@
           </svg>
         </div>
         <div class="step-counter">Step 01</div>
-        <div class="step-title">Consultation & Survey</div>
+        <div class="step-title">Consultation &amp; Survey</div>
         <p class="step-desc">We begin with a thorough site visit and needs assessment. Your project brief drives our planning — no assumptions, only verified data and requirements.</p>
       </div>
 
@@ -600,7 +670,7 @@
           </svg>
         </div>
         <div class="step-counter">Step 02</div>
-        <div class="step-title">Engineering & Design</div>
+        <div class="step-title">Engineering &amp; Design</div>
         <p class="step-desc">Our engineering team produces detailed shop drawings and structural calculations reviewed and approved before any fabrication or site work commences.</p>
       </div>
 
@@ -612,7 +682,7 @@
           </svg>
         </div>
         <div class="step-counter">Step 03</div>
-        <div class="step-title">Fabrication & QC</div>
+        <div class="step-title">Fabrication &amp; QC</div>
         <p class="step-desc">In-house fabrication under strict quality control by ASME IX qualified welders. Every weld, joint, and component is inspected against international standards.</p>
       </div>
 
@@ -624,7 +694,7 @@
           </svg>
         </div>
         <div class="step-counter">Step 04</div>
-        <div class="step-title">Installation & Commissioning</div>
+        <div class="step-title">Installation &amp; Commissioning</div>
         <p class="step-desc">Expert site erection and installation with minimal disruption, followed by full commissioning, documentation, and client sign-off. Every project delivered right.</p>
       </div>
 
@@ -644,7 +714,7 @@
         </h2>
       </div>
       <p class="industries-header-right reveal stagger-2">
-        From oil & gas facilities to petrochemical plants and heavy construction,
+        From oil &amp; gas facilities to petrochemical plants and heavy construction,
         our engineering and fabrication services meet the demands of the most
         rigorous industrial environments across the UAE and beyond.
       </p>
@@ -657,7 +727,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Oil, Gas<br>& Petrochemical</div>
+          <div class="industry-name">Oil, Gas<br>&amp; Petrochemical</div>
           <p class="industry-desc">Certified pipe fabrication, plant maintenance, and structural solutions meeting international safety codes for energy sector clients.</p>
         </div>
       </div>
@@ -667,7 +737,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Construction<br>& Infrastructure</div>
+          <div class="industry-name">Construction<br>&amp; Infrastructure</div>
           <p class="industry-desc">Structural steel fabrication, site erection, and heavy lifting solutions for major construction and infrastructure projects across the UAE.</p>
         </div>
       </div>
@@ -677,7 +747,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Manufacturing<br>& Industrial</div>
+          <div class="industry-name">Manufacturing<br>&amp; Industrial</div>
           <p class="industry-desc">Equipment manufacturing, platforms, pipe supports, and engineered components for factories and production facilities.</p>
         </div>
       </div>
@@ -687,7 +757,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Marine<br>& Offshore</div>
+          <div class="industry-name">Marine<br>&amp; Offshore</div>
           <p class="industry-desc">Specialized onshore and offshore engineering and fabrication support for marine environments and offshore industrial projects.</p>
         </div>
       </div>
@@ -697,7 +767,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Power<br>& Utilities</div>
+          <div class="industry-name">Power<br>&amp; Utilities</div>
           <p class="industry-desc">Structural steel, equipment housings, and process plant maintenance for power generation and utility infrastructure projects.</p>
         </div>
       </div>
@@ -707,7 +777,7 @@
         <div class="industry-overlay"></div>
         <div class="industry-arrow">↗</div>
         <div class="industry-content">
-          <div class="industry-name">Refining<br>& Process Plants</div>
+          <div class="industry-name">Refining<br>&amp; Process Plants</div>
           <p class="industry-desc">Plant dismantling, refurbishment, and process plant maintenance services ensuring operational reliability for refining and processing facilities.</p>
         </div>
       </div>
@@ -787,7 +857,7 @@
       </h2>
     </div>
     <div class="cta-band-right reveal stagger-2">
-      <a href="#contact" class="btn-primary">
+      <a href="contact.html" class="btn-primary">
         Request a Quote
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -830,9 +900,9 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
@@ -854,7 +924,7 @@
         <h5>Contact</h5>
         <div class="footer-contact-item">
           <span class="footer-contact-label">Address</span>
-          <span class="footer-contact-val">P.O. Box 3534, Umm Al Quwain, UAE,</span>
+          <span class="footer-contact-val">P.O. Box 3534, Umm Al Quwain, UAE</span>
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-label">Phone</span>
@@ -866,7 +936,7 @@
         </div>
 
         <div class="footer-newsletter">
-          <p>Project updates & industry insights</p>
+          <p>Project updates &amp; industry insights</p>
           <div class="footer-nl-form">
             <input class="footer-nl-input" type="email" placeholder="your@email.com" />
             <button class="footer-nl-btn">Send →</button>
@@ -895,8 +965,18 @@
 
   <!-- ══════════════════════════════════
        SCRIPTS
+       Reuses main.js from homepage for nav/dropdown/reveal logic.
+       Page-specific JS only below.
   ══════════════════════════════════ -->
+  <script src="assets/js/main.js"></script>
   <script>
+    /* ─── Helper used by mobile menu links ─── */
+    function closeMobileMenu() {
+      document.getElementById('navHamburger').classList.remove('open');
+      document.getElementById('navHamburger').setAttribute('aria-expanded', 'false');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
     /* ── Scroll Progress ── */
     const bar = document.getElementById('progressBar');
     window.addEventListener('scroll', () => {
@@ -904,25 +984,36 @@
       bar.style.width = pct + '%';
     }, { passive: true });
 
-    /* ── Nav scroll ── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', scrollY > 50);
-    }, { passive: true });
+    /* ── Nav scroll class (if main.js uses #mainNav instead of #navbar) ── */
+    const navbar = document.getElementById('mainNav');
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', scrollY > 50);
+      }, { passive: true });
+    }
 
-    /* ── Hamburger ── */
-    const hamburger = document.getElementById('hamburger');
+    /* ── Hamburger toggle (mirrors main.js pattern, safe to run twice) ── */
+    const hamburger = document.getElementById('navHamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
       });
-    });
+    }
+
+    /* ── Mobile Company accordion ── */
+    const mobileCompanyToggle = document.getElementById('mobileCompanyToggle');
+    const mobileSubLinks      = document.getElementById('mobileSubLinks');
+    if (mobileCompanyToggle && mobileSubLinks) {
+      mobileCompanyToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const expanded = mobileCompanyToggle.getAttribute('aria-expanded') === 'true';
+        mobileCompanyToggle.setAttribute('aria-expanded', !expanded);
+        mobileSubLinks.classList.toggle('open', !expanded);
+      });
+    }
 
     /* ── Scroll Reveal ── */
     const revealEls = document.querySelectorAll(
@@ -940,7 +1031,8 @@
 
     /* ── Hero eyebrow line ── */
     setTimeout(() => {
-      document.getElementById('eyebrowLine').classList.add('animated');
+      const line = document.getElementById('eyebrowLine');
+      if (line) line.classList.add('animated');
     }, 600);
 
     /* ── Filter buttons ── */
@@ -962,18 +1054,20 @@
 
     /* ── Floating Particles ── */
     const particleContainer = document.getElementById('particles');
-    for (let i = 0; i < 18; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 3 + 1.5;
-      p.style.cssText = `
-        width:${size}px; height:${size}px;
-        left:${Math.random()*100}%;
-        animation-duration:${10 + Math.random()*18}s;
-        animation-delay:${Math.random()*12}s;
-        opacity:${0.15 + Math.random()*0.25};
-      `;
-      particleContainer.appendChild(p);
+    if (particleContainer) {
+      for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 3 + 1.5;
+        p.style.cssText = `
+          width:${size}px; height:${size}px;
+          left:${Math.random()*100}%;
+          animation-duration:${10 + Math.random()*18}s;
+          animation-delay:${Math.random()*12}s;
+          opacity:${0.15 + Math.random()*0.25};
+        `;
+        particleContainer.appendChild(p);
+      }
     }
 
     /* ── Counter animation ── */

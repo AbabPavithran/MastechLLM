@@ -12,6 +12,13 @@
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/project.css" />
+  <link rel="stylesheet" href="assets/css/nav-dropdown.css" />
+<style>.nav-dropdown,
+.nav-dropdown li {
+  list-style: none;
+  list-style-type: none;
+}
+</style>
 </head>
 <body>
 
@@ -30,32 +37,97 @@
 
   <!-- NAVIGATION -->
   <nav id="navbar">
-    <a href="index.html" class="logo">
-      <span class="logo-dot"></span>
-      Mastech
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
+  <a href="index.html" class="logo">
+    <span class="logo-dot"></span>
+    Mastech
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+
+    <!-- Company Dropdown -->
+    <div class="nav-dropdown-wrap" role="listitem">
+      <button
+        class="nav-dropdown-trigger"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="companyMenu"
+        id="companyTrigger"
+      >
+        Company
+        <span class="nav-chevron" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-dropdown" id="companyMenu" role="menu" aria-labelledby="companyTrigger">
+        <li role="none">
+          <a href="company/trade-licenses.html" role="menuitem">
+            <span class="nav-dropdown-dot" aria-hidden="true"></span>
+            Trade Licenses
+          </a>
+        </li>
+        <li role="none">
+          <a href="company/membership-certificate.html" role="menuitem">
+            <span class="nav-dropdown-dot" aria-hidden="true"></span>
+            Membership Certificate
+          </a>
+        </li>
+        <li role="none">
+          <a href="organization-chart.html" role="menuitem">
+            <span class="nav-dropdown-dot" aria-hidden="true"></span>
+            Organization Chart
+          </a>
+        </li>
+        <li role="none">
+          <a href="policies.html" role="menuitem">
+            <span class="nav-dropdown-dot" aria-hidden="true"></span>
+            Policies
+          </a>
+        </li>
+      </ul>
     </div>
-    <button class="nav-cta" onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})">
-      Get Quote
-    </button>
-    <div class="nav-hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <button class="nav-cta"
+    onclick="document.getElementById('cta-section').scrollIntoView({behavior:'smooth'})">
+    Get Quote
+  </button>
+
+  <div class="nav-hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="closeMobileMenu()">Home</a>
+    <a href="services.html" onclick="closeMobileMenu()">Services</a>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+      <button
+        class="mobile-company-toggle"
+        id="mobileCompanyToggle"
+        aria-expanded="false"
+        aria-controls="mobileSubLinks"
+      >
+        Company
+        <span class="nav-chevron" aria-hidden="true"></span>
+      </button>
+
+      <ul class="mobile-sub-links" id="mobileSubLinks" aria-label="Company sub-menu">
+        <li><a href="company/trade-licenses.html"         onclick="closeMobileMenu()">Trade Licenses</a></li>
+        <li><a href="company/membership-certificate.html" onclick="closeMobileMenu()">Membership Certificate</a></li>
+        <li><a href="organization-chart.html"             onclick="closeMobileMenu()">Organization Chart</a></li>
+        <li><a href="policies.html"                       onclick="closeMobileMenu()">Policies</a></li>
+      </ul>
+    </div>
+
     <a href="projects.html" onclick="closeMobileMenu()">Projects</a>
-    <a href="index.html#services" onclick="closeMobileMenu()">Services</a>
-    <a href="index.html#about" onclick="closeMobileMenu()">About</a>
-    <a href="index.html#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
+    <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
     <button class="mobile-cta">Get a Quote</button>
   </div>
 
@@ -831,6 +903,28 @@
       const images = document.querySelectorAll('[loading="lazy"]');
       images.forEach(img => { img.src = img.dataset.src; });
     }
+    /* ── Company Dropdown ── */
+const companyWrap    = document.querySelector('.nav-dropdown-wrap');
+const companyTrigger = document.getElementById('companyTrigger');
+
+if (companyTrigger && companyWrap) {
+  companyTrigger.addEventListener('click', () => {
+    const isOpen = companyWrap.classList.toggle('open');
+    companyTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', (e) => {
+    if (!companyWrap.contains(e.target)) {
+      companyWrap.classList.remove('open');
+      companyTrigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      companyWrap.classList.remove('open');
+      companyTrigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
   </script>
 </body>
 </html>
